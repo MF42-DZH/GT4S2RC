@@ -8,4 +8,6 @@ Randomizer logic sourced from here: https://github.com/TheAdmiester/OpenAdhoc-GT
 
 Tested using GHC 9.10.1, but you can probably take the code and port it to something less academic (lol).
 
-To run with GHCi, run `ghci SpecIIData.hs`, and use `bruteForce "[USERNAME]"` to try and bruteforce a list of prize cars for randomizer.
+To run the program, execute `runghc SpecIIData.hs`, and input a username to try and bruteforce a list of prize cars for randomizer. You can also compile it into a program with GHC, using `ghc -main-is SpecIIData SpecIIData.hs`, then run it as you would a normal executable.
+
+Car viability metric list provided by TeaKanji.
