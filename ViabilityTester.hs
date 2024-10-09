@@ -3,10 +3,10 @@
 module ViabilityTester where
 
 import Control.Concurrent
-import Control.Concurrent.STM
 import Control.Monad.ST
 import Control.Monad
 import Data.Foldable
+import Data.IORef
 import GenerateCombinedList hiding ( main )
 import GHC.Exception
 import SpecIIData hiding ( main )
@@ -43,24 +43,24 @@ determineViability username cars races funcs =
   in  (username, fromIntegral (sum vs) / fromIntegral (length vs))
 
 formatWinner :: String -> (String, Double) -> String
-formatWinner tn (u, v) = concat ["[", tn, "]: New maximum viability ", show v, " from username ", show u, "."]
+formatWinner tn (u, v) = concat ["[", tn, "]: New local maximum viability ", show v, " from username ", show u, "."]
 
-isWinner :: TVar (String, Double) -> (String, Double) -> STM (Maybe (String, Double))
+isWinner :: IORef (String, Double) -> (String, Double) -> IO (Maybe (String, Double))
 isWinner mx c@(_, v) = do
-  (_, v') <- readTVar mx
+  (_, v') <- readIORef mx
   return $ if v > v' then Just c else Nothing
 
-determine :: TVar (String, Double) -> String -> CarInfo -> [String] -> [String] -> STM (Maybe (String, Double))
+determine :: IORef (String, Double) -> String -> CarInfo -> [String] -> [String] -> IO (Maybe (String, Double))
 determine mx un cs rs fs =
   let vd = determineViability un cs rs fs
   in  do
     w <- isWinner mx vd
-    forM_ w (writeTVar mx)
+    forM_ w (writeIORef mx)
     return w
 
-worker :: String -> TVar (String, Double) -> [String] -> CarInfo -> [String] -> [String] -> IO (JoinHandle ())
+worker :: String -> IORef (String, Double) -> [String] -> CarInfo -> [String] -> [String] -> IO (JoinHandle ())
 worker name mx uns cs rs fs = forkJoinable $ forM_ uns $ \ un -> do
-  result <- atomically (determine mx un cs rs fs)
+  result <- determine mx un cs rs fs
   forM_ result $ \ vs -> putStrLn (formatWinner name vs)
 
 
@@ -89,17 +89,31 @@ main = do
   races <- lines <$> readFile "RACELIST.txt"
   funcs <- lines <$> readFile "FUNCLIST.txt"
 
-  currentMaxViability <- newTVarIO ("", 0)
+  currentMaxViability1 <- newIORef ("", 0)
+  currentMaxViability2 <- newIORef ("", 0)
+  currentMaxViability3 <- newIORef ("", 0)
+  currentMaxViability4 <- newIORef ("", 0)
+  currentMaxViability5 <- newIORef ("", 0)
 
   putStr "Enter a max username length: " >> hFlush stdout
   maxLen :: Int <- read <$> getLine
 
   let (d1, d2, d3, d4, d5) = generateDatasets maxLen
 
-  w1 <- worker "Searcher #1" currentMaxViability d1 cars races funcs
-  w2 <- worker "Searcher #2" currentMaxViability d2 cars races funcs
-  w3 <- worker "Searcher #3" currentMaxViability d3 cars races funcs
-  w4 <- worker "Searcher #4" currentMaxViability d4 cars races funcs
-  w5 <- worker "Searcher #5" currentMaxViability d5 cars races funcs
+  w1 <- worker "Searcher #1" currentMaxViability1 d1 cars races funcs
+  w2 <- worker "Searcher #2" currentMaxViability2 d2 cars races funcs
+  w3 <- worker "Searcher #3" currentMaxViability3 d3 cars races funcs
+  w4 <- worker "Searcher #4" currentMaxViability4 d4 cars races funcs
+  w5 <- worker "Searcher #5" currentMaxViability5 d5 cars races funcs
 
   traverse_ joinHandle_ [w1, w2, w3, w4, w5]
+
+  results <- traverse readIORef
+    [ currentMaxViability1
+    , currentMaxViability2
+    , currentMaxViability3
+    , currentMaxViability4
+    , currentMaxViability5
+    ]
+
+  putStrLn $ formatWinner "Overall" $ maximumBy (\ (_, a) (_, b) -> compare a b) results
