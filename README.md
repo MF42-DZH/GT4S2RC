@@ -10,4 +10,6 @@ Tested using GHC 9.10.1, but you can probably take the code and port it to somet
 
 To run the program, execute `runghc SpecIIData.hs`, and input a username to try and bruteforce a list of prize cars for randomizer. You can also compile it into a program with GHC, using `ghc -main-is SpecIIData SpecIIData.hs`, then run it as you would a normal executable.
 
+To use `ViabilityTester.hs` effectively, it must be compiled with the threaded option and optimisations. I recommend the command `ghc -main-is ViabilityTester ViabilityTester.hs -O2 -threaded` and then enabling the RTS system when running by running the compiled output as `ViabilityTester[.exe] +RTS -N5`.
+
 Car viability metric list provided by TeaKanji.
