@@ -73,11 +73,11 @@ generateDatasets n
                 , fmap pure " 0123456789`\\;,.[]/-="
                 )
   | otherwise = let (d1, d2, d3, d4, d5) = generateDatasets (n - 1)
-                in  ( d1 ++ ((\ str c -> str ++ [c]) <$> d1 <*> charset)
-                    , d2 ++ ((\ str c -> str ++ [c]) <$> d2 <*> charset)
-                    , d3 ++ ((\ str c -> str ++ [c]) <$> d3 <*> charset)
-                    , d4 ++ ((\ str c -> str ++ [c]) <$> d4 <*> charset)
-                    , d5 ++ ((\ str c -> str ++ [c]) <$> d5 <*> charset)
+                in  ( d1 ++ (flip (:) <$> d1 <*> charset)
+                    , d2 ++ (flip (:) <$> d2 <*> charset)
+                    , d3 ++ (flip (:) <$> d3 <*> charset)
+                    , d4 ++ (flip (:) <$> d4 <*> charset)
+                    , d5 ++ (flip (:) <$> d5 <*> charset)
                     )
 
 main :: IO ()
