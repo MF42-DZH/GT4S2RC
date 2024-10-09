@@ -1,0 +1,743 @@
+Peugeot 106 Rallye '03
+Peugeot 106 S16 '03
+Volkswagen Beetle 1100 Standard (Type-11) '49
+Mazda 110S (L10A) '67
+Mazda 110S (L10B) '68
+Isuzu 117 Coupe '68
+BMW 120d '04
+BMW 120i '04
+Honda 1300 Coupe 9 S '70
+Alfa Romeo 147 2.0 Twinspark '02
+Alfa Romeo 147 GTA '02
+Alfa Romeo 155 2.5 V6 TI '93
+Alfa Romeo 156 2.5 V6 24V '98
+Alfa Romeo 166 2.5 V6 24V Sportronic '98
+Mercedes-Benz 190 E 2.5 - 16 Evolution II '91
+AMG Mercedes 190 E 2.5 - 16 Evolution II Touring Car '92
+Toyota 2000GT '67
+BMW 2002 Turbo '73
+Peugeot 205 Turbo 16 '85
+Peugeot 205 Turbo 16 Rally Car '85
+Peugeot 205 Turbo 16 Evolution 2 Rally Car '86
+Peugeot 206 RC '03
+Peugeot 206 S16 '99
+Peugeot 206 Rally Car '99
+Peugeot 206 Rally Car '99
+Peugeot 206cc '01
+Volvo 240 GLT Estate '88
+Nissan 240RS Rally Car '85
+Nissan 240SX '96
+Nissan 240SX (S14) '96
+Nissan 240ZG (HS30) '71
+Citroen 2CV Type A '54
+Mitsubishi 3000GT MR (J) '95
+Mitsubishi 3000GT MR (J) '98
+Mitsubishi 3000GT SL (J) '95
+Mitsubishi 3000GT SL (J) '96
+Mitsubishi 3000GT SL (J) '98
+Mitsubishi 3000GT VR-4 (J) '98
+Mitsubishi 3000GT VR-4 Turbo (J) '95
+Mitsubishi 3000GT VR-4 Turbo (J) '96
+Chrysler 300C '05
+Mercedes-Benz 300 SL Coupe '54
+Nissan 300ZX 2by2 (Z32) '98
+Nissan 300ZX 2seater (Z32) '89
+Nissan 300ZX 2seater (Z32) '98
+Peugeot 307 XSi '04
+BMW 320i Touring Car '03
+BMW 330i '05
+RUF 3400S '00
+Nissan 350Z (Z33) '03
+Nissan 350Z Gran Turismo 4 Limited Edition (Z33) '05
+Nissan 350Z Concept LM Race Car '02
+Nissan 350Z Roadster (Z33) '03
+Subaru SUBARU 360 '58
+Peugeot 406 3.0 V6 Coupe '98
+Fiat 500F '65
+Fiat 500L '69
+Fiat 500R '72
+Renault 5 Maxi Turbo Rally Car '85
+Renault 5 Turbo '80
+Mazda 787B Race Car '91
+Peugeot 905 Race Car '92
+Peugeot 905 Race Car '92
+Autobianchi A112 Abarth '79
+Mercedes-Benz A 160 Avantgarde '98
+Audi A2 1.4 '02
+Alpine A310 1600VE '73
+Audi A3 3.2 quattro '03
+Audi A4 Touring Car '04
+AC Cars 427 S/C '66
+Hyundai Accent Rally Car '01
+Honda ACCORD Coupe EX '03
+Honda ACCORD Coupe '88
+Honda ACCORD Euro-R '02
+Honda ACCORD Euro-R '00
+Acura CL 3.2 Type-S '01
+Acura CL 3.2 Type-S '03
+Acura DN-X '02
+Acura HSC '04
+Acura INTEGRA Type-R '01
+Acura NSX '04
+Acura NSX Coupe '97
+Acura NSX '91
+Acura RSX Type-S '04
+Mitsubishi AIRTREK Turbo-R '02
+Alfa Romeo GT 3.2 V6 24V '04
+Alfa Romeo Spider 3.0i V6 24V '01
+Alpine A110 1600S '73
+Toyota ALTEZZA AS200 '98
+Toyota ALTEZZA Gita AS300 '01
+Toyota ALTEZZA Touring Car '01
+Toyota ALTEZZA RS200 '98
+Suzuki ALTO WORKS RS-Z '97
+Suzuki ALTO WORKS SUZUKI SPORT LIMITED '97
+RE Amemiya AMEMIYA ASPARADRINK RX7 (JGTC) '04
+AMUSE CarbonR (R34) '04
+AMUSE S2000 Street Version '04
+AMUSE S2000 R1 '04
+AMUSE S2000 GT1 '04
+ASL ARTA Garaiya (JGTC) '03
+Honda ARTA NSX (JGTC) '00
+Toyota au CERUMO Supra (JGTC) '01
+Auto Union V16 Type C Streamline '37
+Renault AVANTIME '02
+Mazda Autozam AZ-1 '92
+Fiat Barchetta Giovane Due '00
+Nissan Be-1 '87
+Honda BEAT '91
+Honda BEAT Version F '92
+Honda BEAT Version Z '93
+Volkswagen New Beetle 2.0 '00
+Volkswagen New Beetle Cup Car '00
+Volkswagen New Beetle RSi '00
+Isuzu Bellett 1600 GT-R '69
+BLITZ ER34 D1 spec (D1GP) '04
+Nissan BLUEBIRD 1600 Deluxe (510) '69
+Nissan BLUEBIRD Rally Car (510) '69
+Nissan BLUEBIRD Hardtop 1800SSS (910) '79
+Volkswagen Bora V6 4MOTION '01
+RUF BTR '86
+BUICK GNX '87
+BUICK Special '62
+Callaway C12 '03
+Citroen C3 1.6 '02
+Citroen C5 V6 Exclusive '03
+Spyker C8 Laviolette '02
+Toyota CALDINA GT-FOUR '02
+Nissan CALSONIC SKYLINE (JGTC) '00
+Nissan CALSONIC SKYLINE GT-R Race Car '93
+Chevrolet Camaro IROC-Z Concept '88
+Chevrolet Camaro LM Race Car '01
+Chevrolet Camaro SS '00
+Chevrolet Camaro SS '69
+Chevrolet Camaro Z28 302 '69
+Chevrolet Camaro Z28 Coupe '97
+Suzuki Cappuccino (EA11R) '91
+Suzuki Cappuccino (EA21R) '95
+Toyota CARINA ED 2.0 X 4WS '89
+Lotus Carlton '90
+Mazda Carol 360 Deluxe '62
+Honda Castrol MUGEN NSX (JGTC) '00
+Toyota Castrol Tom's Supra (JGTC) '00
+Toyota Castrol Tom's Supra (JGTC) '01
+Caterham Seven Fire Blade '02
+Toyota CELICA 1600GT (TA22) '70
+Toyota CELICA 2000GT-FOUR (ST165) '86
+Toyota CELICA 2000GT-R (ST162) '86
+Toyota CELICA GT-FOUR (ST205) '98
+Toyota CELICA GT-FOUR RC (ST185) '91
+Toyota CELICA GT-R (ST183, 4WS) '91
+Toyota CELICA SS-II (ST202) '97
+Toyota CELICA SS-II (ZZT231) '99
+Toyota CELICA GT-FOUR Rally Car (ST185) '95
+Toyota CELICA GT-FOUR Rally Car (ST205) '95
+Toyota CELICA XX 2800GT '81
+TVR Cerbera Speed 12 '00
+TVR Cerbera Speed Six '97
+Chaparral 2D Race Car '67
+Chaparral 2J Race Car '70
+Dodge Charger 440 R/T '70
+Dodge Charger Super Bee 426 Hemi '71
+Chevrolet Chevelle SS 454 '70
+Cadillac CIEN '02
+Honda CITY Turbo II '83
+Honda CIVIC 1500 3door 25i '83
+Honda CIVIC 1500 3door CX '79
+Honda CIVIC TYPE R (EP) '01
+Honda CIVIC TYPE R (EP) '04
+Honda CIVIC TYPE R (EK) '97
+Honda CIVIC TYPE R (EK) '98
+Honda CIVIC SiR-II (EG) '91
+Honda CIVIC SiR-II (EG) '92
+Honda CIVIC SiR-II (EG) '93
+Honda CIVIC SiR-II (EG) '95
+Cizeta V16T '94
+Mercedes-Benz CL 600 '00
+Hyundai Click Type-R '04
+Renault Clio Renault Sport 2.0 16V '02
+Clio Renault Sport Trophy V6 24V Race Car '00
+Renault Clio Renault Sport V6 24V '00
+Renault Clio Renault Sport V6 Phase 2 '03
+Hyundai Clix '01
+Mercedes-Benz CLK 55 AMG '00
+AMG Mercedes CLK-LM Race Car '98
+Mercedes-Benz CLK Touring Car '00
+Shelby Cobra 427 '67
+Mitsubishi COLT 1.5 Sport X Version '02
+Suzuki CONCEPT-S2 '03
+Daihatsu Copen Active Top '02
+Daihatsu Copen Detachable Top '02
+Toyota COROLLA Rally Car '98
+Chevrolet Corvette Convertible (C1) '54
+Chevrolet Corvette Coupe (C2) '63
+Chevrolet Corvette C5R (C5) '00
+Chevrolet Corvette GRAND SPORT (C4) '96
+Chevrolet Corvette Stingray L46 350 (C3) '69
+Chevrolet Corvette Z06 (C5) '00
+Chevrolet Corvette Z06 (C2) Race Car '63
+Chevrolet Corvette ZR-1 (C4) '90
+Mercury Cougar XR-7 '67
+Fiat Coupe Turbo Plus '00
+Chrysler Crossfire '04
+Honda BALLADE SPORTS CR-X 1.5i '83
+Honda CR-X SiR '90
+RUF CTR2 '96
+RUF CTR "Yellow Bird" '87
+Nissan CUBE EX (FF/CVT) '02
+Nissan CUBE X '98
+Plymouth Cuda 440 Six Pack '71
+Subaru CUSCO SUBARU ADVAN IMPREZA (JGTC) '03
+Mitsubishi CZ-3 Tarmac '01
+Mitsubishi CZ-3 Tarmac Rally Car '02
+Aston Martin DB7 Vantage Coupe '00
+Aston Martin DB9 Coupe '03
+Honda CR-X del Sol SiR '92
+Lancia DELTA HF Integrale Evoluzione '91
+Lancia DELTA HF Integrale Rally Car '92
+Lancia Delta S4 Rally Car '85
+Mazda DEMIO (J) '99
+Mazda DEMIO SPORT '03
+Toyota DENSO SARD SUPRA GT (JGTC) '00
+DMC DeLorean S2 '04
+Dodge VIPER GTS-R Team Oreca Race Car '00
+DOME ZERO '78
+Mercedes-Benz E 55 AMG '02
+Jaguar E-Type Coupe '61
+EAGLE Talon Esi '97
+Mitsubishi Eclipse GT '06
+Mitsubishi ECLIPSE GT '95
+Mitsubishi ECLIPSE Spyder GTS '03
+Lotus Elan S1 '62
+Honda ELEMENT '03
+Lotus Elise '00
+Lotus Elise 111R '04
+Lotus Elise 111S '03
+Lotus Elise Sport 190 '98
+Lotus Elise Type 72 '01
+Ford Escort Rally Car '98
+Suzuki ESCUDO Dirt Trial Car '98
+Lotus Esprit Sport 350 '00
+Lotus Esprit Turbo HC '87
+Lotus Esprit V8 '02
+Lotus Esprit V8 GT '98
+Lotus Esprit V8 SE '98
+Toyota ESSO Ultraflo Supra (JGTC) '01
+Lotus Europa Special '71
+Mitsubishi Lancer Evolution VI Rally Car '99
+Nissan EXA CANOPY L.A.Version Type S (N13) '88
+Bentley Speed 8 Race Car '03
+Nissan Fairlady 2000 (SR311) '68
+Nissan Fairlady Z 280Z-L 2seater (S130) '78
+Nissan Fairlady Z 300ZX (Z31) '83
+NISMO Fairlady Z S-tune concept by GRANTURISMO (Z33) '02
+Nissan Fairlady Z Version ST (Z33) Option Wheel '02
+Ford Falcon XR8 '00
+Nissan FALKEN ☆ GT-R Race Car '04
+Honda Fit W '01
+Ford FOCUS RS '02
+Ford FOCUS ST170 '03
+Ford FOCUS Rally Car '99
+Ford GT '05
+Ford GT '02
+Ford GT LM Race Car '02
+Ford GT LM Race Car Spec II '04
+Ford GT '05
+Formula Gran Turismo '04
+FPV F6 Typhoon '04
+FPV GT '04
+FPV GT '04
+Mitsubishi FTO GP Version R '97
+Mitsubishi FTO GP Version R '99
+Mitsubishi FTO GPX '94
+Mitsubishi FTO GPX '97
+Mitsubishi FTO GPX '99
+Mitsubishi FTO GR '94
+Mitsubishi FTO GR '97
+Mitsubishi FTO Super Touring Car '97
+Mitsubishi GALANT GTO MR '70
+Mitsubishi Galant 2.0 DOHC Turbo VR-4 '89
+ASL Garaiya '02
+Honda Gathers Drider CIVIC Race Car '98
+Ginetta G4 '64
+Alfa Romeo Giulia Sprint GTA 1600 '65
+Alfa Romeo Giulia Sprint Speciale '63
+Volkswagen Golf IV GTI '01
+Volkswagen Golf V GTI '05
+Volkswagen Golf I GTI '76
+Volkswagen Golf IV R32 '03
+TVR Griffith 500 '94
+Lexus GS300 '00
+Lexus GS300 '91
+Lexus GS300 Vertex Edition (J) '00
+Suzuki GSX-R/4 '01
+Shelby Mustang G.T. 350R '65
+Ford GT40 Race Car '69
+Toyota GT-ONE Race Car (TS020) '99
+Toyota GT-ONE Race Car (TS020) '99
+Nissan GT-R Concept LM Race Car '02
+Nissan GT-R Concept '01
+Alfa Romeo GTV 3.0 V6 24V '01
+Hyundai HCD6 '01
+HKS GENKI HYPER SILVIA RS2 (D1GP) '04
+Hommell Berlinette R/S Coupe '99
+HPA Motorsports Stage II R32 '04
+Mitsubishi HSR-II Concept '89
+Mitsubishi i '03
+Seat Ibiza Cupra '04
+Subaru IMPREZA 22B-STi (GC) '98
+Subaru IMPREZA Coupe WRX Type R STi Version VI (GC) '99
+Subaru IMPREZA Super Touring Car '01
+Subaru IMPREZA Sport Wagon STi (GG, Type-I) '00
+Subaru IMPREZA Sport Wagon WRX STi Version VI (GF) '99
+Subaru IMPREZA Rally Car '01
+Subaru IMPREZA Rally Car '03
+Subaru IMPREZA Rally Car '99
+Subaru IMPREZA Rally Car Prototype '01
+Subaru IMPREZA WRX STi Prodrive Style (GD) '01
+Subaru IMPREZA Sedan WRX STi (GC) '94
+Subaru IMPREZA Sedan WRX STi Version II (GC) '95
+Subaru IMPREZA Sedan WRX STi Version III (GC) '96
+Subaru IMPREZA Sedan WRX STi Version IV (GC) '97
+Subaru IMPREZA Sedan WRX STi Version V (GC) '98
+Subaru IMPREZA Sedan WRX STi Version VI (GC) '99
+Subaru IMPREZA Sedan WRX STi Version (GD) '00
+Subaru IMPREZA Sedan WRX STi (GD) '02
+Subaru IMPREZA Sedan WRX STi spec C (GD) '04
+Infiniti FX45 Concept '02
+Infiniti G20 '90
+Infiniti G35 SEDAN '03
+Infiniti G35 COUPE '03
+Honda Insight '99
+Honda INTEGRA TYPE R (DC5) '03
+Honda INTEGRA TYPE R (DC2) '95
+Honda INTEGRA TYPE R (DC2) '98
+Honda INTEGRA TYPE R (DC2) '99
+Honda INTEGRA TYPE R Touring Car '02
+Jensen Interceptor MkIII '74
+Ford Ka '01
+Volkswagen Karmann Ghia Coupe (Type-1) '68
+Suzuki Kei WORKS '02
+Nissan SKYLINE Hard Top 2000GT-R (KPGC10) '70
+Nissan SKYLINE 2000GT-R (KPGC110) '73
+Mazda KUSABI '03
+Mitsubishi Lancer 1600 GSR '73
+Mitsubishi Lancer 1600 GSR Rally Car '74
+Mitsubishi Lancer Evolution II GSR '94
+Mitsubishi Lancer Evolution III GSR '95
+Mitsubishi Lancer Evolution IV GSR '96
+Mitsubishi Lancer Evolution IV Rally Car '97
+Mitsubishi Lancer Evolution V GSR '98
+Mitsubishi Lancer Evolution VI GSR '99
+Mitsubishi Lancer Evolution VI RS '99
+Mitsubishi Lancer Evolution VI GSR TOMMI MAKINEN Edition '00
+Mitsubishi Lancer Evolution VI RS TOMMI MAKINEN Edition '00
+Mitsubishi Lancer Evolution VII GSR '01
+Mitsubishi Lancer Evolution VII GT-A '02
+Mitsubishi Lancer Evolution VII RS '01
+Mitsubishi Lancer Evolution VIII GSR '03
+Mitsubishi Lancer Evolution VIII MR GSR '04
+Mitsubishi Lancer Evolution VIII RS '03
+Mitsubishi Lancer Evolution GSR '92
+Mitsubishi Lancer EX 1800GSR IC Turbo '83
+Mitsubishi Lancer Evolution Super Rally Car '03
+Land Rover Range Stormer Concept '04
+Suzuki ALTO LAPIN Turbo '02
+Subaru LEGACY B4 2.0GT '03
+Subaru LEGACY B4 3.0R '03
+Subaru LEGACY B4 Blitzen '00
+Subaru LEGACY B4 RSK '98
+Subaru LEGACY Touring Wagon GT-B '96
+Subaru LEGACY B4 2.0GT specB '03
+Subaru LEGACY Touring Wagon 2.0GT '03
+Subaru LEGACY Touring Wagon 2.0GT specB '03
+Subaru LEGACY Touring Wagon 3.0R '03
+Mitsubishi LEGNUM VR-4 Type V '98
+Audi Le Mans quattro '03
+Toyota COROLLA LEVIN BZ-R '98
+Toyota COROLLA LEVIN GT-APEX (AE86) '83
+Lexus IS200 GT-1 Race Car '04
+Lexus IS200 (J) '98
+Lexus IS300 Sport Cross '01
+Lexus IS200 '98
+Lexus SC430 '01
+Honda LIFE STEP VAN '72
+Nissan LOCTITE ZEXEL GT-R (JGTC) '00
+Honda LOCTITE MUGEN NSX (JGTC) '01
+Volkswagen Lupo 1.4 '02
+Volkswagen Lupo Cup Car '00
+Volkswagen Lupo GTI '01
+Volkswagen Lupo GTI Cup Car (J) '03
+BMW M3 '04
+BMW M3 CSL '03
+BMW M3 GTR Race Car '01
+BMW M3 GTR '03
+BMW M5 '05
+BMW M Coupe '98
+Nissan March G# '99
+Mazda Mazda6 5-door '03
+Mazda Mazda6 Concept '01
+Mazda Mazda6 Touring Car '02
+Mazda Mazda 323F '93
+Mazda MX-Crossport '05
+Mazda Mazdaspeed 6 '05
+BMW McLaren F1 GTR Race Car '97
+Renault Megane 2.0 16V '03
+Renault Megane 2.0 IDE Coupe '00
+MGF '97
+Mazda MX-5 Miata 1600 NR-A (NB, J) '04
+Mazda MX-5 Miata 1800 RS (NB, J) '04
+Mazda MX-5 Miata 1.8 RS (NB, J) '98
+Mazda MX-5 Miata J-Limited II (NA, J) '93
+Mazda MX-5 Miata J-Limited (NA, J) '91
+Mazda MX-5 Miata 1800 RS (NB, J) '00
+Mazda MX-5 Miata SR-Limited (NA, J) '97
+Mazda MX-5 Miata S-Special Type I (NA, J) '95
+Mazda MX-5 Miata (NA) '89
+Mazda MX-5 Miata VR-Limited (NA, J) '95
+Mazda MX-5 Miata V-Special Type II (NA, J) '93
+Nissan MICRA '03
+Daihatsu Midget II D-type '98
+Daihatsu Midget '63
+Mine's Lancer Evolution VI '00
+Mine's Skyline GT-R N1 V-spec (R34) '00
+MINI COOPER '02
+Mini Cooper 1.3i '98
+MINI COOPER-S '02
+Marcos Mini Marcos GT '70
+MINI ONE '02
+Mitsubishi MINICA DANGAN ZZ '89
+MINOLTA Toyota 88C-V Race Car '89
+Daihatsu MIRA TR-XX Avanzato R '97
+Mitsubishi MIRAGE 1400GLX '78
+Mitsubishi MIRAGE CYBORG ZR '97
+Nissan mm-R Cup Car '01
+Honda Mobil 1 NSX (JGTC) '01
+Ford Model T Tourer '15
+Holden Monaro CV8 '04
+Lotus Motor Sport Elise '99
+Mercedes-Benz Daimler Motor Carriage '86
+Nissan MOTUL PITWORK Z (JGTC) '04
+Daihatsu MOVE Custom RS Limited '02
+Daihatsu MOVE CX '95
+Daihatsu MOVE SR-XX 2WD '97
+Daihatsu MOVE SR-XX 4WD '97
+Toyota MR2 1600 G '86
+Toyota MR2 1600 G-Limited Super Charger '86
+Toyota MR2 G-Limited '97
+Toyota MR2 GT-S '97
+Toyota MR2 Spyder '99
+Toyota MR2 Spyder '02
+Suzuki MR Wagon Sport '04
+Toyota SUPERAUTOBACS APEX MR-S (JGTC) '00
+Toyota Motor Triathlon Race Car '04
+Honda MUGEN MOTUL CIVIC Si Race Car '87
+MUGEN S2000 '00
+Mazda BP FALKEN RX-7 (D1GP) '03
+Ford Mustang GT '05
+Ford MUSTANG SVT Cobra R '00
+Mazda MX-5 (NC) '05
+Honda N360 '67
+NIKE One 2022
+NISMO 270R '94
+NISMO 400R '96
+NISMO Fairlady Z Z-tune (Z33) '03
+NISMO GT-R LM Road Going Version '95
+Honda NSX '01
+Honda NSX '90
+Honda NSX '93
+Honda NSX '95
+Honda NSX '97
+Honda NSX '99
+Honda NSX-R Concept '01
+Honda NSX Type R '02
+Honda NSX Type R '92
+Honda NSX-R Prototype LM Race Car '02
+Honda NSX-R Prototype LM Road Car '02
+Honda NSX Type S '01
+Honda NSX Type S '97
+Honda NSX Type S '99
+Honda NSX Type S Zero '97
+Honda NSX Type S Zero '99
+Audi Nuvolari quattro '03
+Honda Odyssey '03
+Opel Astra Touring Car (Opel Team Phoenix) '00
+Opel Calibra Touring Car '94
+Opel Corsa Comfort 1.4 '01
+Opel Speedster '00
+Opel Speedster Turbo '00
+Opel Tigra 1.6i '99
+Opel Vectra 3.2 V6 '03
+Opera Performance S2000 '04
+Opera Performance 350Z '04
+Mitsubishi PAJERO Evolution Rally Raid Car '03
+Mitsubishi PAJERO Rally Raid Car '85
+Fiat Panda Super i.e. '90
+Panoz Esperante GTR-1 Race Car '98
+Nissan PAO '89
+Mercedes-Benz Benz Patent Motor Wagen '86
+Nissan PENNZOIL ZEXEL GT-R (JGTC) '01
+Nissan PENNZOIL Nismo GT-R (JGTC) '99
+Pescarolo Courage C60/Peugeot Race Car '03
+PlayStation Pescarolo C60/Judd Race Car '04
+Isuzu PIAZZA XE '81
+Audi Pikes Peak quattro '03
+Volkswagen Polo GTI '01
+Pontiac Tempest Le Mans GTO '64
+Pontiac GTO 5.7 Coupe '04
+Pontiac Vibe GT '03
+Honda PRELUDE Type S '96
+Honda PRELUDE Type S '98
+Honda PRELUDE Si VTEC '91
+Honda PRELUDE SiR '96
+Honda PRELUDE SiR S spec '98
+Nissan PRIMERA 20V '01
+Toyota PRIUS G (J) '02
+Toyota PRIUS G Touring Selection (J) '03
+Mazda Protege '02
+Chrysler Prowler '02
+Chrysler PT-Cruiser '00
+Fiat Punto HGT Abarth '00
+Audi quattro '82
+Nissan SKYLINE Hard Top 2000 RS-X Turbo C (R30) '84
+Nissan SKYLINE Hard Top 2000 Turbo RS (R30) '83
+Nissan SKYLINE GTS-R (R31) '87
+NISMO Skyline GT-R S-tune (R32) '00
+Nissan SKYLINE GT-R Vspec II (R32) '94
+Nissan SKYLINE GTS-t Type M (R32) '91
+Nissan SKYLINE GT-R (R32) '89
+Nissan SKYLINE GT-R (R32) '91
+Nissan SKYLINE GT-R N1 (R32) '91
+Nissan SKYLINE GT-R Vspec (R32) '93
+Nissan SKYLINE GT-R Vspec N1 (R32) '93
+Nissan SKYLINE GTS25 Type S (R32) '91
+Nissan SKYLINE GTS-t Type M (R32) '89
+Nissan SKYLINE GT-R Vspec (R33) '97
+Nissan SKYLINE GT-R (R33) '95
+Nissan SKYLINE GT-R (R33) '96
+Nissan SKYLINE GT-R (R33) '97
+Nissan SKYLINE GT-R N1 (R33) '95
+Nissan SKYLINE GT-R Vspec (R33) '95
+Nissan SKYLINE GT-R Vspec (R33) '96
+Nissan SKYLINE GT-R Vspec LM Limited (R33) '96
+Nissan SKYLINE GT-R M-spec (R34) '01
+NISMO Skyline GT-R R-tune (R34) '99
+Nissan SKYLINE GT-R V-spec II (R34) '00
+Nissan SKYLINE GT-R V-spec II Nur (R34) '02
+Nissan SKYLINE GT-R V-spec (R34) '99
+Nissan GRAN TURISMO SKYLINE GT-R '01
+Nissan GRAN TURISMO SKYLINE GT-R (PaceCar) '01
+Nissan SKYLINE GT-R (R34) '00
+Nissan SKYLINE GT-R (R34) '99
+Nissan SKYLINE GT-R M-spec Nur (R34) '02
+Nissan SKYLINE GT-R Special Color Midnight Purple II (R34) '99
+Nissan SKYLINE GT-R Special Color Midnight Purple III (R34) '00
+Nissan SKYLINE GT-R V-spec N1 (R34) '99
+Nissan SKYLINE GT-R V-spec II N1 (R34) '00
+Nissan R390 GT1 Race Car '98
+Nissan R390 GT1 Road Car '98
+Nissan R89C Race Car '89
+Audi R8 Race Car '01
+Nissan R92CP Race Car '92
+RUF RGT '00
+Dodge RAM 1500 LARAMIE Hemi Quad Cab '04
+Honda RAYBRIG NSX (JGTC) '00
+Nissan C-WEST RAZO SILVIA (JGTC) '01
+Plymouth Super Bird '70
+Ford RS200 '84
+Ford RS200 Rally Car '85
+Audi RS 4 '01
+Audi RS 6 '02
+Audi RS 6 Avant '02
+Toyota RSC '01
+Toyota RSC Rally Raid Car '02
+Toyota COROLLA RUNX Z AEROTOURER '02
+Mazda RX-7 INFINI III (FC, J) '90
+Mazda RX-7 GT-Limited (FC, J) '85
+Mazda RX-7 GT-X (FC, J) '90
+Mazda RX-7 LM Race Car '01
+Mazda RX-7 Type R Bathurst R (FD) '01
+Mazda RX-7 Type R (FD, J) '91
+Mazda RX-7 Type R (FD, J) '93
+Mazda RX-7 Type R-S (FD, J) '95
+Mazda RX-7 Type RS (FD) '00
+Mazda RX-7 Type RS (FD) '98
+Mazda RX-7 Type RS (FD, J) '96
+Mazda RX-7 Type RS-R (FD) '97
+Mazda RX-7 Type RZ (FD) '00
+Mazda RX-7 Type RZ (FD, J) '92
+Mazda RX-7 Type RZ (FD, J) '93
+Mazda RX-7 Type RZ (FD, J) '95
+Mazda RX-7 Type RZ (FD, J) '96
+Mazda RX-7 Spirit R Type A (FD) '02
+Mazda RX-8 '03
+Mazda RX-8 Concept (Type-I) '01
+Mazda RX-8 Concept LM Race Car '01
+Mazda RX-8 Concept (Type-II) '01
+Mazda RX-8 Type E (J) '03
+Mazda RX-8 Type S (J) '03
+Nissan SILVIA K's (S13) '88
+Nissan SILVIA K's (S13) '91
+Nissan SILVIA Q's (S13) '88
+Nissan SILVIA Q's (S13) '91
+Nissan SILVIA K's AERO (S14) '93
+Nissan SILVIA Q's AERO (S14) '93
+Nissan SILVIA Q's AERO (S14) '96
+Nissan SILVIA Spec S AERO (S15) '99
+Nissan SILVIA Spec R AERO (S15) '99
+Honda S2000 '99
+Honda S2000 LM Race Car '01
+Honda S2000 Type V '03
+Honda S2000 Type V '00
+Honda S2000 Type V '01
+Honda S2000 '01
+Honda S2000 '04
+Audi S3 '02
+Audi S4 '03
+Audi S4 '98
+Honda S500 '63
+Honda S600 '64
+Volvo S60 T5 Sport '03
+Honda S800 '66
+Honda S800 RSC Race Car '68
+Jaguar S-Type R '02
+Saleen S7 '02
+Sauber Mercedes C9 Race Car '89
+Lexus SC300 '97
+Toyota SERA '92
+Shelby Series 1 Super Charged '03
+SILEIGHTY '98
+Chevrolet Silverado SST Concept '02
+Nissan SILVIA 240RS (S110) '83
+Nissan SILVIA (CSP311) '65
+Nissan SILVIA Varietta (S15) '00
+Nissan SKYLINE 1500Deluxe (S50D-1) '63
+Nissan SKYLINE 2000GT-B (S54A) '67
+Nissan SKYLINE SEDAN 300GT '01
+Nissan SKYLINE SEDAN 350GT-8 '02
+Nissan SKYLINE Sport Coupe (BLRA-3) '62
+Mercedes-Benz SL 500 (R230) '02
+Mercedes-Benz SL 500 (R129) '98
+Mercedes-Benz SL 55 AMG (R230) '02
+Mercedes-Benz SL 600 (R230) '04
+Mercedes-Benz SL 600 (R129) '98
+Mercedes-Benz SL 65 AMG (R230) '04
+Mercedes-Benz SLK 230 Kompressor '98
+Mercedes-Benz SLR McLaren '03
+Pontiac Solstice Coupe Concept '02
+Alfa Romeo Spider 1600 Duetto '66
+Proto Motors SPIRRA 4.6 V8 '04
+Triumph Spitfire 1500 '74
+Spoon CIVIC TYPE R (EK) '00
+Spoon Fit Race Car '03
+Spoon INTEGRA TYPE R (DC2) '99
+Spoon S2000 '00
+Spoon S2000 Race Car '00
+Toyota SPORTS 800 '65
+Dodge SRT4 '03
+Holden Commodore SS '04
+Chevrolet SSR '03
+Nissan STAGEA 25t RS FOUR S '98
+Nissan STAGEA 260RS AutechVersion '98
+Mitsubishi STARION 4WD Rally Car '84
+Toyota STARLET Glanza V '97
+Daihatsu STORIA CX 2WD '98
+Daihatsu STORIA CX 4WD '98
+Daihatsu STORIA X4 '00
+Lister Storm V12 Race Car '99
+Lancia STRATOS '73
+Lancia STRATOS Rally Car '77
+Nissan OPTION Stream Z '04
+Pontiac Sunfire GXP Concept '02
+Toyota SUPRA 2.5GT Twin Turbo R '90
+Toyota SUPRA 3.0GT Turbo A '88
+Toyota SUPRA RZ '97
+Toyota SUPRA SZ-R '97
+Ford SVT F-150 Lightning '03
+TVR T350C '03
+Toyota Tacoma X-Runner '04
+Honda TAKATA DOME NSX (JGTC) '03
+TVR Tamora '02
+Jay Leno Tank Car '03
+Hyundai Tuscani CCS '03
+Ford Taurus SHO '98
+MG TF160 '03
+Hyundai Tiburon GT '01
+Hyundai Tiburon Turbulence '99
+Honda TODAY G '85
+Tom's X540 CHASER '00
+Toyota 7 Race Car '70
+Toyota Modellista CELICA TRD Sports M (ZZT231) '00
+TRIAL CELICA SS-II (ZZT231) '03
+Toyota SPRINTER TRUENO BZ-R '98
+Toyota SPRINTER TRUENO GT-APEX (AE86) '83
+Toyota SPRINTER TRUENO GT-APEX (AE86) Shuichi Shigeno Version '00
+Audi TT Coupe 1.8T quattro '00
+Audi TT Coupe 3.2 quattro '03
+Audi Abt Audi TT-R Touring Car '02
+TVR Tuscan Speed 6 '00
+BMW V12 LMR Race Car '99
+Aston Martin V8 Vantage '99
+TVR V8S '91
+Aston Martin Vanquish '04
+Vauxhall Astra Super Touring Car '00
+Vauxhall Calibra Super Touring Car '94
+Vauxhall Corsa Comfort 1.4 '01
+Vauxhall Tigra 1.6i '99
+Vauxhall Vectra 3.2 V6 '03
+Vauxhall VX220 '00
+Vauxhall VX220 Turbo '00
+Gillet Vertigo Race Car '04
+Dodge VIPER GTS '99
+Dodge VIPER GTSR Concept '00
+Dodge VIPER SRT10 '03
+Toyota VITZ U Euro Sport Edition '00
+Toyota VITZ F '99
+Toyota VITZ RS 1.5 '00
+Toyota VITZ RS Turbo '02
+Toyota VOLTZ S '02
+Volkswagen W12 Nardo Concept '01
+Suzuki WAGON R RR '98
+Toyota WEDSSPORT CELICA (JGTC) '03
+Toyota WiLL VS '01
+Toyota WOODONE Tom's Supra (JGTC) '03
+SCION xA '03
+Nissan XANAVI HIROTO GT-R (JGTC) '01
+Nissan XANAVI NISMO GT-R (JGTC) '03
+Citroen Xantia 3.0i V6 Exclusive '00
+SCION xB '03
+Jaguar XJ220 LM Race Car '01
+Jaguar XJ220 '92
+Jaguar XJR-9 Race Car '88
+Jaguar XKR Coupe '99
+Jaguar XKR R-Performance '02
+Citroen Xsara VTR '03
+Citroen Xsara Rally Car '99
+BMW Z4 '03
+Honda Z ACT '70
+Pagani Zonda C12 '00
+Pagani Zonda C12S '00
+Pagani Zonda C12S 7.3 '02
+Pagani Zonda LM Race Car '01
+Tommy kaira ZZII '00
+Tommy kaira ZZ-S '00
