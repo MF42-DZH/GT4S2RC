@@ -5,6 +5,9 @@ import CRCPRNG ( randInt )
 import Data.Array
 import Data.Bits
 import Data.Char
+import qualified Data.List as L
+import Data.Set ( Set )
+import qualified Data.Set as S
 import Data.Word
 import GenerateCombinedList
 import System.IO
@@ -41,6 +44,27 @@ bruteForce username carInfo races funcs action =
   let combos = loadCombos username races funcs
   in  fmap (uncurry action) (bruteForce' carInfo combos)
 
+summarise :: String -> [(String, Car)] -> String
+summarise username infos = concat
+  [ "--- \"", username , "\" :: Summary ---\n\n"
+  , "Average Viability: ", show avgV, "\n"
+  , "v Duplicates v\n"
+  , unlines (fmap ("- " ++) duplicates)
+  ]
+  where
+    len = length infos
+
+    rlbd []       = []
+    rlbd (i@(r@('l' : _), _) : is)
+      | r `elem` fmap fst is = rlbd is
+      | otherwise            = i : rlbd is
+    rlbd (i : is) = i : rlbd is
+
+    avgV       = fromIntegral (foldl' (\ acc (_, c) -> acc + viability c) 0 infos) / fromIntegral len
+    duplicates =
+      let names = fmap (name . snd) (rlbd infos)
+      in  S.toList (S.fromList (names L.\\ S.toList (S.fromList names)))
+
 -- Main brute-forcing flow, just to show all of the prize cars.
 main :: IO ()
 main = do
@@ -61,7 +85,9 @@ main = do
         "" -> return ()
         _  -> do
           putStrLn ""
-          sequence_ $ bruteForce username cs rs fs $ \ r c ->
-            putStrLn (concat [r, " ==> ", name c, " (", show (viability c),")"])
+          results <- sequence $ bruteForce username cs rs fs $ \ r c ->
+            (r, c) <$ putStrLn (concat [r, " ==> ", name c, " (", show (viability c),")"])
+          putStrLn ""
+          putStrLn (summarise username results)
           putStrLn ""
           loop cs rs fs

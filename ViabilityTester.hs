@@ -70,8 +70,8 @@ generateDatasets n
                 , fmap pure ['P'..'Z']
                 , fmap pure ['a'..'o']
                 , fmap pure ['p'..'z']
-                , fmap pure " 0123456789`\\;,.[]/"
-                , fmap pure "-=!@#$^&*()~|:<>?_+"
+                , fmap pure " 0123456789`'\\;,.[]/"
+                , fmap pure "-=!@#$^&*()~|:<>?_+{}"
                 )
   | otherwise = let (d1, d2, d3, d4, d5, d6) = generateDatasets (n - 1)
                 in  ( d1 ++ ((:) <$> charset <*> d1)
