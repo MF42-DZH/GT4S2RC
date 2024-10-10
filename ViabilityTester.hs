@@ -73,11 +73,11 @@ generateDatasets n
                 , fmap pure " 0123456789`\\;,.[]/-="
                 )
   | otherwise = let (d1, d2, d3, d4, d5) = generateDatasets (n - 1)
-                in  ( d1 ++ (flip (:) <$> d1 <*> charset)
-                    , d2 ++ (flip (:) <$> d2 <*> charset)
-                    , d3 ++ (flip (:) <$> d3 <*> charset)
-                    , d4 ++ (flip (:) <$> d4 <*> charset)
-                    , d5 ++ (flip (:) <$> d5 <*> charset)
+                in  ( d1 ++ ((:) <$> charset <*> d1)
+                    , d2 ++ ((:) <$> charset <*> d2)
+                    , d3 ++ ((:) <$> charset <*> d3)
+                    , d4 ++ ((:) <$> charset <*> d4)
+                    , d5 ++ ((:) <$> charset <*> d5)
                     )
 
 main :: IO ()
@@ -99,14 +99,17 @@ main = do
   maxLen :: Int <- read <$> getLine
 
   let (d1, d2, d3, d4, d5) = generateDatasets maxLen
+      threadRun            = do
+        w1 <- worker "Searcher #1" currentMaxViability1 d1 cars races funcs
+        w2 <- worker "Searcher #2" currentMaxViability2 d2 cars races funcs
+        w3 <- worker "Searcher #3" currentMaxViability3 d3 cars races funcs
+        w4 <- worker "Searcher #4" currentMaxViability4 d4 cars races funcs
+        w5 <- worker "Searcher #5" currentMaxViability5 d5 cars races funcs
 
-  w1 <- worker "Searcher #1" currentMaxViability1 d1 cars races funcs
-  w2 <- worker "Searcher #2" currentMaxViability2 d2 cars races funcs
-  w3 <- worker "Searcher #3" currentMaxViability3 d3 cars races funcs
-  w4 <- worker "Searcher #4" currentMaxViability4 d4 cars races funcs
-  w5 <- worker "Searcher #5" currentMaxViability5 d5 cars races funcs
+        traverse_ joinHandle_ [w1, w2, w3, w4, w5]
 
-  traverse_ joinHandle_ [w1, w2, w3, w4, w5]
+  -- Threads abstracted to helper to ensure thread id references don't stick around.
+  threadRun
 
   results <- traverse readIORef
     [ currentMaxViability1
