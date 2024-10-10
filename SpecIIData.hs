@@ -3,6 +3,7 @@ module SpecIIData where
 import Control.Monad
 import CRCPRNG ( randInt )
 import Data.Array
+import Data.Bifunctor
 import Data.Bits
 import Data.Char
 import qualified Data.List as L
@@ -48,8 +49,11 @@ summarise :: String -> [(String, Car)] -> String
 summarise username infos = concat
   [ "--- \"", username , "\" :: Summary ---\n\n"
   , "Average Viability: ", show avgV, "\n"
-  , "v Duplicates v\n"
-  , unlines (fmap (\ (n, amt) -> concat ["- ", n, " (x", show amt, ")"]) (M.assocs duplicates))
+  , "       Duplicates:\n"
+  , unlines ( let counts   = fmap (\ (n, (count, _)) -> concat [n, " (x", show count, ")"]) (M.assocs duplicates)
+                  allRaces = fmap (\ (n, (_, races)) -> L.intercalate ", " races) (M.assocs duplicates)
+              in  zipWith (\ c rs -> concat [leftPad (maximum (fmap length counts) + 1) ' ' c, " :: ", rs]) counts allRaces
+            )
   ]
   where
     len = length infos
@@ -64,9 +68,12 @@ summarise username infos = concat
 
     avgV       = fromIntegral (foldl' (\ acc (_, c) -> acc + viability c) 0 infos) / fromIntegral len
     duplicates =
-      let names  = fmap (name . snd) (rlbd infos)
-          counts = foldr (M.alter (maybe (Just (1 :: Int)) (Just . (+ 1)))) M.empty names
-      in  M.filter (> 1) counts
+      let combos = fmap (second name) (rlbd infos)
+          counts = foldr (\ (r, n) acc -> M.alter (maybe (Just (1 :: Int, [r])) (Just . bimap (+ 1) (r :))) n acc) M.empty combos
+      in  M.filter ((> 1) . fst) counts
+
+leftPad :: Int -> Char -> String -> String
+leftPad minLength padding input = replicate (max 0 (minLength - length input)) padding ++ input
 
 -- Main brute-forcing flow, just to show all of the prize cars.
 main :: IO ()
@@ -89,7 +96,7 @@ main = do
         _  -> do
           putStrLn ""
           results <- sequence $ bruteForce username cs rs fs $ \ r c ->
-            (r, c) <$ putStrLn (concat [r, " ==> ", name c, " (", show (viability c),")"])
+            (r, c) <$ putStrLn (concat [leftPad 30 ' ' r, " ==> ", name c, " (", show (viability c),")"])
           putStrLn ""
           putStr (summarise username results)
           putStrLn ""
