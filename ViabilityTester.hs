@@ -63,7 +63,6 @@ worker name mx uns cs rs fs = forkJoinable $ forM_ uns $ \ un -> do
   result <- determine mx un cs rs fs
   forM_ result $ \ vs -> putStrLn (formatWinner name vs)
 
-
 generateDatasets :: Int -> ([String], [String], [String], [String], [String], [String])
 generateDatasets n
   | n <= 1    = ( fmap pure ['A'..'O']

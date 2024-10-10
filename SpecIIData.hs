@@ -6,8 +6,8 @@ import Data.Array
 import Data.Bits
 import Data.Char
 import qualified Data.List as L
-import Data.Set ( Set )
-import qualified Data.Set as S
+import Data.Map ( Map )
+import qualified Data.Map as M
 import Data.Word
 import GenerateCombinedList
 import System.IO
@@ -49,7 +49,7 @@ summarise username infos = concat
   [ "--- \"", username , "\" :: Summary ---\n\n"
   , "Average Viability: ", show avgV, "\n"
   , "v Duplicates v\n"
-  , unlines (fmap ("- " ++) duplicates)
+  , unlines (fmap (\ (n, amt) -> concat ["- ", n, " (x", show amt, ")"]) (M.assocs duplicates))
   ]
   where
     len = length infos
@@ -62,8 +62,9 @@ summarise username infos = concat
 
     avgV       = fromIntegral (foldl' (\ acc (_, c) -> acc + viability c) 0 infos) / fromIntegral len
     duplicates =
-      let names = fmap (name . snd) (rlbd infos)
-      in  S.toList (S.fromList (names L.\\ S.toList (S.fromList names)))
+      let names  = fmap (name . snd) (rlbd infos)
+          counts = foldr (M.alter (maybe (Just (1 :: Int)) (Just . (+ 1)))) M.empty names
+      in  M.filter (> 1) counts
 
 -- Main brute-forcing flow, just to show all of the prize cars.
 main :: IO ()
@@ -88,6 +89,6 @@ main = do
           results <- sequence $ bruteForce username cs rs fs $ \ r c ->
             (r, c) <$ putStrLn (concat [r, " ==> ", name c, " (", show (viability c),")"])
           putStrLn ""
-          putStrLn (summarise username results)
+          putStr (summarise username results)
           putStrLn ""
           loop cs rs fs
