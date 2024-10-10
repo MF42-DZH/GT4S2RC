@@ -54,10 +54,12 @@ summarise username infos = concat
   where
     len = length infos
 
+    count p = foldr (\ x -> if p x then (+ 1) else id) (0 :: Int)
+
     rlbd []       = []
     rlbd (i@(r@('l' : _), _) : is)
-      | r `elem` fmap fst is = rlbd is
-      | otherwise            = i : rlbd is
+      | count (== r) (fmap fst is) == 3 = rlbd is
+      | otherwise                       = i : rlbd is
     rlbd (i : is) = i : rlbd is
 
     avgV       = fromIntegral (foldl' (\ acc (_, c) -> acc + viability c) 0 infos) / fromIntegral len
