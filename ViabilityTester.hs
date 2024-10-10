@@ -64,20 +64,22 @@ worker name mx uns cs rs fs = forkJoinable $ forM_ uns $ \ un -> do
   forM_ result $ \ vs -> putStrLn (formatWinner name vs)
 
 
-generateDatasets :: Int -> ([String], [String], [String], [String], [String])
+generateDatasets :: Int -> ([String], [String], [String], [String], [String], [String])
 generateDatasets n
   | n <= 1    = ( fmap pure ['A'..'O']
                 , fmap pure ['P'..'Z']
                 , fmap pure ['a'..'o']
                 , fmap pure ['p'..'z']
-                , fmap pure " 0123456789`\\;,.[]/-="
+                , fmap pure " 0123456789`\\;,.[]/"
+                , fmap pure "-=!@#$^&*()~|:<>?_+"
                 )
-  | otherwise = let (d1, d2, d3, d4, d5) = generateDatasets (n - 1)
+  | otherwise = let (d1, d2, d3, d4, d5, d6) = generateDatasets (n - 1)
                 in  ( d1 ++ ((:) <$> charset <*> d1)
                     , d2 ++ ((:) <$> charset <*> d2)
                     , d3 ++ ((:) <$> charset <*> d3)
                     , d4 ++ ((:) <$> charset <*> d4)
                     , d5 ++ ((:) <$> charset <*> d5)
+                    , d6 ++ ((:) <$> charset <*> d6)
                     )
 
 main :: IO ()
@@ -94,22 +96,21 @@ main = do
   currentMaxViability3 <- newIORef ("", 0)
   currentMaxViability4 <- newIORef ("", 0)
   currentMaxViability5 <- newIORef ("", 0)
+  currentMaxViability6 <- newIORef ("", 0)
 
   putStr "Enter a max username length: " >> hFlush stdout
   maxLen :: Int <- read <$> getLine
 
-  let (d1, d2, d3, d4, d5) = generateDatasets maxLen
-      threadRun            = do
-        w1 <- worker "Searcher #1" currentMaxViability1 d1 cars races funcs
-        w2 <- worker "Searcher #2" currentMaxViability2 d2 cars races funcs
-        w3 <- worker "Searcher #3" currentMaxViability3 d3 cars races funcs
-        w4 <- worker "Searcher #4" currentMaxViability4 d4 cars races funcs
-        w5 <- worker "Searcher #5" currentMaxViability5 d5 cars races funcs
+  let (d1, d2, d3, d4, d5, d6) = generateDatasets maxLen
 
-        traverse_ joinHandle_ [w1, w2, w3, w4, w5]
-
-  -- Threads abstracted to helper to ensure thread id references don't stick around.
-  threadRun
+  sequence
+    [ worker "Searcher #1" currentMaxViability1 d1 cars races funcs
+    , worker "Searcher #2" currentMaxViability2 d2 cars races funcs
+    , worker "Searcher #3" currentMaxViability3 d3 cars races funcs
+    , worker "Searcher #4" currentMaxViability4 d4 cars races funcs
+    , worker "Searcher #5" currentMaxViability5 d5 cars races funcs
+    , worker "Searcher #6" currentMaxViability6 d6 cars races funcs
+    ] >>= mapM_ joinHandle
 
   results <- traverse readIORef
     [ currentMaxViability1
@@ -117,6 +118,7 @@ main = do
     , currentMaxViability3
     , currentMaxViability4
     , currentMaxViability5
+    , currentMaxViability6
     ]
 
   putStrLn $ formatWinner "Overall" $ maximumBy (\ (_, a) (_, b) -> compare a b) results
