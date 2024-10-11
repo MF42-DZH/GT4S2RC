@@ -12,6 +12,8 @@ import GHC.Exception
 import SpecIIData hiding ( main )
 import System.IO
 
+type Evaluation = (String, Double)
+type Cmp p      = p -> p -> Bool
 newtype JoinHandle a = JH (ThreadId, MVar a)
 
 -- WARNING: In GHC, holding onto the ThreadID after a thread has finished
@@ -37,38 +39,38 @@ joinTid (JH (tid, _)) = tid
 charset :: String
 charset = ['A'..'Z'] ++ ['a'..'z'] ++ " 0123456789`\\;,.[]/-="
 
-determineViability :: String -> CarInfo -> [String] -> [String] -> (String, Double)
+determineViability :: String -> CarInfo -> [String] -> [String] -> Evaluation
 determineViability username cars races funcs =
   let vs = bruteForce username cars races funcs (const viability)
   in  (username, fromIntegral (sum vs) / fromIntegral (length vs))
 
-formatWinner :: String -> (String, Double) -> String
-formatWinner tn (u, v) = concat ["[", tn, "]: New local maximum viability ", show v, " from username ", show u, "."]
+formatWinner :: String -> Evaluation -> String
+formatWinner tn (u, v) = concat ["[", tn, "]: New best for criteria ", show v, " from username ", show u, "."]
 
-isWinner :: IORef (String, Double) -> (String, Double) -> IO (Maybe (String, Double))
-isWinner mx c@(_, v) = do
+isWinner :: Cmp Double -> IORef Evaluation -> Evaluation -> IO (Maybe Evaluation)
+isWinner p mx c@(_, v) = do
   (_, v') <- readIORef mx
-  return $ if v > v' then Just c else Nothing
+  return $ if p v v' then Just c else Nothing
 
-determine :: IORef (String, Double) -> String -> CarInfo -> [String] -> [String] -> IO (Maybe (String, Double))
-determine mx un cs rs fs =
+determine :: Cmp Double -> IORef Evaluation -> String -> CarInfo -> [String] -> [String] -> IO (Maybe Evaluation)
+determine p mx un cs rs fs =
   let vd = determineViability un cs rs fs
   in  do
-    w <- isWinner mx vd
+    w <- isWinner p mx vd
     forM_ w (writeIORef mx)
     return w
 
-worker :: String -> IORef (String, Double) -> [String] -> CarInfo -> [String] -> [String] -> IO (JoinHandle ())
-worker name mx uns cs rs fs = forkJoinable $ forM_ uns $ \ un -> do
-  result <- determine mx un cs rs fs
+worker :: String -> Cmp Double -> IORef Evaluation -> [String] -> CarInfo -> [String] -> [String] -> IO (JoinHandle ())
+worker name p mx uns cs rs fs = forkJoinable $ forM_ uns $ \ un -> do
+  result <- determine p mx un cs rs fs
   forM_ result $ \ vs -> putStrLn (formatWinner name vs)
 
 generateDatasets :: Int -> ([String], [String], [String], [String], [String], [String])
 generateDatasets n
-  | n <= 1    = ( fmap pure ['A'..'O']
-                , fmap pure ['P'..'Z']
-                , fmap pure ['a'..'o']
-                , fmap pure ['p'..'z']
+  | n <= 1    = ( fmap pure ['A'..'M']
+                , fmap pure ['N'..'Z']
+                , fmap pure ['a'..'m']
+                , fmap pure ['n'..'z']
                 , fmap pure " 0123456789`'\\;,.[]/"
                 , fmap pure "-=!@#$^&*()~|:<>?_+{}"
                 )
@@ -103,12 +105,12 @@ main = do
   let (d1, d2, d3, d4, d5, d6) = generateDatasets maxLen
 
   sequence
-    [ worker "Searcher #1" currentMaxViability1 d1 cars races funcs
-    , worker "Searcher #2" currentMaxViability2 d2 cars races funcs
-    , worker "Searcher #3" currentMaxViability3 d3 cars races funcs
-    , worker "Searcher #4" currentMaxViability4 d4 cars races funcs
-    , worker "Searcher #5" currentMaxViability5 d5 cars races funcs
-    , worker "Searcher #6" currentMaxViability6 d6 cars races funcs
+    [ worker "Searcher #1" (>) currentMaxViability1 d1 cars races funcs
+    , worker "Searcher #2" (>) currentMaxViability2 d2 cars races funcs
+    , worker "Searcher #3" (>) currentMaxViability3 d3 cars races funcs
+    , worker "Searcher #4" (>) currentMaxViability4 d4 cars races funcs
+    , worker "Searcher #5" (>) currentMaxViability5 d5 cars races funcs
+    , worker "Searcher #6" (>) currentMaxViability6 d6 cars races funcs
     ] >>= mapM_ joinHandle
 
   results <- traverse readIORef
