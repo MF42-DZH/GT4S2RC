@@ -1,7 +1,10 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module UnviabilityTester where
 
 import Data.Foldable
 import Data.IORef
+import qualified Data.Text.IO as TI
 import SpecIIData hiding ( main )
 import ViabilityTester hiding ( main )
 import System.IO
@@ -43,4 +46,4 @@ main = do
     , currentMaxViability6
     ]
 
-  putStrLn $ formatWinner "Overall" $ maximumBy (\ (_, a) (_, b) -> compare a b) results
+  TI.putStrLn $ formatWinner "Overall" $ maximumBy (\ (_, a) (_, b) -> compare a b) results

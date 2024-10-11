@@ -1,4 +1,4 @@
-{-# LANGUAGE LambdaCase #-}
+{-# LANGUAGE OverloadedStrings, LambdaCase #-}
 
 module ViabilityTester where
 
@@ -7,12 +7,15 @@ import Control.Monad.ST
 import Control.Monad
 import Data.Foldable
 import Data.IORef
+import Data.Text ( Text )
+import qualified Data.Text as T
+import qualified Data.Text.IO as TI
 import GenerateCombinedList hiding ( main )
 import GHC.Exception
 import SpecIIData hiding ( main )
 import System.IO
 
-type Evaluation = (String, Double)
+type Evaluation = (Username, Double)
 type Cmp p      = p -> p -> Bool
 newtype JoinHandle a = JH (ThreadId, MVar a)
 
@@ -37,22 +40,22 @@ joinTid :: JoinHandle a -> ThreadId
 joinTid (JH (tid, _)) = tid
 
 charset :: String
-charset = ['A'..'Z'] ++ ['a'..'z'] ++ " 0123456789`\\;,.[]/-="
+charset = ['A'..'Z'] ++ ['a'..'z'] ++ " 0123456789`'\\;,.[]/-=!@#$^&*()~|:<>?_+{}"
 
-determineViability :: String -> SP2Data -> Evaluation
+determineViability :: Username -> SP2Data -> Evaluation
 determineViability username sp2Data =
   let vs = bruteForce username sp2Data (const viability)
   in  (username, fromIntegral (sum vs) / fromIntegral (length vs))
 
-formatWinner :: String -> Evaluation -> String
-formatWinner tn (u, v) = concat ["[", tn, "]: New best for criteria ", show v, " from username ", show u, "."]
+formatWinner :: Text -> Evaluation -> Text
+formatWinner tn (u, v) = T.concat ["[", tn, "]: New best for criteria ", T.pack (show v), " from username \"", u, "\"."]
 
 isWinner :: Cmp Double -> IORef Evaluation -> Evaluation -> IO (Maybe Evaluation)
 isWinner p mx c@(_, v) = do
   (_, v') <- readIORef mx
   return $ if p v v' then Just c else Nothing
 
-determine :: Cmp Double -> IORef Evaluation -> String -> SP2Data -> IO (Maybe Evaluation)
+determine :: Cmp Double -> IORef Evaluation -> Username -> SP2Data -> IO (Maybe Evaluation)
 determine p mx un sp2Data =
   let vd = determineViability un sp2Data
   in  do
@@ -60,27 +63,27 @@ determine p mx un sp2Data =
     forM_ w (writeIORef mx)
     return w
 
-worker :: String -> Cmp Double -> IORef Evaluation -> [String] -> SP2Data -> IO (JoinHandle ())
+worker :: Text -> Cmp Double -> IORef Evaluation -> [Username] -> SP2Data -> IO (JoinHandle ())
 worker name p mx uns sp2Data = forkJoinable $ forM_ uns $ \ un -> do
   result <- determine p mx un sp2Data
-  forM_ result $ \ vs -> putStrLn (formatWinner name vs)
+  forM_ result $ \ vs -> TI.putStrLn (formatWinner name vs)
 
-generateDatasets :: Int -> ([String], [String], [String], [String], [String], [String])
+generateDatasets :: Int -> ([Username], [Username], [Username], [Username], [Username], [Username])
 generateDatasets n
-  | n <= 1    = ( fmap pure ['A'..'M']
-                , fmap pure ['N'..'Z']
-                , fmap pure ['a'..'m']
-                , fmap pure ['n'..'z']
-                , fmap pure " 0123456789`'\\;,.[]/"
-                , fmap pure "-=!@#$^&*()~|:<>?_+{}"
+  | n <= 1    = ( fmap T.singleton ['A'..'M']
+                , fmap T.singleton ['N'..'Z']
+                , fmap T.singleton ['a'..'m']
+                , fmap T.singleton ['n'..'z']
+                , fmap T.singleton " 0123456789`'\\;,.[]/"
+                , fmap T.singleton "-=!@#$^&*()~|:<>?_+{}"
                 )
   | otherwise = let (d1, d2, d3, d4, d5, d6) = generateDatasets (n - 1)
-                in  ( d1 ++ ((:) <$> charset <*> d1)
-                    , d2 ++ ((:) <$> charset <*> d2)
-                    , d3 ++ ((:) <$> charset <*> d3)
-                    , d4 ++ ((:) <$> charset <*> d4)
-                    , d5 ++ ((:) <$> charset <*> d5)
-                    , d6 ++ ((:) <$> charset <*> d6)
+                in  ( d1 ++ (T.cons <$> charset <*> d1)
+                    , d2 ++ (T.cons <$> charset <*> d2)
+                    , d3 ++ (T.cons <$> charset <*> d3)
+                    , d4 ++ (T.cons <$> charset <*> d4)
+                    , d5 ++ (T.cons <$> charset <*> d5)
+                    , d6 ++ (T.cons <$> charset <*> d6)
                     )
 
 main :: IO ()
@@ -97,7 +100,7 @@ main = do
   currentMaxViability5 <- newIORef ("", 0)
   currentMaxViability6 <- newIORef ("", 0)
 
-  putStr "Enter a max username length: " >> hFlush stdout
+  TI.putStr "Enter a max username length: " >> hFlush stdout
   maxLen :: Int <- read <$> getLine
 
   let (d1, d2, d3, d4, d5, d6) = generateDatasets maxLen
@@ -120,4 +123,4 @@ main = do
     , currentMaxViability6
     ]
 
-  putStrLn $ formatWinner "Overall" $ maximumBy (\ (_, a) (_, b) -> compare a b) results
+  TI.putStrLn $ formatWinner "Overall" $ maximumBy (\ (_, a) (_, b) -> compare a b) results

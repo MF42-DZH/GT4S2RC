@@ -1,3 +1,5 @@
+{-# LANGUAGE OverloadedStrings #-}
+
 module GenerateCombinedList
   ( Label
   , Name
@@ -10,12 +12,15 @@ module GenerateCombinedList
   , loadCarsAndEvents
   ) where
 
+import Data.Text ( Text )
+import qualified Data.Text as T
+import qualified Data.Text.IO as TI
 import Text.ParserCombinators.ReadP
 
-type Label     = String
-type Name      = String
+type Label     = Text
+type Name      = Text
 type Viability = Int
-type Func      = String
+type Func      = Text
 
 data Car = Car
   { label     :: Label
@@ -30,12 +35,12 @@ data Event = Event
   }
 
 instance Show Car where
-  show car = label car <> "|" <> name car <> "|" <> show (viability car)
+  show car = T.unpack (label car) <> "|" <> T.unpack (name car) <> "|" <> show (viability car)
 
 carP :: ReadP Car
 carP = do
-  l <- manyTill (satisfy (/= '|')) (satisfy (== '|'))
-  n <- manyTill (satisfy (/= '|')) (satisfy (== '|'))
+  l <- T.pack <$> manyTill (satisfy (/= '|')) (satisfy (== '|'))
+  n <- T.pack <$> manyTill (satisfy (/= '|')) (satisfy (== '|'))
   v <- manyTill (satisfy (/= '|')) eof
   return (Car l n (read v))
 
@@ -43,13 +48,13 @@ instance Read Car where
   readsPrec _ = readP_to_S carP
 
 instance Show Event where
-  show e = group e <> "|" <> func e <> "|" <> event e
+  show e = T.unpack (group e) <> "|" <> T.unpack (func e) <> "|" <> T.unpack (event e)
 
 eventP :: ReadP Event
 eventP = do
-  g <- manyTill (satisfy (/= '|')) (satisfy (== '|'))
-  f <- manyTill (satisfy (/= '|')) (satisfy (== '|'))
-  e <- manyTill (satisfy (/= '|')) eof
+  g <- T.pack <$> manyTill (satisfy (/= '|')) (satisfy (== '|'))
+  f <- T.pack <$> manyTill (satisfy (/= '|')) (satisfy (== '|'))
+  e <- T.pack <$> manyTill (satisfy (/= '|')) eof
   return (Event g f e)
 
 instance Read Event where
@@ -66,16 +71,16 @@ loadCarsAndEvents = (,)
 
 main :: IO ()
 main = do
-  labels      <- lines <$> readFile "Data/LABELS.txt"
-  cars        <- lines <$> readFile "Data/CARLIST.txt"
+  labels      <- T.lines <$> TI.readFile "Data/LABELS.txt"
+  cars        <- T.lines <$> TI.readFile "Data/CARLIST.txt"
   viabilities <- (++ repeat 0) . fmap read . lines <$> readFile "Data/VIABILITY.txt"
 
-  groups <- lines <$> readFile "Data/RACELIST.txt"
-  funcs  <- lines <$> readFile "Data/FUNCLIST.txt"
-  events <- (++ repeat "") . lines <$> readFile "Data/RACENAMES.txt"
+  groups <- T.lines <$> TI.readFile "Data/RACELIST.txt"
+  funcs  <- T.lines <$> TI.readFile "Data/FUNCLIST.txt"
+  events <- (++ repeat "") . T.lines <$> TI.readFile "Data/RACENAMES.txt"
 
   let allCars   = zipWith3 Car labels cars viabilities
       allEvents = zipWith3 Event groups funcs events
 
-  writeFile combinedCarList (unlines (fmap show allCars))
-  writeFile combinedEventList (unlines (fmap show allEvents))
+  TI.writeFile combinedCarList (T.unlines (fmap (T.pack . show) allCars))
+  TI.writeFile combinedEventList (T.unlines (fmap (T.pack . show) allEvents))
