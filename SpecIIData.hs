@@ -14,7 +14,10 @@ import GenerateCombinedList
 import System.IO
 
 type CarInfo   = (Int, Array Int Car)
-type Combo     = (String, String)
+type EventInfo = [Event]
+type SP2Data   = (CarInfo, EventInfo)
+type BFData    = (CarInfo, [Combo])
+type Combo     = (Event, String)
 type PrizeInfo = (String, Car)
 
 fnv1a :: String -> Word32
@@ -28,22 +31,29 @@ fnv1a str = go str 0x811c9dc5
           r'' = r' * prime
       in  go cs r''
 
-loadCombos :: String -> [String] -> [String] -> [Combo]
-loadCombos username = zipWith (\ r f -> (r, username ++ r ++ f))
+loadCombos :: String -> EventInfo -> [Combo]
+loadCombos username es = zipWith (\ r f -> (r, username ++ group r ++ f)) es (fmap func es)
 
-loadCars :: IO CarInfo
-loadCars = do
-  ls <- fmap read . lines <$> readFile "COMBINEDLIST.txt"
-  let len = length ls
-  return (len, listArray (0, len) ls)
+loadData :: IO SP2Data
+loadData = do
+  (cs, es) <- loadCarsAndEvents
+  let cl = length cs
+      el = length es
+  return ((cl, listArray (0, cl) cs), es)
 
-bruteForce' :: CarInfo -> [Combo] -> [(String, Car)]
-bruteForce' (len, cars) = fmap (\ (r, c) -> (r, cars ! randInt (fnv1a c) 0 len))
+bruteForce' :: BFData -> [(String, Car)]
+bruteForce' ((len, cars), combos) = fmap (\ (r, c) -> (coalesce event group r, cars ! randInt (fnv1a c) 0 len)) combos
 
-bruteForce :: String -> CarInfo -> [String] -> [String] -> (String -> Car -> a) -> [a]
-bruteForce username carInfo races funcs action =
-  let combos = loadCombos username races funcs
-  in  fmap (uncurry action) (bruteForce' carInfo combos)
+coalesce :: (a -> String) -> (a -> String) -> a -> String
+coalesce f g x =
+  case f x of
+    "" -> g x
+    s  -> s
+
+bruteForce :: String -> SP2Data -> (String -> Car -> a) -> [a]
+bruteForce username (carInfo, eventInfo) action =
+  let combos = loadCombos username eventInfo
+  in  fmap (uncurry action) (bruteForce' (carInfo, combos))
 
 summarise :: String -> [(String, Car)] -> String
 summarise username infos = concat
@@ -80,13 +90,10 @@ main :: IO ()
 main = do
   putStrLn "Gran Turismo 4 Spec II v1.06.X Prize Car Randomizer Brute-Forcer\n"
 
-  cars  <- loadCars
-  races <- lines <$> readFile "RACELIST.txt"
-  funcs <- lines <$> readFile "FUNCLIST.txt"
-
-  loop cars races funcs
+  sp2Data <- loadData
+  loop sp2Data
   where
-    loop cs rs fs = do
+    loop s2d = do
       putStr "Enter an in-game username (leave empty to exit): "
       hFlush stdout
       username <- getLine
@@ -95,9 +102,9 @@ main = do
         "" -> return ()
         _  -> do
           putStrLn ""
-          results <- sequence $ bruteForce username cs rs fs $ \ r c ->
-            (r, c) <$ putStrLn (concat [leftPad 30 ' ' r, " ==> ", name c, " (", show (viability c),")"])
+          results <- sequence $ bruteForce username s2d $ \ r c ->
+            (r, c) <$ putStrLn (concat [leftPad 44 ' ' r, " ==> ", name c, " (", show (viability c),")"])
           putStrLn ""
           putStr (summarise username results)
           putStrLn ""
-          loop cs rs fs
+          loop s2d

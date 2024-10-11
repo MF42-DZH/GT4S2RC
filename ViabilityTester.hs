@@ -39,9 +39,9 @@ joinTid (JH (tid, _)) = tid
 charset :: String
 charset = ['A'..'Z'] ++ ['a'..'z'] ++ " 0123456789`\\;,.[]/-="
 
-determineViability :: String -> CarInfo -> [String] -> [String] -> Evaluation
-determineViability username cars races funcs =
-  let vs = bruteForce username cars races funcs (const viability)
+determineViability :: String -> SP2Data -> Evaluation
+determineViability username sp2Data =
+  let vs = bruteForce username sp2Data (const viability)
   in  (username, fromIntegral (sum vs) / fromIntegral (length vs))
 
 formatWinner :: String -> Evaluation -> String
@@ -52,17 +52,17 @@ isWinner p mx c@(_, v) = do
   (_, v') <- readIORef mx
   return $ if p v v' then Just c else Nothing
 
-determine :: Cmp Double -> IORef Evaluation -> String -> CarInfo -> [String] -> [String] -> IO (Maybe Evaluation)
-determine p mx un cs rs fs =
-  let vd = determineViability un cs rs fs
+determine :: Cmp Double -> IORef Evaluation -> String -> SP2Data -> IO (Maybe Evaluation)
+determine p mx un sp2Data =
+  let vd = determineViability un sp2Data
   in  do
     w <- isWinner p mx vd
     forM_ w (writeIORef mx)
     return w
 
-worker :: String -> Cmp Double -> IORef Evaluation -> [String] -> CarInfo -> [String] -> [String] -> IO (JoinHandle ())
-worker name p mx uns cs rs fs = forkJoinable $ forM_ uns $ \ un -> do
-  result <- determine p mx un cs rs fs
+worker :: String -> Cmp Double -> IORef Evaluation -> [String] -> SP2Data -> IO (JoinHandle ())
+worker name p mx uns sp2Data = forkJoinable $ forM_ uns $ \ un -> do
+  result <- determine p mx un sp2Data
   forM_ result $ \ vs -> putStrLn (formatWinner name vs)
 
 generateDatasets :: Int -> ([String], [String], [String], [String], [String], [String])
@@ -88,9 +88,7 @@ main = do
   putStrLn "Gran Turismo 4 Spec II v1.06.X Prize Car Randomizer Viability Brute-Forcer"
   putStrLn "Viability value per car provided by TeaKanji\n"
 
-  cars  <- loadCars
-  races <- lines <$> readFile "RACELIST.txt"
-  funcs <- lines <$> readFile "FUNCLIST.txt"
+  sp2Data <- loadData
 
   currentMaxViability1 <- newIORef ("", 0)
   currentMaxViability2 <- newIORef ("", 0)
@@ -105,12 +103,12 @@ main = do
   let (d1, d2, d3, d4, d5, d6) = generateDatasets maxLen
 
   sequence
-    [ worker "Searcher #1" (>) currentMaxViability1 d1 cars races funcs
-    , worker "Searcher #2" (>) currentMaxViability2 d2 cars races funcs
-    , worker "Searcher #3" (>) currentMaxViability3 d3 cars races funcs
-    , worker "Searcher #4" (>) currentMaxViability4 d4 cars races funcs
-    , worker "Searcher #5" (>) currentMaxViability5 d5 cars races funcs
-    , worker "Searcher #6" (>) currentMaxViability6 d6 cars races funcs
+    [ worker "Searcher #1" (>) currentMaxViability1 d1 sp2Data
+    , worker "Searcher #2" (>) currentMaxViability2 d2 sp2Data
+    , worker "Searcher #3" (>) currentMaxViability3 d3 sp2Data
+    , worker "Searcher #4" (>) currentMaxViability4 d4 sp2Data
+    , worker "Searcher #5" (>) currentMaxViability5 d5 sp2Data
+    , worker "Searcher #6" (>) currentMaxViability6 d6 sp2Data
     ] >>= mapM_ joinHandle
 
   results <- traverse readIORef

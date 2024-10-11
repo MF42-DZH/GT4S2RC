@@ -11,9 +11,7 @@ main = do
   putStrLn "Gran Turismo 4 Spec II v1.06.X Prize Car Randomizer Unviability Brute-Forcer"
   putStrLn "Viability value per car provided by TeaKanji\n"
 
-  cars  <- loadCars
-  races <- lines <$> readFile "RACELIST.txt"
-  funcs <- lines <$> readFile "FUNCLIST.txt"
+  sp2Data <- loadData
 
   currentMaxViability1 <- newIORef ("", 100000)
   currentMaxViability2 <- newIORef ("", 100000)
@@ -28,12 +26,12 @@ main = do
   let (d1, d2, d3, d4, d5, d6) = generateDatasets maxLen
 
   sequence
-    [ worker "Searcher #1" (<) currentMaxViability1 d1 cars races funcs
-    , worker "Searcher #2" (<) currentMaxViability2 d2 cars races funcs
-    , worker "Searcher #3" (<) currentMaxViability3 d3 cars races funcs
-    , worker "Searcher #4" (<) currentMaxViability4 d4 cars races funcs
-    , worker "Searcher #5" (<) currentMaxViability5 d5 cars races funcs
-    , worker "Searcher #6" (<) currentMaxViability6 d6 cars races funcs
+    [ worker "Searcher #1" (<) currentMaxViability1 d1 sp2Data
+    , worker "Searcher #2" (<) currentMaxViability2 d2 sp2Data
+    , worker "Searcher #3" (<) currentMaxViability3 d3 sp2Data
+    , worker "Searcher #4" (<) currentMaxViability4 d4 sp2Data
+    , worker "Searcher #5" (<) currentMaxViability5 d5 sp2Data
+    , worker "Searcher #6" (<) currentMaxViability6 d6 sp2Data
     ] >>= mapM_ joinHandle
 
   results <- traverse readIORef

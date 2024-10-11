@@ -12,4 +12,4 @@ To run the program, execute `runghc SpecIIData.hs`, and input a username to try 
 
 To use `ViabilityTester.hs` effectively, it must be compiled with the threaded option and optimisations. I recommend the command `ghc -main-is ViabilityTester ViabilityTester.hs -O2 -threaded` and then enabling the RTS system when running by running the compiled output as `ViabilityTester[.exe] +RTS -N6`. You can use `UnviabilityTester.hs` in the same way, but it instead finds the worst username of a maximum length.
 
-Car viability metric list provided by TeaKanji. If any of the four primary lists (`CARLIST.txt`, `RACELIST.txt`, `FUNCLIST.txt`, `VIABILITY.txt`) are modified, please run `runghc GenerateCombinedList.hs` to initialise the new data into `COMBINEDLIST.txt`.
+Car viability metric list provided by TeaKanji. If any of the five primary lists (`CARLIST.txt`, `RACELIST.txt`, `FUNCLIST.txt`, `VIABILITY.txt`, `RACENAMES.txt`) are modified, please run `runghc GenerateCombinedList.hs` to initialise the new data into `COMBINEDLIST.txt`.

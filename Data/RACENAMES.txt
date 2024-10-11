@@ -1,0 +1,202 @@
+Sunday Cup
+FF Challenge
+FR Challenge
+4WD Challenge
+MR Challenge
+Lightweight K Car Cup
+Spiders & Roadsters
+Sports Truck Race
+Clubman Cup
+Tuning Car Grand Prix
+Race of NA Sports
+Race of Turbo Sports
+Boxer Spirit
+World Classic Car Cup
+World Compact Car Cup
+Supercal Festival
+Gran Turismo World Championship
+Gran Turismo All Stars
+Dream Car Championship
+Polyphony Digital Cup
+Like The Wind
+Formula Gran Turismo World Championship
+Real Circuit Tours
+Premium Sports Lounge
+Road-Going Formula Cup (Unused?)
+Grand Valley 300km
+Laguna Seca 200mi
+Roadster 4h
+Tokyo R246 300km
+Super Speedway 150mi
+Nürburgring 24h
+Nürburgring 4h
+Suzuka 1000km
+Motegi 8h
+Eight+ Cylinder Shootout
+Circuit de La Sarthe 24h
+Circuit de La Sarthe 24h II (Unused?)
+Fuji 1000km
+Infineon World Sports
+El Capitan 200mi
+New York 200mi
+Pan Euro Championship
+British GT
+British Lightweights
+Deutsche Touring Car Meisterschaft
+La Festa Italiano
+Tous France Championnat
+Euro Classic Car Cup
+Euro Hot Hatch League
+Grand Tour (formerly 1000 Miles!)
+Schwarzwald Liga A
+Schwarzwald Liga B
+All American Championship
+Stars & Stripes
+Hot Rod Competition
+Muscle Car Competition
+Japan Championship
+GT300
+Japanese 70s Cup
+Japanese 80s Cup
+Japanese 90s Cup
+Japanese Compact Car Cup
+GTA Cup (Alfa Romeo)
+Aston Martin Festival
+Elise Trophy (Lotus)
+Lotus Classics
+MG Festival
+Spitfire Cup (Triumph)
+Blackpool Racers (TVR)
+Tourist Trophy (Audi)
+A3 Cup (Audi)
+1 Series Trophy (BMW)
+Club "M" (BMW)
+Legends of the Silver Arrow (Mercedes-Benz)
+SL Challenge (Mercedes-Benz)
+Mini Sports Meeting (Mini)
+Speedster Trophy (Opel / Vauxhall)
+Beetle Cup (Volkswagen)
+Lupo Cup (Volkswagen)
+GTI Cup (Volkswagen)
+Vette! Vette! Vette! (Chevrolet)
+Camaro Meeting (Chevrolet)
+Crossfire Trophy (Chrysler)
+Saleen S7 Club
+Shelby Cobra Cup
+2HP-2CV Classics (Citroën)
+206 Cup (Peugeot)
+Clio Trophy (Renault)
+Megane Cup (Renault)
+Alpine Cup
+Copen Race (Daihatsu)
+Midget II Race (Daihatsu)
+Type R Meeting (Honda)
+Civic Race (Honda)
+Isuzu Sports Classics
+Club "RE" (Mazda)
+NR-A Roadster Cup (Mazda)
+NR-A RX-8 Cup (Mazda)
+Mirage Cup (Mitsubishi)
+Evolution Meeting (Mitsubishi)
+Race of the Red "R" Emblem (Nissan)
+March Brothers (Nissan)
+Silvia Sisters (Nissan)
+Club "Z" (Nissan)
+Subaru 360 Race
+Stars of Pleaides (Subaru)
+Suzuki Kei Car Cup
+Suzuki Concepts
+Altezza Race (Toyota / Lexus)
+Vitz Race (Toyota)
+Hyundai Sports Festival
+B License Bronze (Duplicate)
+A License Bronze (Duplicate)
+IB License Bronze (Duplicate)
+IA License Bronze (Duplicate)
+S License Bronze (Duplicate)
+B License Bronze
+A License Bronze
+IB License Bronze
+IA License Bronze
+S License Bronze
+B License Silver
+A License Silver
+IB License Silver
+IA License Silver
+S License Silver
+B License Gold
+A License Gold
+IB License Gold
+IA License Gold
+S License Gold
+Umbria Rally (Easy)
+Umbria Rally (Normal)
+Umbria Rally (Hard)
+Capri Rally (Easy)
+Capri Rally (Normal)
+Capri Rally (Hard)
+Grand Canyon Rally (Easy)
+Grand Canyon Rally (Normal)
+Grand Canyon Rally (Hard)
+Whistler Ice Race (Easy)
+Whistler Ice Race (Normal)
+Whistler Ice Race (Hard)
+Chamonix Rally (Easy)
+Chamonix Rally (Normal)
+Chamonix Rally (Hard)
+George V Rally (Easy)
+George V Rally (Normal)
+George V Rally (Hard)
+Swiss Alps Rally (Easy)
+Swiss Alps Rally (Normal)
+Swiss Alps Rally (Hard)
+Tour of Tahiti (Easy)
+Tour of Tahiti (Normal)
+Tour of Tahiti (Hard)
+Tsukuba Wet Race (Easy)
+Tsukuba Wet Race (Normal)
+Tsukuba Wet Race (Hard)
+Yosemite Rally I (Easy)
+Yosemite Rally I (Normal)
+Yosemite Rally I (Hard)
+Yosemite Rally II (Easy)
+Yosemite Rally II (Normal)
+Yosemite Rally II (Hard)
+The Pass 1-5
+The Pass 6-10
+3-Lap Battle 11-20
+Slipstream Battle 21-24
+1-Lap Magic 25-29
+1-Lap Magic 30-34
+Chase Battle 35-40
+25% Completion
+50% Completion
+100% Completion
+Super Wagon Race
+Snakebite Trophy (Dodge)
+Four Cylinder Shootout
+Six Cylinder Shootout
+Mustang Showdown (Ford)
+10k A-Spec Points
+15k A-Spec Points
+20k A-Spec Points
+Beat the Beat (Honda)
+Clubman League
+Homologation Heroes
+Faszination (RUF)
+SSR5 All Night
+Trial Mountain 30 Laps
+GT500
+City Slickers
+Midfield 100mi
+Seattle 100mi
+Jaguar Sports Legends
+All Beginner Events
+All Professional Events
+All Extreme Events
+All Japanese Events
+All American Events
+All European Events
+All Special Condition Events
+All Endurance Events
+Focus Cup (Ford)
