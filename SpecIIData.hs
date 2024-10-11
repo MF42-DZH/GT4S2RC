@@ -56,7 +56,7 @@ bruteForce username (carInfo, eventInfo) action =
   in  fmap (uncurry action) (bruteForce' (carInfo, combos))
 
 summarise :: String -> [(String, Car)] -> String
-summarise username infos = concat
+summarise username is' = concat
   [ "--- \"", username , "\" :: Summary ---\n\n"
   , "Average Viability: ", show avgV, "\n"
   , "       Duplicates:\n"
@@ -66,19 +66,20 @@ summarise username infos = concat
             )
   ]
   where
-    len = length infos
+    infos = rlbd is'
+    len   = length infos
 
     count p = foldr (\ x -> if p x then (+ 1) else id) (0 :: Int)
 
     rlbd []       = []
-    rlbd (i@(r@('l' : _), _) : is)
-      | count (== r) (fmap fst is) == 3 = rlbd is
-      | otherwise                       = i : rlbd is
-    rlbd (i : is) = i : rlbd is
+    rlbd (i@(r, _) : is)
+      | "Duplicate" `L.isInfixOf` r = rlbd is
+      | "Unused" `L.isInfixOf` r    = rlbd is
+      | otherwise                   = i : rlbd is
 
     avgV       = fromIntegral (foldl' (\ acc (_, c) -> acc + viability c) 0 infos) / fromIntegral len
     duplicates =
-      let combos = fmap (second name) (rlbd infos)
+      let combos = fmap (second name) infos
           counts = foldr (\ (r, n) acc -> M.alter (maybe (Just (1 :: Int, [r])) (Just . bimap (+ 1) (r :))) n acc) M.empty combos
       in  M.filter ((> 1) . fst) counts
 
