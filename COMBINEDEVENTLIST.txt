@@ -4,7 +4,7 @@ am_fr_0000|win|FR Challenge
 am_4wd_0000|win|4WD Challenge
 am_mr_0000|win|MR Challenge
 am_kcar_0000|win|Lightweight K Car Cup
-am_spider_0000|win|Spiders & Roadsters
+am_spider_0000|win|Spider & Roadster
 am_pickup_0000|win|Sports Truck Race
 pr_clubman_0000|win|Clubman Cup
 pr_tuning_0500|win|Tuning Car Grand Prix
