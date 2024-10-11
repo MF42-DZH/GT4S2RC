@@ -42,13 +42,21 @@ loadData = do
   return ((cl, listArray (0, cl) cs), es)
 
 bruteForce' :: BFData -> [(String, Car)]
-bruteForce' ((len, cars), combos) = fmap (\ (r, c) -> (coalesce event group r, cars ! randInt (fnv1a c) 0 len)) combos
+bruteForce' ((len, cars), combos) = removeDuplicatesAndUnused $ fmap (\ (r, c) -> (coalesce event group r, cars ! randInt (fnv1a c) 0 len)) combos
 
 coalesce :: (a -> String) -> (a -> String) -> a -> String
 coalesce f g x =
   case f x of
     "" -> g x
     s  -> s
+
+-- Expensive method call.
+removeDuplicatesAndUnused :: [(String, b)] -> [(String, b)]
+removeDuplicatesAndUnused []       = []
+removeDuplicatesAndUnused (i@(r, _) : is)
+  | "Duplicate" `L.isInfixOf` r = removeDuplicatesAndUnused is
+  | "Unused" `L.isInfixOf` r    = removeDuplicatesAndUnused is
+  | otherwise                   = i : removeDuplicatesAndUnused is
 
 bruteForce :: String -> SP2Data -> (String -> Car -> a) -> [a]
 bruteForce username (carInfo, eventInfo) action =
@@ -66,16 +74,8 @@ summarise username is' = concat
             )
   ]
   where
-    infos = rlbd is'
+    infos = is'
     len   = length infos
-
-    count p = foldr (\ x -> if p x then (+ 1) else id) (0 :: Int)
-
-    rlbd []       = []
-    rlbd (i@(r, _) : is)
-      | "Duplicate" `L.isInfixOf` r = rlbd is
-      | "Unused" `L.isInfixOf` r    = rlbd is
-      | otherwise                   = i : rlbd is
 
     avgV       = fromIntegral (foldl' (\ acc (_, c) -> acc + viability c) 0 infos) / fromIntegral len
     duplicates =
