@@ -46,4 +46,4 @@ main = do
     , currentMaxViability6
     ]
 
-  TI.putStrLn $ formatWinner "Overall" $ maximumBy (\ (_, a) (_, b) -> compare a b) results
+  TI.putStrLn $ formatWinner "Overall" $ maximumBy (\ (_, a) (_, b) -> compare b a) results
