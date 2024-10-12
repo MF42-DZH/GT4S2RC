@@ -10,6 +10,7 @@ import Data.Bits
 import Data.Char
 import Data.Map ( Map )
 import qualified Data.Map as M
+import Data.String
 import Data.Text ( Text )
 import qualified Data.Text as T
 import qualified Data.Text.IO as TI
@@ -21,12 +22,12 @@ type CarInfo   = (Int, Array Int Car)
 type EventInfo = [Event]
 type SP2Data   = (CarInfo, EventInfo)
 type BFData    = (CarInfo, [Combo])
-type Combo     = (Event, Text)
+type Combo     = (Event, String)
 type PrizeInfo = (Text, Car)
-type Username  = Text
+type Username  = String
 
-fnv1a :: Text -> Word32
-fnv1a = T.foldl' (\ acc ch -> (acc `xor` fromIntegral (ord ch)) * prime) initial
+fnv1a :: String -> Word32
+fnv1a = foldl' (\ acc ch -> (acc `xor` fromIntegral (ord ch)) * prime) initial
   where
     initial = 0x811c9dc5
     prime   = 16777619
@@ -41,17 +42,17 @@ loadData = do
       el = length es
   return ((cl, listArray (0, cl) cs), es)
 
-bruteForce' :: BFData -> [(Text, Car)]
-bruteForce' ((len, cars), combos) = removeDuplicatesAndUnused $ fmap (\ (r, c) -> (coalesce event group r, cars ! randInt (fnv1a c) 0 len)) combos
+bruteForce' :: BFData -> [PrizeInfo]
+bruteForce' ((len, cars), combos) = removeDuplicatesAndUnused $ fmap (\ (r, c) -> (coalesce event (T.pack . group) r, cars ! randInt (fnv1a c) 0 len)) combos
 
-coalesce :: (a -> Text) -> (a -> Text) -> a -> Text
+coalesce :: (Eq s, IsString s) => (a -> s) -> (a -> s) -> a -> s
 coalesce f g x =
   case f x of
     "" -> g x
     s  -> s
 
 -- Expensive method call.
-removeDuplicatesAndUnused :: [(Text, b)] -> [(Text, b)]
+removeDuplicatesAndUnused :: [PrizeInfo] -> [PrizeInfo]
 removeDuplicatesAndUnused []       = []
 removeDuplicatesAndUnused (i@(r, _) : is)
   | "Duplicate" `T.isInfixOf` r = removeDuplicatesAndUnused is
@@ -65,12 +66,12 @@ bruteForce username (carInfo, eventInfo) action =
 
 summarise :: Username -> [(Text, Car)] -> Text
 summarise username is' = T.concat
-  [ "--- \"", username , "\" :: Summary ---\n\n"
+  [ "--- \"", T.pack username , "\" :: Summary ---\n\n"
   , "Average Viability: ", T.pack (show avgV), "\n"
   , "       Duplicates:\n"
   , T.unlines ( let counts   = fmap (\ (n, (count, _)) -> T.concat [n, " (x", T.pack (show count), ")"]) (M.assocs duplicates)
                     allRaces = fmap (\ (n, (_, races)) -> T.intercalate ", " races) (M.assocs duplicates)
-                in  zipWith (\ c rs -> T.concat [leftPad (maximum (fmap T.length counts) + 1) ' ' c, " :: ", rs]) counts allRaces
+                in  zipWith (\ c rs -> T.concat [T.justifyRight (maximum (fmap T.length counts) + 1) ' ' c, " :: ", rs]) counts allRaces
               )
   ]
   where
@@ -83,9 +84,6 @@ summarise username is' = T.concat
           counts = foldr (\ (r, n) acc -> M.alter (maybe (Just (1 :: Int, [r])) (Just . bimap (+ 1) (r :))) n acc) M.empty combos
       in  M.filter ((> 1) . fst) counts
 
-leftPad :: Int -> Char -> Text -> Text
-leftPad minLength padding input = T.replicate (max 0 (minLength - T.length input)) (T.pack [padding]) <> input
-
 -- Main brute-forcing flow, just to show all of the prize cars.
 main :: IO ()
 main = do
@@ -97,14 +95,14 @@ main = do
     loop s2d = do
       putStr "Enter an in-game username (leave empty to exit): "
       hFlush stdout
-      username <- TI.getLine
+      username <- getLine
 
       case username of
         "" -> return ()
         _  -> do
           TI.putStrLn ""
           results <- sequence $ bruteForce username s2d $ \ r c ->
-            (r, c) <$ TI.putStrLn (T.concat [leftPad 44 ' ' r, " ==> ", name c, " (", T.pack (show (viability c)),")"])
+            (r, c) <$ TI.putStrLn (T.concat [T.justifyRight 44 ' ' r, " ==> ", name c, " (", T.pack (show (viability c)),")"])
           TI.putStrLn ""
           TI.putStr (summarise username results)
           TI.putStrLn ""
