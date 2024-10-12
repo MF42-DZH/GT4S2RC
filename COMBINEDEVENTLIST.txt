@@ -172,7 +172,7 @@ rh_yosemite_dirt_short_h_0000|win|Yosemite Rally II (Hard)
 25|achievement|25% Completion
 50|achievement|50% Completion
 100|achievement|100% Completion
-am_wagon_0000|win|Super Wagon Race
+am_wagon_0000|win|Super Wagon Series
 us_dodge_viper_0000|win|Snakebite Trophy (Dodge)
 am_fourcyl_0000|win|Four Cylinder Shootout
 am_sixcyl_0000|win|Six Cylinder Shootout
