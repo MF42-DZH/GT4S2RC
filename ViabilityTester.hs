@@ -47,7 +47,7 @@ determineViability dbm ns username sp2Data =
   let infoF   = bruteForce username sp2Data (const id)
       vs      = fmap viability infoF
       penalty = 1 + S.size (missingFor100 infoF ns)
-  in  (username, fromIntegral (sum vs) / (fromIntegral (length vs) * fromIntegral penalty), penalty - 1)
+  in  (username, fromIntegral (sum vs) / (fromIntegral (length vs) * fromIntegral (penalty * penalty)), penalty - 1)
 
 formatWinner :: String -> Evaluation -> String
 formatWinner tn (u, v, m) = concat ["[", tn, "]: New best for criteria ", show v, " from username \"", u, "\", missing ", show m, " cars for 100%."]
