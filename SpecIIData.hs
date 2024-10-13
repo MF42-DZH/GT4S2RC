@@ -82,7 +82,9 @@ summarise username ns is' = T.concat
                 in  zipWith (\ c rs -> T.concat [T.justifyRight (maximum (fmap T.length counts) + 1) ' ' c, " :: ", rs]) counts allRaces
               )
   , "\nMissing for 100%:\n"
-  , T.unlines (fmap ("- " <>) (S.elems (missingFor100 (fmap snd is') ns)))
+  ,  case S.elems (missingFor100 (fmap snd is') ns) of
+       []      -> "*** None. This is a 100% randomizer playthrough candidate! ***"
+       missing -> T.unlines (fmap ("- " <>) missing)
   ]
   where
     infos = is'
