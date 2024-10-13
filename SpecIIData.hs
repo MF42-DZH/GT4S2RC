@@ -58,9 +58,10 @@ coalesce f g x =
 removeDuplicatesAndUnused :: [PrizeInfo] -> [PrizeInfo]
 removeDuplicatesAndUnused []       = []
 removeDuplicatesAndUnused (i@(r, _) : is)
-  | "Duplicate" `T.isInfixOf` r = removeDuplicatesAndUnused is
-  | "Unused" `T.isInfixOf` r    = removeDuplicatesAndUnused is
-  | otherwise                   = i : removeDuplicatesAndUnused is
+  | "Duplicate" `T.isInfixOf` r  = removeDuplicatesAndUnused is
+  | "Unused" `T.isInfixOf` r     = removeDuplicatesAndUnused is
+  | "Inaccurate" `T.isInfixOf` r = removeDuplicatesAndUnused is
+  | otherwise                    = i : removeDuplicatesAndUnused is
 
 bruteForce :: Username -> SP2Data -> (Text -> Car -> a) -> [a]
 bruteForce username (carInfo, eventInfo, _) action =

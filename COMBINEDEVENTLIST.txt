@@ -169,17 +169,17 @@ rh_yosemite_dirt_short_h_0000|win|Yosemite Rally II (Hard)
 25,29|mission_1st|1-Lap Magic 25-29
 30,34|mission_1st|1-Lap Magic 30-34
 35,40|mission_1st|Chase Battle 35-40
-25|achievement|25% Completion
-50|achievement|50% Completion
-100|achievement|100% Completion
+25|achievement|25% Completion (Inaccurate)
+50|achievement|50% Completion (Inaccurate)
+100|achievement|100% Completion (Inaccurate)
 am_wagon_0000|win|Super Wagon Series
 us_dodge_viper_0000|win|Snakebite Trophy (Dodge)
 am_fourcyl_0000|win|Four Cylinder Shootout
 am_sixcyl_0000|win|Six Cylinder Shootout
 us_ford_mustang_0000|win|Mustang Showdown (Ford)
-1|aspec|10k A-Spec Points
-2|aspec|15k A-Spec Points
-3|aspec|20k A-Spec Points
+1|aspec|10k A-Spec Points (Inaccurate)
+2|aspec|15k A-Spec Points (Inaccurate)
+3|aspec|20k A-Spec Points (Inaccurate)
 jp_honda_beat_0000|win|Beat the Beat (Honda)
 pr_clubman_race_0400|win|Clubman League
 pr_homologation_0000|win|Homologation Heroes

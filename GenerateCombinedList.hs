@@ -89,7 +89,7 @@ loadCarsAndEvents = (,)
 necessities :: Int
 necessities = 55
 
-loadAllNecessities :: IO (Necessities)
+loadAllNecessities :: IO Necessities
 loadAllNecessities = do
   ns <- T.lines <$> TI.readFile "Data/NECESSITY.txt"
   return (listArray (1, necessities) ns)

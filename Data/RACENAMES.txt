@@ -169,17 +169,17 @@ Slipstream Battle 21-24
 1-Lap Magic 25-29
 1-Lap Magic 30-34
 Chase Battle 35-40
-25% Completion
-50% Completion
-100% Completion
+25% Completion (Inaccurate)
+50% Completion (Inaccurate)
+100% Completion (Inaccurate)
 Super Wagon Series
 Snakebite Trophy (Dodge)
 Four Cylinder Shootout
 Six Cylinder Shootout
 Mustang Showdown (Ford)
-10k A-Spec Points
-15k A-Spec Points
-20k A-Spec Points
+10k A-Spec Points (Inaccurate)
+15k A-Spec Points (Inaccurate)
+20k A-Spec Points (Inaccurate)
 Beat the Beat (Honda)
 Clubman League
 Homologation Heroes
