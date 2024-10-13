@@ -10,6 +10,8 @@ import Data.Bits
 import Data.Char
 import Data.Map ( Map )
 import qualified Data.Map as M
+import Data.Set ( Set )
+import qualified Data.Set as S
 import Data.String
 import Data.Text ( Text )
 import qualified Data.Text as T
@@ -20,7 +22,7 @@ import System.IO
 
 type CarInfo   = (Int, Array Int Car)
 type EventInfo = [Event]
-type SP2Data   = (CarInfo, EventInfo)
+type SP2Data   = (CarInfo, EventInfo, Array Int Necessity)
 type BFData    = (CarInfo, [Combo])
 type Combo     = (Event, String)
 type PrizeInfo = (Text, Car)
@@ -38,9 +40,10 @@ loadCombos username es = zipWith (\ r f -> (r, username <> group r <> f)) es (fm
 loadData :: IO SP2Data
 loadData = do
   (cs, es) <- loadCarsAndEvents
+  ns       <- loadAllNecessities
   let cl = length cs
       el = length es
-  return ((cl, listArray (0, cl) cs), es)
+  return ((cl, listArray (0, cl) cs), es, ns)
 
 bruteForce' :: BFData -> [PrizeInfo]
 bruteForce' ((len, cars), combos) = removeDuplicatesAndUnused $ fmap (\ (r, c) -> (coalesce event (T.pack . group) r, cars ! randInt (fnv1a c) 0 len)) combos
@@ -60,19 +63,26 @@ removeDuplicatesAndUnused (i@(r, _) : is)
   | otherwise                   = i : removeDuplicatesAndUnused is
 
 bruteForce :: Username -> SP2Data -> (Text -> Car -> a) -> [a]
-bruteForce username (carInfo, eventInfo) action =
+bruteForce username (carInfo, eventInfo, _) action =
   let combos = loadCombos username eventInfo
   in  fmap (uncurry action) (bruteForce' (carInfo, combos))
 
-summarise :: Username -> [(Text, Car)] -> Text
-summarise username is' = T.concat
+missingFor100 :: [Car] -> Array Int Necessity -> Set Necessity
+missingFor100 cars necessities =
+  let sn = S.fromList (elems necessities)
+  in  foldl' (\ s c -> foldl' (flip S.delete) s (fmap (necessities !) (necessaryFor c))) sn cars
+
+summarise :: Username -> Array Int Necessity -> [(Text, Car)] -> Text
+summarise username ns is' = T.concat
   [ "--- \"", T.pack username , "\" :: Summary ---\n\n"
   , "Average Viability: ", T.pack (show avgV), "\n"
-  , "       Duplicates:\n"
+  , "\nDuplicates:\n"
   , T.unlines ( let counts   = fmap (\ (n, (count, _)) -> T.concat [n, " (x", T.pack (show count), ")"]) (M.assocs duplicates)
                     allRaces = fmap (\ (n, (_, races)) -> T.intercalate ", " races) (M.assocs duplicates)
                 in  zipWith (\ c rs -> T.concat [T.justifyRight (maximum (fmap T.length counts) + 1) ' ' c, " :: ", rs]) counts allRaces
               )
+  , "\nMissing for 100%:\n"
+  , T.unlines (fmap ("- " <>) (S.elems (missingFor100 (fmap snd is') ns)))
   ]
   where
     infos = is'
@@ -91,9 +101,10 @@ main = do
   putStrLn "Please note that as of currently, the Game % Completion and A-Spec point\nreward cars are not accurate / correct to how they are in-game.\n"
 
   sp2Data <- loadData
+
   loop sp2Data
   where
-    loop s2d = do
+    loop s2d@(_, _, necessities) = do
       putStr "Enter an in-game username (leave empty to exit): "
       hFlush stdout
       username <- getLine
@@ -105,6 +116,6 @@ main = do
           results <- sequence $ bruteForce username s2d $ \ r c ->
             (r, c) <$ TI.putStrLn (T.concat [T.justifyRight 44 ' ' r, " ==> ", name c, " (", T.pack (show (viability c)),")"])
           TI.putStrLn ""
-          TI.putStr (summarise username results)
+          TI.putStr (summarise username necessities results)
           TI.putStrLn ""
           loop s2d
