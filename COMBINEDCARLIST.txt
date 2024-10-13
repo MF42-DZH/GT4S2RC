@@ -291,7 +291,7 @@ gs300_us_00|Lexus GS300 '00|7745|
 gs300_us_91|Lexus GS300 '91|7169|
 gs300_vertex_us_00|Lexus GS300 Vertex Edition (J) '00|7751|
 gsx_r_4_tmv_01|Suzuki GSX-R/4 '01|13014|22
-gt350_r_65|Shelby Mustang G.T. 350R '65|4894|21
+gt350_r_65|Shelby Mustang G.T. 350R '65|4894|21,55
 gt40_race_69|Ford GT40 Race Car '69|9851|
 gt_one_race_99|Toyota GT-ONE Race Car (TS020) '99|14914|
 gt_one_race_exxon_99|Toyota GT-ONE Race Car (TS020) '99|14744|
@@ -454,8 +454,8 @@ mtr_gmv_04|Toyota Motor Triathlon Race Car '04|0|
 mugen_motul_civic_87|Honda MUGEN MOTUL CIVIC Si Race Car '87|4785|18
 mugen_s2000_00|MUGEN S2000 '00|7224|
 murao_rx7_03|Mazda BP FALKEN RX-7 (D1GP) '03|7793|
-mustang_gt_05|Ford Mustang GT '05|9032|
-mustang_svt_cobrar_00|Ford MUSTANG SVT Cobra R '00|7383|
+mustang_gt_05|Ford Mustang GT '05|9032|55
+mustang_svt_cobrar_00|Ford MUSTANG SVT Cobra R '00|7383|55
 mx5_gms_05|Mazda MX-5 (NC) '05|0|
 n360_67|Honda N360 '67|3811|
 nike_one_04|NIKE One 2022|0|
