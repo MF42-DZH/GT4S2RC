@@ -6,6 +6,7 @@ module GenerateCombinedList
   , Viability
   , Func
   , Necessity
+  , Necessities
   , Car(..)
   , Event(..)
   , combinedCarList
@@ -24,11 +25,12 @@ import qualified Data.Text.IO as TI
 import Text.ParserCombinators.ReadP
 import Text.Read ( readMaybe )
 
-type Label     = String
-type Name      = Text
-type Viability = Int
-type Func      = String
-type Necessity = Text
+type Label       = String
+type Name        = Text
+type Viability   = Int
+type Func        = String
+type Necessity   = Text
+type Necessities = Array Int Necessity
 
 data Car = Car
   { label        :: Label
@@ -87,7 +89,7 @@ loadCarsAndEvents = (,)
 necessities :: Int
 necessities = 55
 
-loadAllNecessities :: IO (Array Int Necessity)
+loadAllNecessities :: IO (Necessities)
 loadAllNecessities = do
   ns <- T.lines <$> TI.readFile "Data/NECESSITY.txt"
   return (listArray (1, necessities) ns)

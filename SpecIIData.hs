@@ -22,7 +22,7 @@ import System.IO
 
 type CarInfo   = (Int, Array Int Car)
 type EventInfo = [Event]
-type SP2Data   = (CarInfo, EventInfo, Array Int Necessity)
+type SP2Data   = (CarInfo, EventInfo, Necessities)
 type BFData    = (CarInfo, [Combo])
 type Combo     = (Event, String)
 type PrizeInfo = (Text, Car)
@@ -67,12 +67,12 @@ bruteForce username (carInfo, eventInfo, _) action =
   let combos = loadCombos username eventInfo
   in  fmap (uncurry action) (bruteForce' (carInfo, combos))
 
-missingFor100 :: [Car] -> Array Int Necessity -> Set Necessity
+missingFor100 :: [Car] -> Necessities -> Set Necessity
 missingFor100 cars necessities =
   let sn = S.fromList (elems necessities)
   in  foldl' (\ s c -> foldl' (flip S.delete) s (fmap (necessities !) (necessaryFor c))) sn cars
 
-summarise :: Username -> Array Int Necessity -> [(Text, Car)] -> Text
+summarise :: Username -> Necessities -> [(Text, Car)] -> Text
 summarise username ns is' = T.concat
   [ "--- \"", T.pack username , "\" :: Summary ---\n\n"
   , "Average Viability: ", T.pack (show avgV), "\n"
