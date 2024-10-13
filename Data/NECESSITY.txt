@@ -33,7 +33,7 @@ BMW M
 Nissan March
 MG
 Mazda Miata
-Truck
+Midget II
 Mini
 Mitsubishi Mirage
 Honda Type R
@@ -54,3 +54,4 @@ Subaru
 Euro Classic
 Mustang
 Suzuki Kei
+Daihatsu Midget II

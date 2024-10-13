@@ -417,7 +417,7 @@ miata_us_89|Mazda MX-5 Miata (NA) '89|8621|35
 miata_vr_lim_95|Mazda MX-5 Miata VR-Limited (NA, J) '95|8372|35
 miata_vspl2_93|Mazda MX-5 Miata V-Special Type II (NA, J) '93|8397|35
 micra_12c_5d_03|Nissan MICRA '03|6347|33
-midget2_d_type_98|Daihatsu Midget II D-type '98|6679|36
+midget2_d_type_98|Daihatsu Midget II D-type '98|6679|36,57
 midget_mp5_63|Daihatsu Midget '63|6215|36
 mines_evo6_00|Mine's Lancer Evolution VI '00|8163|51
 mines_r34_00|Mine's Skyline GT-R N1 V-spec (R34) '00|6428|
