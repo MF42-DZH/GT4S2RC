@@ -87,7 +87,7 @@ loadCarsAndEvents = (,)
   <*> (fmap read . lines <$> readFile combinedEventList)
 
 necessities :: Int
-necessities = 55
+necessities = 56
 
 loadAllNecessities :: IO Necessities
 loadAllNecessities = do
