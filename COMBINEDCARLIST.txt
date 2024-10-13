@@ -90,8 +90,8 @@ altezza_as200_98|Toyota ALTEZZA AS200 '98|7879|12
 altezza_gita_as300_01|Toyota ALTEZZA Gita AS300 '01|7596|12
 altezza_lm_race_00|Toyota ALTEZZA Touring Car '01|11238|12
 altezza_rs200_98|Toyota ALTEZZA RS200 '98|7855|12
-altoworks_rsz_97|Suzuki ALTO WORKS RS-Z '97|7715|
-altoworks_sport_ltd_97|Suzuki ALTO WORKS SUZUKI SPORT LIMITED '97|8475|
+altoworks_rsz_97|Suzuki ALTO WORKS RS-Z '97|7715|56
+altoworks_sport_ltd_97|Suzuki ALTO WORKS SUZUKI SPORT LIMITED '97|8475|56
 amemiya_aspara_rx7_04|RE Amemiya AMEMIYA ASPARADRINK RX7 (JGTC) '04|11512|13
 amuse_carbonr_04|AMUSE CarbonR (R34) '04|7692|
 amuse_s2000_04|AMUSE S2000 Street Version '04|8944|
@@ -133,8 +133,8 @@ camaro_ss_00|Chevrolet Camaro SS '00|7487|16
 camaro_ss_69|Chevrolet Camaro SS '69|4920|16
 camaro_z28_302_69|Chevrolet Camaro Z28 302 '69|4869|16
 camaro_z28_coupe_97|Chevrolet Camaro Z28 Coupe '97|8274|16
-cappuccino_91|Suzuki Cappuccino (EA11R) '91|9441|
-cappuccino_95|Suzuki Cappuccino (EA21R) '95|9465|
+cappuccino_91|Suzuki Cappuccino (EA11R) '91|9441|56
+cappuccino_95|Suzuki Cappuccino (EA21R) '95|9465|56
 carina_ed_20x_4ws_89|Toyota CARINA ED 2.0 X 4WS '89|4494|
 carlton_90|Lotus Carlton '90|6162|
 carol_360_deluxe_62|Mazda Carol 360 Deluxe '62|4562|
@@ -337,7 +337,7 @@ integra_r_lm_01|Honda INTEGRA TYPE R Touring Car '02|7244|39
 interceptor_mk3_74|Jensen Interceptor MkIII '74|4900|
 ka_01|Ford Ka '01|5156|
 karmann_ghia_type1_1500_68|Volkswagen Karmann Ghia Coupe (Type-1) '68|6394|54
-kei_works_4wd_02|Suzuki Kei WORKS '02|8587|
+kei_works_4wd_02|Suzuki Kei WORKS '02|8587|56
 kpgc10_skyline_gtr_70|Nissan SKYLINE Hard Top 2000GT-R (KPGC10) '70|6610|
 kpgc110_skyline_gtr_73|Nissan SKYLINE 2000GT-R (KPGC110) '73|6978|
 kusabi_concept_03|Mazda KUSABI '03|6451|
@@ -362,7 +362,7 @@ lancer_evo_gsr_92|Mitsubishi Lancer Evolution GSR '92|6333|51
 lancer_ex_1800gsr_ic_turbo_83|Mitsubishi Lancer EX 1800GSR IC Turbo '83|6748|
 lancer_wrc_03|Mitsubishi Lancer Evolution Super Rally Car '03|8204|51
 land_range_stormer_04|Land Rover Range Stormer Concept '04|1844|
-lapin_turbo_4wd_02|Suzuki ALTO LAPIN Turbo '02|8281|
+lapin_turbo_4wd_02|Suzuki ALTO LAPIN Turbo '02|8281|56
 legacy_b4_20gt_03|Subaru LEGACY B4 2.0GT '03|7296|53
 legacy_b4_30r_03|Subaru LEGACY B4 3.0R '03|6106|53
 legacy_b4_blitzen_00|Subaru LEGACY B4 Blitzen '00|6314|53
@@ -448,7 +448,7 @@ mr2_glimited_97|Toyota MR2 G-Limited '97|8679|
 mr2_gts_97|Toyota MR2 GT-S '97|8639|
 mr2_spyder_us_99|Toyota MR2 Spyder '99|9051|
 mr2_spyder_v_us_02|Toyota MR2 Spyder '02|8892|
-mr_wagon_sport_04|Suzuki MR Wagon Sport '04|6743|
+mr_wagon_sport_04|Suzuki MR Wagon Sport '04|6743|56
 mrs_autobacs_00|Toyota SUPERAUTOBACS APEX MR-S (JGTC) '00|10827|13
 mtr_gmv_04|Toyota Motor Triathlon Race Car '04|0|
 mugen_motul_civic_87|Honda MUGEN MOTUL CIVIC Si Race Car '87|4785|18
@@ -717,7 +717,7 @@ vitz_rs15_00|Toyota VITZ RS 1.5 '00|5323|48
 vitz_rs_turbo_02|Toyota VITZ RS Turbo '02|5903|48
 voltz_s_2wd_02|Toyota VOLTZ S '02|4846|
 w12_tmv_01|Volkswagen W12 Nardo Concept '01|10489|
-wagon_r_rr_98|Suzuki WAGON R RR '98|7352|
+wagon_r_rr_98|Suzuki WAGON R RR '98|7352|56
 wedssport_celica_03|Toyota WEDSSPORT CELICA (JGTC) '03|11254|13
 will_vs_01|Toyota WiLL VS '01|4459|
 woodone_supra_03|Toyota WOODONE Tom's Supra (JGTC) '03|12882|14
