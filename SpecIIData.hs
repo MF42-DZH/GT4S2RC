@@ -88,6 +88,7 @@ summarise username is' = T.concat
 main :: IO ()
 main = do
   putStrLn "Gran Turismo 4 Spec II v1.06.X Prize Car Randomizer Brute-Forcer\n"
+  putStrLn "Please note that as of currently, the Game % Completion and A-Spec point\nreward cars are not accurate / correct to how they are in-game.\n"
 
   sp2Data <- loadData
   loop sp2Data
