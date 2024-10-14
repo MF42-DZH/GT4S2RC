@@ -1,6 +1,6 @@
 {-# LANGUAGE FlexibleContexts, ScopedTypeVariables #-}
 
-module CRCPRNG where
+module S2RA.CRCPRNG where
 
 import Control.Monad.ST
 import Data.Array ( Array )
@@ -8,8 +8,8 @@ import Data.Array.Base
 import Data.Bits
 import Data.Foldable ( foldl' )
 import Data.Int
+import Data.Kind ( Type )
 import Data.Word
-import Data.Kind (Type)
 import Data.STRef
 
 -- WARNING: Inaccurate to PS2 due to floating point jankery.

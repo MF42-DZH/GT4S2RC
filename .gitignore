@@ -1,5 +1,8 @@
+# Haskell-related Ignores
+
 *.hi
 *.exe
 *.o
 *.a
 *.so
+/dist-newstyle/*

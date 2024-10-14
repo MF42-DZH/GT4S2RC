@@ -1,4 +1,4 @@
-module MT19937 where
+module S2RA.MT19937 where
 
 -- NOT USED.
 -- PD ONLY USED THIS IN GT5 ONWARDS.

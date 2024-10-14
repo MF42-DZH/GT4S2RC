@@ -1,24 +1,20 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module SpecIIData where
+module S2RA.S2Data where
 
-import Control.Monad
-import CRCPRNG ( randInt )
 import Data.Array
 import Data.Bifunctor
 import Data.Bits
 import Data.Char
-import Data.Map ( Map )
 import qualified Data.Map as M
 import Data.Set ( Set )
 import qualified Data.Set as S
 import Data.String
 import Data.Text ( Text )
 import qualified Data.Text as T
-import qualified Data.Text.IO as TI
 import Data.Word
-import GenerateCombinedList
-import System.IO
+import S2RA.CRCPRNG ( randInt )
+import S2RA.DataFiles
 
 type CarInfo   = (Int, Array Int Car)
 type EventInfo = [Event]
@@ -42,7 +38,6 @@ loadData = do
   (cs, es) <- loadCarsAndEvents
   ns       <- loadAllNecessities
   let cl = length cs
-      el = length es
   return ((cl, listArray (0, cl) cs), es, ns)
 
 bruteForce' :: BFData -> [PrizeInfo]
@@ -91,34 +86,8 @@ summarise username ns is' = T.concat
     infos = is'
     len   = length infos
 
-    avgV       = fromIntegral (foldl' (\ acc (_, c) -> acc + viability c) 0 infos) / fromIntegral len
-    duplicates =
+    avgV :: Double = fromIntegral (foldl' (\ acc (_, c) -> acc + viability c) 0 infos) / fromIntegral len
+    duplicates     =
       let combos = fmap (second name) infos
           counts = foldr (\ (r, n) acc -> M.alter (maybe (Just (1 :: Int, [r])) (Just . bimap (+ 1) (r :))) n acc) M.empty combos
       in  M.filter ((> 1) . fst) counts
-
--- Main brute-forcing flow, just to show all of the prize cars.
-main :: IO ()
-main = do
-  putStrLn "Gran Turismo 4 Spec II v1.06.X Prize Car Randomizer Brute-Forcer\nMade by Azullia / 0xFC963F18DC21\nSpecial Thanks to Nenkai, TeaKanji\n"
-  putStrLn "Please note that as of currently, the Game % Completion and A-Spec point\nreward cars are not accurate / correct to how they are in-game.\n"
-
-  sp2Data <- loadData
-
-  loop sp2Data
-  where
-    loop s2d@(_, _, necessities) = do
-      putStr "Enter an in-game username (leave empty to exit): "
-      hFlush stdout
-      username <- getLine
-
-      case username of
-        "" -> return ()
-        _  -> do
-          TI.putStrLn ""
-          results <- sequence $ bruteForce username s2d $ \ r c ->
-            (r, c) <$ TI.putStrLn (T.concat [T.justifyRight 44 ' ' r, " ==> ", name c, " (", T.pack (show (viability c)),")"])
-          TI.putStrLn ""
-          TI.putStr (summarise username necessities results)
-          TI.putStrLn ""
-          loop s2d

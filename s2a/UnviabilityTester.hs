@@ -1,13 +1,14 @@
 {-# LANGUAGE OverloadedStrings #-}
 
-module UnviabilityTester where
+module Main where
 
 import Data.Char
 import Data.Foldable
 import Data.IORef
-import SpecIIData hiding ( main )
-import ViabilityTester hiding ( main )
 import System.IO
+import S2RA.Bruteforce
+import S2RA.Concurrent
+import S2RA.S2Data
 
 main :: IO ()
 main = do
