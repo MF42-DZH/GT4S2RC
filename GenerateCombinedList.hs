@@ -86,13 +86,10 @@ loadCarsAndEvents = (,)
   <$> (fmap read . lines <$> readFile combinedCarList)
   <*> (fmap read . lines <$> readFile combinedEventList)
 
-necessities :: Int
-necessities = 57
-
 loadAllNecessities :: IO Necessities
 loadAllNecessities = do
-  ns <- T.lines <$> TI.readFile "Data/NECESSITY.txt"
-  return (listArray (1, necessities) ns)
+  ns     <- T.lines <$> TI.readFile "Data/NECESSITY.txt"
+  return (listArray (1, length ns) ns)
 
 main :: IO ()
 main = do
