@@ -6,3 +6,4 @@
 *.a
 *.so
 /dist-newstyle/*
+/Release/*
