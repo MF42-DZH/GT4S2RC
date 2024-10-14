@@ -36,16 +36,16 @@ rud0 seed' = runST $ do
           writeSTRef ret ((r .>>. 8) .^. fromIntegral (crc32table ! index))
         go (it + 1)
 
-  go 0
+  go (0 :: Word32)
 
   fromIntegral . (.&. 0x00000000FFFFFFFF) <$> readSTRef ret
 
 randInt :: Word32 -> Int -> Int -> Int
-randInt seed min max =
+randInt seed incMin excMax =
   let uv  = rud0 seed
       mul = ri32toFloat uv
-      sz  = max - min
-  in  floor ((mul * fromIntegral sz) + fromIntegral min)
+      sz  = excMax - incMin
+  in  floor ((mul * fromIntegral sz) + fromIntegral incMin)
 
 crc32table :: Array Word8 Word32
 crc32table = listArray (0, 255)

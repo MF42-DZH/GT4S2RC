@@ -1,6 +1,6 @@
 cabal-version:      3.4
 name:               SpecII-Cracking
-version:            0.1.0.0
+version:            0.1.0.1
 synopsis:           An attempt at breaking Spec II's randomizer algorithm.
 description:        See https://github.com/MF42-DZH/GT4S2RC/blob/master/README.md
 homepage:           https://github.com/MF42-DZH/GT4S2RC
