@@ -11,7 +11,7 @@ Currently, this seems to work for v1.06.1.
 This project was created using Haskell, primarily using GHC 9.10.1.
 I recommend install Haskell via [`ghcup`](https://www.haskell.org/ghcup/), or if that is not an option, via Chocolatey (Windows), Homebrew (OS X) or your Linux distribution's package management system.
 
-After you have set up Haskell and Cabal and cloned the repository, run the following commands:
+After you have set up Haskell (GHC 9.10.1) and Cabal 3.12.1.0 and cloned the repository, run the following commands:
 
 ```
 git clone https://github.com/MF42-DZH/GT4S2RC.git
