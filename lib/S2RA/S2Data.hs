@@ -74,7 +74,7 @@ summarise username ns is' = T.concat
   , "Average Viability: ", T.pack (show avgV), "\n"
   , "\nDuplicates:\n"
   , T.unlines ( let counts   = fmap (\ (n, (count, _)) -> T.concat [n, " (x", T.pack (show count), ")"]) (M.assocs duplicates)
-                    allRaces = fmap (\ (n, (_, races)) -> T.intercalate ", " races) (M.assocs duplicates)
+                    allRaces = fmap (\ (_, (_, races)) -> T.intercalate ", " races) (M.assocs duplicates)
                 in  zipWith (\ c rs -> T.concat [T.justifyRight (maximum (fmap T.length counts) + 1) ' ' c, " :: ", rs]) counts allRaces
               )
   , "\nMissing for 100%:\n"

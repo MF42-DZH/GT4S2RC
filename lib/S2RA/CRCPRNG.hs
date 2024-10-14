@@ -6,9 +6,7 @@ import Control.Monad.ST
 import Data.Array ( Array )
 import Data.Array.Base
 import Data.Bits
-import Data.Foldable ( foldl' )
 import Data.Int
-import Data.Kind ( Type )
 import Data.Word
 import Data.STRef
 

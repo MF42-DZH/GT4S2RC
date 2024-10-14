@@ -1,3 +1,5 @@
+{-# OPTIONS_GHC -Wno-incomplete-patterns #-}
+
 module S2RA.MT19937 where
 
 -- NOT USED.

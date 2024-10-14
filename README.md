@@ -2,7 +2,9 @@
 
 Some experiments in cracking GT4 Spec II's randomizer.
 
-Currently, this seems to work for v1.06.1.
+Currently, this seems to work for v1.06.1. **WARNING: If inputting names into Spec II's improved keyboard, disable HD HUD / UI textures, as it renders some symbols invisible on the keyboard (e.g. what looks like `BOLT STORY` might actually be `BOLT_STORY`).**
+
+This **does not work** for the original Randomizer Public Build from sometime 2023.
 
 ## Usage Instructions
 
@@ -27,7 +29,7 @@ You will need to have these files in the current working directory in order to u
 
 ### Using a Pre-built Release
 
-**Coming Soon!**
+For Windows users, pre-built releases will be provided in the Releases tab.
 
 ## Special Thanks
 
