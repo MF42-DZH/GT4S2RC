@@ -1,4 +1,4 @@
-{-# OPTIONS_GHC -Wno-incomplete-patterns #-}
+{-# OPTIONS_GHC -Wno-incomplete-patterns -Wno-name-shadowing #-}
 
 module S2RA.MT19937 where
 
@@ -46,7 +46,7 @@ mkMTState :: Word32 -> MTState
 mkMTState seed = MTState (populate 0 seed (array (0, cN - 1) [(i, 0) | i <- [0 .. cN - 1]])) 0
   where
     populate 0 s   = (// [(0, s)]) . populate 1 s
-    populate 624 s = id
+    populate 624 _ = id
     populate n s   =
       let s' = cF * (s .^. (s `shiftR` (fromIntegral cW - 2))) + fromIntegral n
       in  (// [(n, s')]) . populate (n + 1) s'
