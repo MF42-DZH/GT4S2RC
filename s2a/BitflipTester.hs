@@ -26,12 +26,6 @@ extend :: [Char] -> [Char]
 extend [a, b] = nub [toLower a, toUpper a, toLower b, toUpper b]
 extend xs     = nub xs
 
-split :: [a] -> ([a], [a])
-split = go False
-  where go _ []           = ([], [])
-        go False (x : xs) = let (l, r) = go True xs in (x : l, r)
-        go True (x : xs) = let (l, r)  = go False xs in (l, x : r)
-
 main :: IO ()
 main = do
   putStrLn "Gran Turismo 4 Spec II v1.06.X Prize Car Randomizer Capitalisation LSB Bitflip Brute-Forcer"

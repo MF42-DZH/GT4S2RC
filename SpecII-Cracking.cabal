@@ -1,6 +1,6 @@
 cabal-version:      3.4
 name:               SpecII-Cracking
-version:            0.1.1.0
+version:            0.1.2.0
 synopsis:           An attempt at breaking Spec II's randomizer algorithm.
 description:        See https://github.com/MF42-DZH/GT4S2RC/blob/master/README.md
 homepage:           https://github.com/MF42-DZH/GT4S2RC
@@ -74,6 +74,18 @@ executable SpecII-List-Analyzer
         shared-depends,
         executable-depends
     main-is:          ListAnalyzer.hs
+    -- other-modules:
+    -- other-extensions:
+    build-depends: SpecII-Cracking:Common
+
+    hs-source-dirs:   s2a
+
+executable SpecII-Stdin-Analyzer
+    import:
+        warnings,
+        shared-depends,
+        executable-depends
+    main-is:          StdinAnalyzer.hs
     -- other-modules:
     -- other-extensions:
     build-depends: SpecII-Cracking:Common

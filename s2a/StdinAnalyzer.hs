@@ -1,27 +1,24 @@
-{-# LANGUAGE OverloadedStrings #-}
-
 module Main where
 
+import Control.Monad
+import Data.Bifunctor
 import Data.Char
-import Data.Foldable
 import Data.IORef
-import System.IO
+import Data.List
+import System.Environment
 import S2RA.Bruteforce
 import S2RA.Concurrent
 import S2RA.S2Data
 
-permutations :: String -> [String]
-permutations []       = pure []
-permutations (x : xs) =
-  [ h : t
-  | t <- permutations xs
-  , h <- if isAlpha x then [toLower x, toUpper x] else [x]
-  ]
-
 main :: IO ()
 main = do
-  putStrLn "Gran Turismo 4 Spec II v1.06.X Prize Car Randomizer Capitalisation Permutation Brute-Forcer"
+  putStrLn "Gran Turismo 4 Spec II v1.06.X Prize Car Randomizer Viability Stdin Analyzer"
   putStrLn "Viability value per car provided by TeaKanji\n"
+
+  args <- getArgs
+  let divByMissing = foldr (\ x -> (((fmap toLower x == "-m") || (fmap toLower x == "--missing")) ||)) False args
+
+  when divByMissing $ putStrLn "Dividing by missing cars for 100%.\n"
 
   sp2Data@(_, _, necessities) <- loadData
 
@@ -30,15 +27,7 @@ main = do
   currentMaxViability3 <- newIORef ("", 0, 0)
   currentMaxViability4 <- newIORef ("", 0, 0)
 
-  putStr "Enter a username with at least one letter: " >> hFlush stdout
-  username <- fmap toLower <$> getLine
-
-  putStr "Divide by missing cars for 100% (Y/N): " >> hFlush stdout
-  divByMissing <- (== "y") . fmap toLower <$> getLine
-
-  let ~(p, u : us) = break isAlpha username
-      (d1, d2)     = split $ fmap ((p ++) . (toLower u :)) (permutations us)
-      (d3, d4)     = split $ fmap ((p ++) . (toUpper u :)) (permutations us)
+  ((d1, d2), (d3, d4)) <- bimap split split . split . lines <$> getContents
 
   sequence
     [ worker "Searcher #1" (>) currentMaxViability1 divByMissing necessities d1 sp2Data

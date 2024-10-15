@@ -3,6 +3,7 @@ module S2RA.Bruteforce where
 import Control.Monad
 import Data.IORef
 import qualified Data.Set as S
+import Data.Word
 import S2RA.Concurrent
 import S2RA.Typedefs
 import S2RA.S2Data
@@ -41,10 +42,44 @@ determine p mx dbm ns un sp2Data =
     forM_ w (writeIORef mx)
     return w
 
+zipF :: Applicative f => f a -> f b -> f (a, b)
+zipF a b = (,) <$> a <*> b
+
 worker :: String -> Cmp Double -> IORef Evaluation -> Bool -> Necessities -> [Username] -> SP2Data -> IO (JoinHandle ())
-worker name p mx dbm ns uns sp2Data = forkJoinable $ forM_ uns $ \ un -> do
-  result <- determine p mx dbm ns un sp2Data
-  forM_ result $ \ vs -> putStrLn (formatWinner name vs)
+worker name p mx dbm ns uns sp2Data = forkJoinable $ do
+  haveSearchedRaw <- newIORef (0 :: Word64)
+  haveSearchedMod <- newIORef (0 :: Word64)
+
+  let printer u = do
+        modifyIORef' haveSearchedRaw (+ 1)
+        modifyIORef' haveSearchedMod ((`mod` 20000) . (+ 1))
+
+        zipF (readIORef haveSearchedMod) (readIORef haveSearchedRaw) >>= \ (h, r) ->
+          when (h == 0) $ putStrLn (concat ["[", name, "]: Searched ", show r, " names. Currently looking at: \"", u, "\"."])
+
+  forM_ uns $ \ un -> do
+    result <- determine p mx dbm ns un sp2Data
+    forM_ result $ \ vs -> putStrLn (formatWinner name vs)
+    printer un
+
+  zipF (readIORef haveSearchedRaw) (readIORef mx) >>= \ (r, (n, v, m)) -> putStrLn $ concat
+    [ "[", name, "]: Searched a total of "
+    , show r
+    , " names.\n"
+    , "[", name, "]: Best result "
+    , show v
+    , " from username \""
+    , n
+    , "\", missing "
+    , show m
+    , " cars for 100%."
+    ]
+
+split :: [a] -> ([a], [a])
+split = go False
+  where go _ []           = ([], [])
+        go False (x : xs) = let (l, r) = go True xs in (x : l, r)
+        go True (x : xs) = let (l, r)  = go False xs in (l, x : r)
 
 generateDatasets :: Int -> ([String], [String], [String], [String], [String], [String])
 generateDatasets n
