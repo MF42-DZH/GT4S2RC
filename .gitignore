@@ -7,3 +7,10 @@
 *.so
 /dist-newstyle/*
 /Release/*
+
+# LaTeX-related Ignores
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.synctex.gz
