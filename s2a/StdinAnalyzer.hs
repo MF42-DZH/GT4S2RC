@@ -3,11 +3,9 @@
 module Main where
 
 import Control.Monad
-import Data.Array
 import Data.Char
 import Data.IORef
 import Data.List
-import Data.Word
 import System.Environment
 import System.IO
 import S2RA.Bruteforce
@@ -44,7 +42,8 @@ main = do
     , workerSTM "Searcher #3" (>) currentMaxViability3 divByMissing necessities d3 shouldContinue sp2Data
     , workerSTM "Searcher #4" (>) currentMaxViability4 divByMissing necessities d4 shouldContinue sp2Data
     ] >>= \ ts -> do
-      let readLoop 1 = isEOF >>= (`unless` ((*> readLoop 2) $! (getLine >>= atomically . writeTBQueue d1)))
+      let readLoop :: Int -> IO ()
+          readLoop 1 = isEOF >>= (`unless` ((*> readLoop 2) $! (getLine >>= atomically . writeTBQueue d1)))
           readLoop 2 = isEOF >>= (`unless` ((*> readLoop 3) $! (getLine >>= atomically . writeTBQueue d2)))
           readLoop 3 = isEOF >>= (`unless` ((*> readLoop 4) $! (getLine >>= atomically . writeTBQueue d3)))
           readLoop 4 = isEOF >>= (`unless` ((*> readLoop 1) $! (getLine >>= atomically . writeTBQueue d4)))

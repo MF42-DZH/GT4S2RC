@@ -27,8 +27,6 @@ You should now have `SpecII-Seed-Analyzer`, `SpecII-Viability-Tester`, `SpecII-P
 Before anything else, while still in the repository, run `SpecII-Generate-Combined-Lists` in order to (re-)generate the combined lists and necessity list you see at the top level of the repository with up-to-date data.
 You will need to have these files in the current working directory in order to use the functionality of the programs built.
 
-It is also recommended to run the STDIN Analyzer with the `+RTS -c -I0`, to make the garbage collector more aggressive to reduce the chance of the program using up virtual memory.
-
 ### Using a Pre-built Release
 
 For Windows users, pre-built releases will be provided in the Releases tab.

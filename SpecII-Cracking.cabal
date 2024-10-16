@@ -27,7 +27,7 @@ common shared-depends
     default-language: GHC2021
 
 common executable-depends
-    ghc-options: -static -optc-static -optl-static -threaded -rtsopts -with-rtsopts=-N -O2 -ferror-spans
+    ghc-options: -static -optc-static -optl-static -threaded -rtsopts -O2 -ferror-spans "-with-rtsopts=-N -I0 -c"
 
 library Common
     import:
