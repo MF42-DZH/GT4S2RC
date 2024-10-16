@@ -44,14 +44,12 @@ main = do
     , workerSTM "Searcher #3" (>) currentMaxViability3 divByMissing necessities d3 shouldContinue sp2Data
     , workerSTM "Searcher #4" (>) currentMaxViability4 divByMissing necessities d4 shouldContinue sp2Data
     ] >>= \ ts -> do
-      let readLoop 1 = isEOF >>= (`unless` ((getLine >>= atomically . writeTBQueue d1) <* readLoop 2))
-          readLoop 2 = isEOF >>= (`unless` ((getLine >>= atomically . writeTBQueue d2) <* readLoop 3))
-          readLoop 3 = isEOF >>= (`unless` ((getLine >>= atomically . writeTBQueue d3) <* readLoop 4))
-          readLoop 4 = isEOF >>= (`unless` ((getLine >>= atomically . writeTBQueue d4) <* readLoop 1))
+      let readLoop 1 = isEOF >>= (`unless` ((*> readLoop 2) $! (getLine >>= atomically . writeTBQueue d1)))
+          readLoop 2 = isEOF >>= (`unless` ((*> readLoop 3) $! (getLine >>= atomically . writeTBQueue d2)))
+          readLoop 3 = isEOF >>= (`unless` ((*> readLoop 4) $! (getLine >>= atomically . writeTBQueue d3)))
+          readLoop 4 = isEOF >>= (`unless` ((*> readLoop 1) $! (getLine >>= atomically . writeTBQueue d4)))
 
-      readLoop (1 :: Word8)
-      modifyMVar_ shouldContinue (pure . const False)
-
+      forkJoinable (readLoop 1 *> modifyMVar_ shouldContinue (pure . const False)) >>= joinHandle_
       mapM_ joinHandle_ ts
 
   results <- traverse readIORef
