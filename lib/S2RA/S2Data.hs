@@ -35,9 +35,9 @@ loadCombos username es = zipWith (\ r f -> (r, username <> group r <> f)) es (fm
 
 loadData :: IO SP2Data
 loadData = do
-  (cs, es) <- loadCarsAndEvents
-  ns       <- loadAllNecessities
-  let cl = length cs
+  (!cs, !es) <- loadCarsAndEvents
+  !ns        <- loadAllNecessities
+  let !cl = length cs
   return ((cl, listArray (0, cl) cs), es, ns)
 
 bruteForce' :: BFData -> [PrizeInfo]

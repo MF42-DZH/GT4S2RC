@@ -36,9 +36,9 @@ main = do
   putStr "Divide by missing cars for 100% (Y/N): " >> hFlush stdout
   divByMissing <- (== "y") . fmap toLower <$> getLine
 
-  let ~(p, u : us) = break isAlpha username
-      (d1, d2)     = split $ fmap ((p ++) . (toLower u :)) (permutations us)
-      (d3, d4)     = split $ fmap ((p ++) . (toUpper u :)) (permutations us)
+  let (p, u : us) = break isAlpha username
+      (d1, d2)    = split $ fmap ((p ++) . (toLower u :)) (permutations us)
+      (d3, d4)    = split $ fmap ((p ++) . (toUpper u :)) (permutations us)
 
   sequence
     [ worker "Searcher #1" (>) currentMaxViability1 divByMissing necessities d1 sp2Data

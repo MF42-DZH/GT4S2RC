@@ -1,11 +1,15 @@
+{-# OPTIONS_GHC -Wno-incomplete-patterns #-}
+
 module Main where
 
 import Control.Monad
-import Data.Bifunctor
+import Data.Array
 import Data.Char
 import Data.IORef
 import Data.List
+import Data.Word
 import System.Environment
+import System.IO
 import S2RA.Bruteforce
 import S2RA.Concurrent
 import S2RA.S2Data
@@ -27,14 +31,28 @@ main = do
   currentMaxViability3 <- newIORef ("", 0, 0)
   currentMaxViability4 <- newIORef ("", 0, 0)
 
-  ((d1, d2), (d3, d4)) <- bimap split split . split . lines <$> getContents
+  shouldContinue <- newMVar True
+
+  d1 <- newTBQueueIO @Username 5
+  d2 <- newTBQueueIO @Username 5
+  d3 <- newTBQueueIO @Username 5
+  d4 <- newTBQueueIO @Username 5
 
   sequence
-    [ worker "Searcher #1" (>) currentMaxViability1 divByMissing necessities d1 sp2Data
-    , worker "Searcher #2" (>) currentMaxViability2 divByMissing necessities d2 sp2Data
-    , worker "Searcher #3" (>) currentMaxViability3 divByMissing necessities d3 sp2Data
-    , worker "Searcher #4" (>) currentMaxViability4 divByMissing necessities d4 sp2Data
-    ] >>= mapM_ joinHandle_
+    [ workerSTM "Searcher #1" (>) currentMaxViability1 divByMissing necessities d1 shouldContinue sp2Data
+    , workerSTM "Searcher #2" (>) currentMaxViability2 divByMissing necessities d2 shouldContinue sp2Data
+    , workerSTM "Searcher #3" (>) currentMaxViability3 divByMissing necessities d3 shouldContinue sp2Data
+    , workerSTM "Searcher #4" (>) currentMaxViability4 divByMissing necessities d4 shouldContinue sp2Data
+    ] >>= \ ts -> do
+      let readLoop 1 = isEOF >>= (`unless` ((getLine >>= atomically . writeTBQueue d1) <* readLoop 2))
+          readLoop 2 = isEOF >>= (`unless` ((getLine >>= atomically . writeTBQueue d2) <* readLoop 3))
+          readLoop 3 = isEOF >>= (`unless` ((getLine >>= atomically . writeTBQueue d3) <* readLoop 4))
+          readLoop 4 = isEOF >>= (`unless` ((getLine >>= atomically . writeTBQueue d4) <* readLoop 1))
+
+      readLoop (1 :: Word8)
+      modifyMVar_ shouldContinue (pure . const False)
+
+      mapM_ joinHandle_ ts
 
   results <- traverse readIORef
     [ currentMaxViability1

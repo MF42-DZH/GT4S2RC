@@ -22,7 +22,8 @@ common shared-depends
         base ^>=4.20.0.0,
         array ^>=0.5.7.0,
         text ^>=2.1.1,
-        containers ^>=0.7
+        containers ^>=0.7,
+        stm ^>=2.5.3.1
     default-language: GHC2021
 
 common executable-depends

@@ -7,10 +7,12 @@ module S2RA.Concurrent
   , joinHandle_
   , joinTid
   , module Control.Concurrent
+  , module Control.Concurrent.STM
   ) where
 
 import Control.Monad ( void )
 import Control.Concurrent
+import Control.Concurrent.STM
 import GHC.Exception
 
 newtype JoinHandle a = JH (ThreadId, MVar a)
