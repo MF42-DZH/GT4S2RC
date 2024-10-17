@@ -177,9 +177,9 @@ win
 win
 win
 win
-aspec
-aspec
-aspec
+aspec_1
+aspec_2
+aspec_3
 win
 win
 win
