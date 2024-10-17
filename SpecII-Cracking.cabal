@@ -140,3 +140,16 @@ executable SpecII-Bitflip-Tester
     build-depends: SpecII-Cracking:Common
 
     hs-source-dirs:   s2a
+
+executable SpecII-Random-Verifier
+    import:
+        warnings,
+        shared-depends,
+        executable-depends
+    main-is:          RandomVerifier.hs
+    -- other-modules:
+    -- other-extensions:
+    build-depends: SpecII-Cracking:Common
+
+    hs-source-dirs:   s2a
+
