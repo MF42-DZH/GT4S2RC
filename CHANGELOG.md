@@ -1,5 +1,11 @@
 # Revision history for SpecII-Cracking
 
+## 0.1.2.0 -- 2024-10-17
+
+* Merge #1 from ddm999/master -- Fixes A-Spec point rewards.
+* Add PRNG integrity verifier.
+* Add STDIN-based bruteforcer.
+
 ## 0.1.1.0 -- 2024-10-15
 
 * Add List Analyzer bruteforcer.
