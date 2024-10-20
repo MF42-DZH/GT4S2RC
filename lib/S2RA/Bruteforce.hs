@@ -100,7 +100,7 @@ workerSTM !name !p !mx !dbm !ns !uns !shouldContinue !sp2Data = forkJoinable $ d
           forM_ result $ \ !vs -> putStrLn (formatWinner name vs)
           printer un
 
-        zipF (readMVar shouldContinue) (atomically (not <$> isEmptyTBQueue uns)) >>= (`when` analysisLoop) . (uncurry (&&))
+        zipF (readMVar shouldContinue) (atomically (not <$> isEmptyTBQueue uns)) >>= (`when` analysisLoop) . uncurry (&&)
 
   analysisLoop
 
