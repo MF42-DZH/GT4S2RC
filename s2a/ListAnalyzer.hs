@@ -25,7 +25,7 @@ main = do
   putStr "Divide by missing cars for 100% (Y/N): " >> hFlush stdout
   divByMissing <- (== "y") . fmap toLower <$> getLine
 
-  worker "Searcher" (>) currentMaxViability divByMissing necessities names sp2Data >>= joinHandle_
+  viabilityWorker (WorkerInfo "Searcher" (>) currentMaxViability sp2Data necessities (viabilityParams divByMissing True names)) >>= joinHandle_
 
   result <- readIORef currentMaxViability
   putStrLn $ formatWinner "Overall" result

@@ -1,4 +1,4 @@
-{-# LANGUAGE OverloadedStrings #-}
+{-# LANGUAGE OverloadedStrings, LambdaCase #-}
 
 module S2RA.S2Data where
 
@@ -6,6 +6,7 @@ import Data.Array
 import Data.Bifunctor
 import Data.Bits
 import Data.Char
+import Data.Map ( Map )
 import qualified Data.Map as M
 import Data.Set ( Set )
 import qualified Data.Set as S
@@ -18,7 +19,7 @@ import S2RA.DataFiles
 
 type CarInfo   = (Int, Array Int Car)
 type EventInfo = [Event]
-type SP2Data   = (CarInfo, EventInfo, Necessities)
+type S2Data   = (CarInfo, EventInfo, Necessities)
 type BFData    = (CarInfo, [Combo])
 type Combo     = (Event, String)
 type PrizeInfo = (Text, Car)
@@ -33,7 +34,7 @@ fnv1a = foldl' (\ acc ch -> (acc `xor` fromIntegral (ord ch)) * prime) initial
 loadCombos :: Username -> EventInfo -> [Combo]
 loadCombos username es = zipWith (\ r f -> (r, username <> group r <> f)) es (fmap func es)
 
-loadData :: IO SP2Data
+loadData :: IO S2Data
 loadData = do
   (!cs, !es) <- loadCarsAndEvents
   !ns        <- loadAllNecessities
@@ -58,7 +59,7 @@ removeDuplicatesAndUnused (i@(r, _) : is)
   | "Inaccurate" `T.isInfixOf` r = removeDuplicatesAndUnused is
   | otherwise                    = i : removeDuplicatesAndUnused is
 
-bruteForce :: Username -> SP2Data -> (Text -> Car -> a) -> [a]
+bruteForce :: Username -> S2Data -> (Text -> Car -> a) -> [a]
 bruteForce username (carInfo, eventInfo, _) action =
   let combos = loadCombos username eventInfo
   in  fmap (uncurry action) (bruteForce' (carInfo, combos))
@@ -68,13 +69,31 @@ missingFor100 cars necessities =
   let sn = S.fromList (elems necessities)
   in  foldl' (\ s c -> foldl' (flip S.delete) s (fmap (necessities !) (necessaryFor c))) sn cars
 
-summarise :: Username -> Necessities -> [(Text, Car)] -> Text
+duplicateEvents :: [PrizeInfo] -> Map Car [Text]
+duplicateEvents infos =
+  let ds = foldl' (\ m (t, c) -> M.alter (maybe (Just [t]) (Just . (t :))) c m ) M.empty infos
+  in  M.filter (\ case
+        (_ : _ : _) -> True
+        _           -> False) ds
+
+duplicateCounts :: [Car] -> Map Car Int
+duplicateCounts cars =
+  let dcs = foldl' (flip (M.alter (maybe (Just 1) (Just . (+ 1))))) M.empty cars
+  in  M.filter (> 1) dcs
+
+duplicateDetails :: [PrizeInfo] -> Map Name (Int, [Text])
+duplicateDetails infos =
+  let combos = fmap (second name) infos
+      counts = foldr (\ (r, n) acc -> M.alter (maybe (Just (1 :: Int, [r])) (Just . bimap (+ 1) (r :))) n acc) M.empty combos
+  in  M.filter ((> 1) . fst) counts
+
+summarise :: Username -> Necessities -> [PrizeInfo] -> Text
 summarise username ns is' = T.concat
   [ "--- \"", T.pack username , "\" :: Summary ---\n\n"
   , "Average Viability: ", T.pack (show avgV), "\n"
   , "\nDuplicates:\n"
-  , T.unlines ( let counts   = fmap (\ (n, (count, _)) -> T.concat [n, " (x", T.pack (show count), ")"]) (M.assocs duplicates)
-                    allRaces = fmap (\ (_, (_, races)) -> T.intercalate ", " races) (M.assocs duplicates)
+  , T.unlines ( let counts   = fmap (\ (n, (count, _)) -> T.concat [n, " (x", T.pack (show count), ")"]) (M.assocs dups)
+                    allRaces = fmap (\ (_, (_, races)) -> T.intercalate ", " races) (M.assocs dups)
                 in  zipWith (\ c rs -> T.concat [T.justifyRight (maximum (fmap T.length counts) + 1) ' ' c, " :: ", rs]) counts allRaces
               )
   , "\nMissing for 100%:\n"
@@ -87,7 +106,4 @@ summarise username ns is' = T.concat
     len   = length infos
 
     avgV :: Double = fromIntegral (foldl' (\ acc (_, c) -> acc + viability c) 0 infos) / fromIntegral len
-    duplicates     =
-      let combos = fmap (second name) infos
-          counts = foldr (\ (r, n) acc -> M.alter (maybe (Just (1 :: Int, [r])) (Just . bimap (+ 1) (r :))) n acc) M.empty combos
-      in  M.filter ((> 1) . fst) counts
+    dups           = duplicateDetails infos

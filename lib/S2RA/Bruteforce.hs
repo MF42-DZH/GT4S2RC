@@ -1,5 +1,6 @@
 module S2RA.Bruteforce where
 
+import Prelude hiding ( readIO )
 import Control.Concurrent.STM
 import Control.Monad
 import Data.IORef
@@ -15,7 +16,7 @@ type Cmp p      = p -> p -> Bool
 charset :: String
 charset = ['A'..'Z'] ++ ['a'..'z'] ++ " 0123456789`'\\;,.[]/-=!@#$^&*()~|:<>?_+{}"
 
-determineViability :: Bool -> Necessities -> Username -> SP2Data -> Evaluation
+determineViability :: Bool -> Necessities -> Username -> S2Data -> Evaluation
 determineViability dbm ns username sp2Data =
   let infoF   = bruteForce username sp2Data (const id)
       vs      = fmap viability infoF
@@ -35,7 +36,7 @@ isWinner !p !mx c@(_, v, _) = do
   (_, v', _) <- readIORef mx
   return $ if p v v' then Just c else Nothing
 
-determine :: Cmp Double -> IORef Evaluation -> Bool -> Necessities -> Username -> SP2Data -> IO (Maybe Evaluation)
+determine :: Cmp Double -> IORef Evaluation -> Bool -> Necessities -> Username -> S2Data -> IO (Maybe Evaluation)
 determine !p !mx !dbm !ns !un !sp2Data =
   let vd = determineViability dbm ns un sp2Data
   in  do
@@ -46,76 +47,130 @@ determine !p !mx !dbm !ns !un !sp2Data =
 zipF :: Applicative f => f a -> f b -> f (a, b)
 zipF a b = (,) <$> a <*> b
 
-worker :: String -> Cmp Double -> IORef Evaluation -> Bool -> Necessities -> [Username] -> SP2Data -> IO (JoinHandle ())
-worker !name !p !mx !dbm !ns !uns !sp2Data = forkJoinable $ do
-  haveSearchedRaw <- newIORef (0 :: Word64)
-  haveSearchedMod <- newIORef (0 :: Word64)
+class IOModifiable var where
+  readIO    :: var a -> IO a
+  writeIO   :: var a -> a -> IO ()
+  modifyIO  :: var a -> (a -> a) -> IO ()
+  modifyIO' :: var a -> (a -> a) -> IO () -- Strict version of modifyIO
 
-  let printer u = do
-        modifyIORef' haveSearchedRaw (+ 1)
-        modifyIORef' haveSearchedMod ((`mod` 50000) . (+ 1))
+instance IOModifiable IORef where
+  readIO    = readIORef
+  writeIO   = writeIORef
+  modifyIO  = modifyIORef
+  modifyIO' = modifyIORef'
 
-        zipF (readIORef haveSearchedMod) (readIORef haveSearchedRaw) >>= \ (h, r) ->
-          when (h == 0) $ do
-            putStrLn (concat ["[", name, "]: Searched ", show r, " names. Currently looking at: \"", u, "\"."])
-            threadDelay 1000000
+instance IOModifiable MVar where
+  readIO         = readMVar
+  writeIO        = (void .) . swapMVar
+  modifyIO mv f  = modifyMVar_ mv (pure . f)
+  modifyIO' mv f = modifyMVar_ mv (pure . f)
 
-  forM_ uns $ \ un -> do
-    result <- determine p mx dbm ns un sp2Data
-    forM_ result $ \ vs -> putStrLn (formatWinner name vs)
-    printer un
+instance IOModifiable TVar where
+  readIO    = readTVarIO
+  writeIO   = (atomically .) . writeTVar
+  modifyIO  = (atomically .) . modifyTVar
+  modifyIO' = (atomically .) . modifyTVar'
 
-  zipF (readIORef haveSearchedRaw) (readIORef mx) >>= \ (r, (n, v, m)) -> putStrLn $ concat
-    [ "[", name, "]: Searched a total of "
-    , show r
-    , " names.\n"
-    , "[", name, "]: Best result "
-    , show v
-    , " from username \""
-    , n
-    , "\", missing "
-    , show m
-    , " cars for 100%."
-    ]
+data WorkerInfo n otherParams = WorkerInfo
+  { wiThreadName  :: !String
+  , wiCmp         :: Cmp n
+  , wiBest        :: IORef (Username, n, Int)
+  , wiData        :: !S2Data
+  , wiNecessities :: !Necessities
+  , wiOtherParams :: otherParams
+  }
 
-workerSTM :: String -> Cmp Double -> IORef Evaluation -> Bool -> Necessities -> TBQueue Username -> MVar Bool -> SP2Data -> IO (JoinHandle ())
-workerSTM !name !p !mx !dbm !ns !uns !shouldContinue !sp2Data = forkJoinable $ do
-  haveSearchedRaw <- newTVarIO (0 :: Word64)
-  haveSearchedMod <- newTVarIO (0 :: Word64)
+-- Please make sure to use joinHandle or joinHandle_ to join your workers.
+baseWorker :: (WorkerInfo n op -> IO ()) -> WorkerInfo n op -> IO (JoinHandle ())
+baseWorker action wi = forkJoinable (action wi)
 
-  let printer u = do
-        atomically $ do
-          modifyTVar' haveSearchedRaw (+ 1)
-          modifyTVar' haveSearchedMod ((`mod` 50000) . (+ 1))
+class UsernameQueue us
+instance UsernameQueue [String]
+instance UsernameQueue (TBQueue String)
 
-        atomically (zipF (readTVar haveSearchedMod) (readTVar haveSearchedRaw)) >>= \ (h, r) ->
-          when (h == 0) $ do
-            putStrLn (concat ["[", name, "]: Searched ", show r, " names. Currently looking at: \"", u, "\"."])
-            threadDelay 1000000
-      analysisLoop = do
-        !mu <- atomically (tryReadTBQueue uns)
+-- Do not construct directly. Use the camel-case smart constructor below.
+data ViabilityParams cs uns = ViabilityParams
+  { divideByMissing :: !Bool
+  , shouldContinue  :: cs
+  , usernameQueue   :: uns
+  }
 
-        forM_ mu $ \ !un -> do
-          result <- determine p mx dbm ns un sp2Data
-          forM_ result $ \ !vs -> putStrLn (formatWinner name vs)
-          printer un
+class ContinueSource t where
+  continue :: t -> IO Bool
 
-        zipF (readMVar shouldContinue) (atomically (not <$> isEmptyTBQueue uns)) >>= (`when` analysisLoop) . uncurry (||)
+instance ContinueSource Bool where
+  continue = pure
 
-  analysisLoop
+instance IOModifiable var => ContinueSource (var Bool) where
+  continue = readIO
 
-  zipF (readTVarIO haveSearchedRaw) (readIORef mx) >>= \ (r, (n, v, m)) -> putStrLn $ concat
-    [ "[", name, "]: Searched a total of "
-    , show r
-    , " names.\n"
-    , "[", name, "]: Best result "
-    , show v
-    , " from username \""
-    , n
-    , "\", missing "
-    , show m
-    , " cars for 100%."
-    ]
+viabilityParams :: (UsernameQueue us, ContinueSource cs) => Bool -> cs -> us -> ViabilityParams cs us
+viabilityParams = ViabilityParams
+
+viabilityWorker :: WorkerInfo Double (ViabilityParams Bool [String]) -> IO (JoinHandle ())
+viabilityWorkerSTM :: WorkerInfo Double (ViabilityParams (MVar Bool) (TBQueue String)) -> IO (JoinHandle ())
+
+(viabilityWorker, viabilityWorkerSTM) = (baseWorker nonStm, baseWorker withStm)
+  where
+    nonStm (WorkerInfo name p mx s2Data ns (ViabilityParams !dbm _ (uns :: [String]))) = do
+      haveSearchedRaw <- newIORef (0 :: Word64)
+      haveSearchedMod <- newIORef (0 :: Word64)
+
+      let printer u = do
+            modifyIORef' haveSearchedRaw (+ 1)
+            modifyIORef' haveSearchedMod ((`mod` 50000) . (+ 1))
+
+            zipF (readIORef haveSearchedMod) (readIORef haveSearchedRaw) >>= \ (h, r) ->
+              when (h == 0) $ do
+                putStrLn (concat ["[", name, "]: Searched ", show r, " names. Currently looking at: \"", u, "\"."])
+                threadDelay 1000000
+
+      forM_ uns $ \ un -> do
+        result <- determine p mx dbm ns un s2Data
+        forM_ result $ \ vs -> putStrLn (formatWinner name vs)
+        printer un
+      
+      summarizeSearch name haveSearchedRaw mx
+
+    withStm (WorkerInfo name p mx s2Data ns (ViabilityParams !dbm shouldContinue (uns :: TBQueue String))) = do
+      haveSearchedRaw <- newTVarIO (0 :: Word64)
+      haveSearchedMod <- newTVarIO (0 :: Word64)
+
+      let printer u = do
+            atomically $ do
+              modifyTVar' haveSearchedRaw (+ 1)
+              modifyTVar' haveSearchedMod ((`mod` 50000) . (+ 1))
+
+            atomically (zipF (readTVar haveSearchedMod) (readTVar haveSearchedRaw)) >>= \ (h, r) ->
+              when (h == 0) $ do
+                putStrLn (concat ["[", name, "]: Searched ", show r, " names. Currently looking at: \"", u, "\"."])
+                threadDelay 1000000
+          analysisLoop = do
+            !mu <- atomically (tryReadTBQueue uns)
+
+            forM_ mu $ \ !un -> do
+              result <- determine p mx dbm ns un s2Data
+              forM_ result $ \ !vs -> putStrLn (formatWinner name vs)
+              printer un
+
+            zipF (readMVar shouldContinue) (atomically (not <$> isEmptyTBQueue uns)) >>= (`when` analysisLoop) . uncurry (||)
+
+      analysisLoop
+
+      summarizeSearch name haveSearchedRaw mx
+
+    summarizeSearch name raw mx = zipF (readIO raw) (readIO mx) >>= \ (r, (n, v, m)) -> putStrLn $ concat
+      [ "[", name, "]: Searched a total of "
+      , show r
+      , " names.\n"
+      , "[", name, "]: Best result "
+      , show v
+      , " from username \""
+      , n
+      , "\", missing "
+      , show m
+      , " cars for 100%."
+      ]
 
 split :: [a] -> ([a], [a])
 split = go False

@@ -50,10 +50,10 @@ main = do
   let ((d1, d2), (d3, d4)) = bimap split split $ split (flips permC username)
 
   sequence
-    [ worker "Searcher #1" (>) currentMaxViability1 divByMissing necessities d1 sp2Data
-    , worker "Searcher #2" (>) currentMaxViability2 divByMissing necessities d2 sp2Data
-    , worker "Searcher #3" (>) currentMaxViability3 divByMissing necessities d3 sp2Data
-    , worker "Searcher #4" (>) currentMaxViability4 divByMissing necessities d4 sp2Data
+    [ viabilityWorker (WorkerInfo "Searcher #1" (>) currentMaxViability1 sp2Data necessities (viabilityParams divByMissing True d1))
+    , viabilityWorker (WorkerInfo "Searcher #2" (>) currentMaxViability2 sp2Data necessities (viabilityParams divByMissing True d2))
+    , viabilityWorker (WorkerInfo "Searcher #3" (>) currentMaxViability3 sp2Data necessities (viabilityParams divByMissing True d3))
+    , viabilityWorker (WorkerInfo "Searcher #4" (>) currentMaxViability4 sp2Data necessities (viabilityParams divByMissing True d4))
     ] >>= mapM_ joinHandle_
 
   results <- traverse readIORef

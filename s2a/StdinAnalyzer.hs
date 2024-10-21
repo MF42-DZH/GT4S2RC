@@ -37,10 +37,10 @@ main = do
   d4 <- newTBQueueIO @Username 5
 
   sequence
-    [ workerSTM "Searcher #1" (>) currentMaxViability1 divByMissing necessities d1 shouldContinue sp2Data
-    , workerSTM "Searcher #2" (>) currentMaxViability2 divByMissing necessities d2 shouldContinue sp2Data
-    , workerSTM "Searcher #3" (>) currentMaxViability3 divByMissing necessities d3 shouldContinue sp2Data
-    , workerSTM "Searcher #4" (>) currentMaxViability4 divByMissing necessities d4 shouldContinue sp2Data
+    [ viabilityWorkerSTM (WorkerInfo "Searcher #1" (>) currentMaxViability1 sp2Data necessities (viabilityParams divByMissing shouldContinue d1))
+    , viabilityWorkerSTM (WorkerInfo "Searcher #2" (>) currentMaxViability2 sp2Data necessities (viabilityParams divByMissing shouldContinue d2))
+    , viabilityWorkerSTM (WorkerInfo "Searcher #3" (>) currentMaxViability3 sp2Data necessities (viabilityParams divByMissing shouldContinue d3))
+    , viabilityWorkerSTM (WorkerInfo "Searcher #4" (>) currentMaxViability4 sp2Data necessities (viabilityParams divByMissing shouldContinue d4))
     ] >>= \ ts -> do
       let readLoop :: Int -> IO ()
           readLoop 1 = isEOF >>= (`unless` ((*> readLoop 2) $! (getLine >>= atomically . writeTBQueue d1)))
