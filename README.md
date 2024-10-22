@@ -8,6 +8,12 @@ This **does not work** for the original Randomizer Public Build from sometime 20
 
 ## Usage Instructions
 
+### Using a Pre-built Release
+
+For Windows users, pre-built releases will be provided in the Releases tab.
+You do not need to install any extra components in order to run it.
+Ensure you are using some kind of command shell (CMD, PS, PWSH, etc.) and your current directory is in the directory where you have unzipped all the contents of the ZIP file to.
+
 ### Building from Scratch
 
 This project was created using Haskell, primarily using GHC 9.10.1.
@@ -26,10 +32,6 @@ You should now have `SpecII-Seed-Analyzer`, `SpecII-Viability-Tester`, `SpecII-P
 
 Before anything else, while still in the repository, run `SpecII-Generate-Combined-Lists` in order to (re-)generate the combined lists and necessity list you see at the top level of the repository with up-to-date data.
 You will need to have these files in the current working directory in order to use the functionality of the programs built.
-
-### Using a Pre-built Release
-
-For Windows users, pre-built releases will be provided in the Releases tab.
 
 ## Special Thanks
 
