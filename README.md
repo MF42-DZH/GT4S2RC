@@ -33,6 +33,19 @@ You should now have `SpecII-Seed-Analyzer`, `SpecII-Viability-Tester`, `SpecII-P
 Before anything else, while still in the repository, run `SpecII-Generate-Combined-Lists` in order to (re-)generate the combined lists and necessity list you see at the top level of the repository with up-to-date data.
 You will need to have these files in the current working directory in order to use the functionality of the programs built.
 
+## Programs
+
+- `SpecII-Seed-Analyzer`: For analyzing the prizes of a single username in detail. **This is probably what you want.**
+- `SpecII-Viability-Tester`: This runs through all possible usernames of a length less than or equal to a length specified by the user and checks which username is the 'best'.
+- `SpecII-Unviability-Tester`: Similar to `SpecII-Viability-Tester`, but tries to find the worst username instead.
+- `SpecII-Permutation-Tester`: This runs through all possible capitalizations of a username input by a user and checks which username is the 'best'.
+- `SpecII-Bitflip-Tester`: Similar to `SpecII-Permutation-Tester`, but also tries flipping the least significant bit of each character in the username.
+- `SpecII-List-Analyzer`: This runs through all the usernames in a file, whose path is specified by the user. Separate each username into its own line in the file. It will also try to find the 'best' username out of all of them.
+- `SpecII-Stdin-Analyzer`: Similar to `SpecII-List-Analyzer`, but will take usernames via standard input. This would be typically used with external programs that can generate hundreds of thousands or even millions of usernames on separate lines, whose output is piped into this analyzer (e.g. `../some-username-generator | SpecII-Stdin-Analyzer`). Specify `--missing` to divide the viability of each username by the number of missing cars for a 100% prize car only playthrough.
+- `SpecII-Generate-Combined-Lists`: This is a utility command used for regenerating the combined lists and necessity lists at the top level of the file structure of these programs.
+
+Where 'best username' is referenced, it means it has the highest average viability of all the cars. Some programs will also let you divide this viability by the number of missing cars, to let you find usernames most viable for getting close to a 100% run on only prize cars.
+
 ## Special Thanks
 
 - Nenkai: Help with pointing in the right direction for GTHD executables to disassemble and disassembly snippets.
