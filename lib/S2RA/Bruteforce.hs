@@ -10,42 +10,11 @@ import S2RA.Concurrent
 import S2RA.Typedefs
 import S2RA.S2Data
 
-type Evaluation = (Username, Double, Int)
-type Cmp p      = p -> p -> Bool
+type Evaluation n = (Username, n, Int)
+type Cmp p        = p -> p -> Bool
 
 charset :: String
 charset = ['A'..'Z'] ++ ['a'..'z'] ++ " 0123456789`'\\;,.[]/-=!@#$^&*()~|:<>?_+{}"
-
-determineViability :: Bool -> Necessities -> Username -> S2Data -> Evaluation
-determineViability dbm ns username sp2Data =
-  let infoF   = bruteForce username sp2Data (const id)
-      vs      = fmap viability infoF
-      penalty = 1 + S.size (missingFor100 infoF ns)
-  in  ( username
-      , if dbm
-        then fromIntegral (sum vs) / (fromIntegral (length vs) * fromIntegral (penalty * penalty))
-        else fromIntegral (sum vs) / fromIntegral (length vs)
-      , penalty - 1
-      )
-
-formatWinner :: String -> Evaluation -> String
-formatWinner !tn (!u, !v, !m) = concat ["[", tn, "]: New best for criteria ", show v, " from username \"", u, "\", missing ", show m, " cars for 100%."]
-
-isWinner :: Cmp Double -> IORef Evaluation -> Evaluation -> IO (Maybe Evaluation)
-isWinner !p !mx c@(_, v, _) = do
-  (_, v', _) <- readIORef mx
-  return $ if p v v' then Just c else Nothing
-
-determine :: Cmp Double -> IORef Evaluation -> Bool -> Necessities -> Username -> S2Data -> IO (Maybe Evaluation)
-determine !p !mx !dbm !ns !un !sp2Data =
-  let vd = determineViability dbm ns un sp2Data
-  in  do
-    w <- isWinner p mx vd
-    forM_ w (writeIORef mx)
-    return w
-
-zipF :: Applicative f => f a -> f b -> f (a, b)
-zipF a b = (,) <$> a <*> b
 
 class IOModifiable var where
   readIO    :: var a -> IO a
@@ -74,11 +43,33 @@ instance IOModifiable TVar where
 data WorkerInfo n otherParams = WorkerInfo
   { wiThreadName  :: !String
   , wiCmp         :: Cmp n
-  , wiBest        :: IORef (Username, n, Int)
+  , wiBest        :: IORef (Evaluation n)
   , wiData        :: !S2Data
   , wiNecessities :: !Necessities
   , wiOtherParams :: otherParams
   }
+
+formatWinner :: Show n => String -> Evaluation n -> String
+formatWinner !tn (!u, !v, !m) = concat ["[", tn, "]: New best for criteria ", show v, " from username \"", u, "\", missing ", show m, " cars for 100%."]
+
+isWinner :: Cmp n -> IORef (Evaluation n) -> Evaluation n -> IO (Maybe (Evaluation n))
+isWinner !p !mx c@(_, v, _) = do
+  (_, v', _) <- readIORef mx
+  return $ if p v v' then Just c else Nothing
+
+-- Typically, you'd write eval with the declaration of the worker info in scope so you can capture the
+-- type information of the extra parameters to use in the eval function.
+determine :: WorkerInfo n p -> ([PrizeInfo] -> Evaluation n) -> Username -> IO (Maybe (Evaluation n))
+determine wi eval username =
+  let prizes     = bruteForce @PrizeInfo username (wiData wi) (,)
+      evaluation = eval prizes
+  in  do
+    w <- isWinner (wiCmp wi) (wiBest wi) evaluation
+    forM_ w (writeIORef (wiBest wi))
+    return w
+
+zipF :: Applicative f => f a -> f b -> f (a, b)
+zipF a b = (,) <$> a <*> b
 
 -- Please make sure to use joinHandle or joinHandle_ to join your workers.
 baseWorker :: (WorkerInfo n op -> IO ()) -> WorkerInfo n op -> IO (JoinHandle ())
@@ -94,6 +85,20 @@ data ViabilityParams cs uns = ViabilityParams
   , shouldContinue  :: cs
   , usernameQueue   :: uns
   }
+
+determineV :: (ContinueSource cs, UsernameQueue us) => WorkerInfo Double (ViabilityParams cs us) -> Username -> IO (Maybe (Evaluation Double))
+determineV wi username = determine wi (\ prizes ->
+  let infoF                   = fmap snd prizes
+      vs                      = fmap viability infoF
+      penalty                 = 1 + S.size (missingFor100 infoF (wiNecessities wi))
+      ViabilityParams dbm _ _ = wiOtherParams wi
+  in ( username
+     , if   dbm
+       then fromIntegral (sum vs) / (fromIntegral (length vs) * fromIntegral (penalty * penalty))
+       else fromIntegral (sum vs) / fromIntegral (length vs)
+     , penalty - 1
+     )
+  ) username
 
 class ContinueSource t where
   continue :: t -> IO Bool
@@ -112,7 +117,7 @@ viabilityWorkerSTM :: WorkerInfo Double (ViabilityParams (MVar Bool) (TBQueue St
 
 (viabilityWorker, viabilityWorkerSTM) = (baseWorker nonStm, baseWorker withStm)
   where
-    nonStm (WorkerInfo name p mx s2Data ns (ViabilityParams !dbm _ (uns :: [String]))) = do
+    nonStm wi@(WorkerInfo name _ mx _ _ (ViabilityParams !_ _ (uns :: [String]))) = do
       haveSearchedRaw <- newIORef (0 :: Word64)
       haveSearchedMod <- newIORef (0 :: Word64)
 
@@ -126,13 +131,13 @@ viabilityWorkerSTM :: WorkerInfo Double (ViabilityParams (MVar Bool) (TBQueue St
                 threadDelay 1000000
 
       forM_ uns $ \ un -> do
-        result <- determine p mx dbm ns un s2Data
+        result <- determineV wi un
         forM_ result $ \ vs -> putStrLn (formatWinner name vs)
         printer un
       
       summarizeSearch name haveSearchedRaw mx
 
-    withStm (WorkerInfo name p mx s2Data ns (ViabilityParams !dbm shouldContinue (uns :: TBQueue String))) = do
+    withStm wi@(WorkerInfo name _ mx _ _ (ViabilityParams !_ shouldContinue (uns :: TBQueue String))) = do
       haveSearchedRaw <- newTVarIO (0 :: Word64)
       haveSearchedMod <- newTVarIO (0 :: Word64)
 
@@ -149,7 +154,7 @@ viabilityWorkerSTM :: WorkerInfo Double (ViabilityParams (MVar Bool) (TBQueue St
             !mu <- atomically (tryReadTBQueue uns)
 
             forM_ mu $ \ !un -> do
-              result <- determine p mx dbm ns un s2Data
+              result <- determineV wi un
               forM_ result $ \ !vs -> putStrLn (formatWinner name vs)
               printer un
 
