@@ -53,6 +53,6 @@ Where 'best username' is referenced, it means it has the highest average viabili
 
 ## Credits
 
-CARLIST, FUNCLIST and RACELIST are sourced from here https://github.com/TheAdmiester/OpenAdhoc-GT4SpecII/blob/06527e1b1cddb98ceb7f39a4df37509cc4fd9a68/src/projects/gt4o_us/gtmode/US_carlist.ad
+CARLIST, FUNCLIST and RACELIST are sourced from here https://github.com/TheAdmiester/OpenAdhoc-GT4SpecII/blob/master/src/projects/gt4o_us/gtmode/US_carlist.ad
 
-Randomizer logic sourced from here: https://github.com/TheAdmiester/OpenAdhoc-GT4SpecII/blob/06527e1b1cddb98ceb7f39a4df37509cc4fd9a68/src/projects/gt4o_us/gtmode/PresentRoot.ad
+Randomizer logic sourced from here: https://github.com/TheAdmiester/OpenAdhoc-GT4SpecII/blob/master/src/projects/gt4o_us/gtmode/PresentRoot.ad
