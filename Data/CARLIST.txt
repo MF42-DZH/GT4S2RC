@@ -21,8 +21,8 @@ Peugeot 205 Turbo 16 Rally Car '85
 Peugeot 205 Turbo 16 Evolution 2 Rally Car '86
 Peugeot 206 RC '03
 Peugeot 206 S16 '99
-Peugeot 206 Rally Car '99
-Peugeot 206 Rally Car '99
+Peugeot 206 Rally Car (Esso) '99
+Peugeot 206 Rally Car (Exxon) '99
 Peugeot 206cc '01
 Volvo 240 GLT Estate '88
 Nissan 240RS Rally Car '85
@@ -59,8 +59,8 @@ Fiat 500R '72
 Renault 5 Maxi Turbo Rally Car '85
 Renault 5 Turbo '80
 Mazda 787B Race Car '91
-Peugeot 905 Race Car '92
-Peugeot 905 Race Car '92
+Peugeot 905 Race Car (Esso) '92
+Peugeot 905 Race Car (Exxon) '92
 Autobianchi A112 Abarth '79
 Mercedes-Benz A 160 Avantgarde '98
 Audi A2 1.4 '02
@@ -293,8 +293,8 @@ Lexus GS300 Vertex Edition (J) '00
 Suzuki GSX-R/4 '01
 Shelby Mustang G.T. 350R '65
 Ford GT40 Race Car '69
-Toyota GT-ONE Race Car (TS020) '99
-Toyota GT-ONE Race Car (TS020) '99
+Toyota GT-ONE Race Car (TS020, Esso) '99
+Toyota GT-ONE Race Car (TS020, Exxon) '99
 Nissan GT-R Concept LM Race Car '02
 Nissan GT-R Concept '01
 Alfa Romeo GTV 3.0 V6 24V '01

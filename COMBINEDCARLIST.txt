@@ -21,8 +21,8 @@ _205_t16_rally_85|Peugeot 205 Turbo 16 Rally Car '85|7234|
 _205_t16_wrc_ev2_86|Peugeot 205 Turbo 16 Evolution 2 Rally Car '86|7546|
 _206_rc_03|Peugeot 206 RC '03|5225|5
 _206_s16_99|Peugeot 206 S16 '99|5194|5
-_206_wrc_99|Peugeot 206 Rally Car '99|8169|5
-_206_wrc_exxon_99|Peugeot 206 Rally Car '99|8184|5
+_206_wrc_99|Peugeot 206 Rally Car (Esso) '99|8169|5
+_206_wrc_exxon_99|Peugeot 206 Rally Car (Exxon) '99|8184|5
 _206cc_20_01|Peugeot 206cc '01|5653|5
 _240_glt_estate_88|Volvo 240 GLT Estate '88|8594|60
 _240rs_gpb_rally_85|Nissan 240RS Rally Car '85|7333|42,63
@@ -59,8 +59,8 @@ _500_r_72|Fiat 500R '72|6479|54
 _5_maxi_turbo_rally_85|Renault 5 Maxi Turbo Rally Car '85|7859|
 _5_turbo_80|Renault 5 Turbo '80|8481|62
 _787b_91|Mazda 787B Race Car '91|14712|64
-_905b_evo1_92|Peugeot 905 Race Car '92|14893|
-_905b_evo1_exxon_92|Peugeot 905 Race Car '92|14893|
+_905b_evo1_92|Peugeot 905 Race Car (Esso) '92|14893|
+_905b_evo1_exxon_92|Peugeot 905 Race Car (Exxon) '92|14893|
 a112_abarth_79|Autobianchi A112 Abarth '79|5907|
 a160_98|Mercedes-Benz A 160 Avantgarde '98|7002|
 a2_14_02|Audi A2 1.4 '02|3293|
@@ -293,8 +293,8 @@ gs300_vertex_us_00|Lexus GS300 Vertex Edition (J) '00|7751|
 gsx_r_4_tmv_01|Suzuki GSX-R/4 '01|13014|22
 gt350_r_65|Shelby Mustang G.T. 350R '65|4894|21,55
 gt40_race_69|Ford GT40 Race Car '69|9851|
-gt_one_race_99|Toyota GT-ONE Race Car (TS020) '99|14914|
-gt_one_race_exxon_99|Toyota GT-ONE Race Car (TS020) '99|14744|
+gt_one_race_99|Toyota GT-ONE Race Car (TS020, Esso) '99|14914|
+gt_one_race_exxon_99|Toyota GT-ONE Race Car (TS020, Exxon) '99|14744|
 gtr_concept_lm_01|Nissan GT-R Concept LM Race Car '02|11963|59
 gtr_concept_tmv_01|Nissan GT-R Concept '01|7179|59
 gtv_30v6_v24_01|Alfa Romeo GTV 3.0 V6 24V '01|3572|
