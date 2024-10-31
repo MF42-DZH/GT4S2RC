@@ -107,13 +107,6 @@ win
 win
 win
 win
-win
-win
-license
-license
-license
-license
-license
 license
 license
 license

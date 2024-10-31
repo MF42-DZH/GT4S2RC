@@ -22,7 +22,6 @@ Like The Wind
 Formula Gran Turismo World Championship
 Real Circuit Tours
 Premium Sports Lounge
-Road-Going Formula Cup (Unused?)
 Grand Valley 300km
 Laguna Seca 200mi
 Roadster 4h
@@ -34,7 +33,6 @@ Suzuka 1000km
 Motegi 8h
 Eight+ Cylinder Shootout
 Circuit de La Sarthe 24h
-Circuit de La Sarthe 24h II (Unused?)
 Fuji 1000km
 Infineon World Sports
 El Capitan 200mi
@@ -109,11 +107,6 @@ Suzuki Concepts
 Altezza Race (Toyota / Lexus)
 Vitz Race (Toyota)
 Hyundai Sports Festival
-B License Bronze (Duplicate)
-A License Bronze (Duplicate)
-IB License Bronze (Duplicate)
-IA License Bronze (Duplicate)
-S License Bronze (Duplicate)
 B License Bronze
 A License Bronze
 IB License Bronze

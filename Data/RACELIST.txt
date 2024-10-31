@@ -22,7 +22,6 @@ ex_wind_0000
 ex_formula_1500
 ex_real_circuit_0000
 ex_premium_0000
-ex_roadgoing_0000
 en_grandvalley300_0000
 en_laguna200_0000
 en_roadster4h_0000
@@ -34,7 +33,6 @@ en_suzuka1000_0000
 en_motegi8h_0000
 ex_eightcyl_0500
 en_sarthe24h_0000
-en_sarthe_old24h_0000
 en_fuji1000_0000
 en_infinion_alms_0000
 en_capitan200_0000
@@ -109,11 +107,6 @@ jp_suzuki_concept_0000
 jp_toyota_altezza_0000
 jp_toyota_vitz_0000
 kr_hyundai_sport_0000
-l0b
-l0a
-lib
-lia
-l0s
 l0b
 l0a
 lib

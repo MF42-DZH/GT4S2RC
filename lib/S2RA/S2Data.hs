@@ -42,22 +42,13 @@ loadData = do
   return ((cl, listArray (0, cl) cs), es, ns)
 
 bruteForce' :: BFData -> [PrizeInfo]
-bruteForce' ((len, cars), combos) = removeDuplicatesAndUnused $ fmap (\ (r, c) -> (coalesce event (T.pack . group) r, cars ! randInt (fnv1a c) 0 len)) combos
+bruteForce' ((len, cars), combos) = fmap (\ (r, c) -> (coalesce event (T.pack . group) r, cars ! randInt (fnv1a c) 0 len)) combos
 
 coalesce :: (Eq s, IsString s) => (a -> s) -> (a -> s) -> a -> s
 coalesce f g x =
   case f x of
     "" -> g x
     s  -> s
-
--- Expensive method call.
-removeDuplicatesAndUnused :: [PrizeInfo] -> [PrizeInfo]
-removeDuplicatesAndUnused []       = []
-removeDuplicatesAndUnused (i@(r, _) : is)
-  | "Duplicate" `T.isInfixOf` r  = removeDuplicatesAndUnused is
-  | "Unused" `T.isInfixOf` r     = removeDuplicatesAndUnused is
-  | "Inaccurate" `T.isInfixOf` r = removeDuplicatesAndUnused is
-  | otherwise                    = i : removeDuplicatesAndUnused is
 
 bruteForce :: Username -> S2Data -> (Text -> Car -> a) -> [a]
 bruteForce username (carInfo, eventInfo, _) action =

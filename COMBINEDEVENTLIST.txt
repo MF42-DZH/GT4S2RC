@@ -22,7 +22,6 @@ ex_wind_0000|win|Like The Wind
 ex_formula_1500|win|Formula Gran Turismo World Championship
 ex_real_circuit_0000|win|Real Circuit Tours
 ex_premium_0000|win|Premium Sports Lounge
-ex_roadgoing_0000|win|Road-Going Formula Cup (Unused?)
 en_grandvalley300_0000|win|Grand Valley 300km
 en_laguna200_0000|win|Laguna Seca 200mi
 en_roadster4h_0000|win|Roadster 4h
@@ -34,7 +33,6 @@ en_suzuka1000_0000|win|Suzuka 1000km
 en_motegi8h_0000|win|Motegi 8h
 ex_eightcyl_0500|win|Eight+ Cylinder Shootout
 en_sarthe24h_0000|win|Circuit de La Sarthe 24h
-en_sarthe_old24h_0000|win|Circuit de La Sarthe 24h II (Unused?)
 en_fuji1000_0000|win|Fuji 1000km
 en_infinion_alms_0000|win|Infineon World Sports
 en_capitan200_0000|win|El Capitan 200mi
@@ -109,11 +107,6 @@ jp_suzuki_concept_0000|win|Suzuki Concepts
 jp_toyota_altezza_0000|win|Altezza Race (Toyota / Lexus)
 jp_toyota_vitz_0000|win|Vitz Race (Toyota)
 kr_hyundai_sport_0000|win|Hyundai Sports Festival
-l0b|license|B License Bronze (Duplicate)
-l0a|license|A License Bronze (Duplicate)
-lib|license|IB License Bronze (Duplicate)
-lia|license|IA License Bronze (Duplicate)
-l0s|license|S License Bronze (Duplicate)
 l0b|license|B License Bronze
 l0a|license|A License Bronze
 lib|license|IB License Bronze
