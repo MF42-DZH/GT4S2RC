@@ -1,8 +1,12 @@
-{-# LANGUAGE OverloadedStrings, LambdaCase #-}
+{-# LANGUAGE OverloadedStrings, LambdaCase, ScopedTypeVariables #-}
 
 module S2RA.S2Data where
 
+import Control.Monad
+import Control.Monad.ST
 import Data.Array
+import Data.Array.MArray
+import Data.Array.ST
 import Data.Bifunctor
 import Data.Bits
 import Data.Char
@@ -44,6 +48,9 @@ loadData = do
 bruteForce' :: BFData -> [PrizeInfo]
 bruteForce' ((len, cars), combos) = fmap (\ (r, c) -> (coalesce event (T.pack . group) r, cars ! randInt (fnv1a c) 0 len)) combos
 
+bruteForceCarsOnly :: BFData -> (Car -> a) -> [a]
+bruteForceCarsOnly ((len, cars), combos) action = fmap (\ (_, c) -> action (cars ! randInt (fnv1a c) 0 len)) combos
+
 coalesce :: (Eq s, IsString s) => (a -> s) -> (a -> s) -> a -> s
 coalesce f g x =
   case f x of
@@ -54,6 +61,28 @@ bruteForce :: Username -> S2Data -> (Text -> Car -> a) -> [a]
 bruteForce username (carInfo, eventInfo, _) action =
   let combos = loadCombos username eventInfo
   in  fmap (uncurry action) (bruteForce' (carInfo, combos))
+
+bruteForceMissingCount :: Username -> S2Data -> Int
+bruteForceMissingCount username (carInfo, eventInfo, necessities) = runST comp
+  where
+    combos = loadCombos username eventInfo
+
+    comp :: forall s . ST s Int
+    comp = do
+      missing :: STUArray s Int Bool <- newArray (bounds necessities) True
+
+      sequence_ $ bruteForceCarsOnly (carInfo, combos) $ \ (Car _ _ _ nfs) ->
+        forM_ nfs $ \ nf ->
+          writeArray missing nf False
+
+      let (minIx, maxIx) = bounds necessities
+          go !n !acc
+            | n >= minIx && n <= maxIx = readArray missing n >>= \ case
+              True  -> go (n + 1) (acc + 1)
+              False -> go (n + 1) acc
+            | otherwise                = return acc
+
+      go minIx 0
 
 missingFor100 :: [Car] -> Necessities -> Set Necessity
 missingFor100 cars necessities =

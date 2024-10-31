@@ -21,12 +21,14 @@ data Car = Car
   , necessaryFor :: [Int] -- Indices into the necessity array found in loadNecessities.
   }
   deriving (Eq, Ord)
+
 data Event = Event
   { group :: Label
   , func  :: Func
   , event :: Name
   }
   deriving (Eq, Ord)
+
 instance Show Car where
   show car = label car
     <> "|" <> T.unpack (name car)

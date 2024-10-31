@@ -43,6 +43,7 @@ You will need to have these files in the current working directory in order to u
 - `SpecII-List-Analyzer`: This runs through all the usernames in a file, whose path is specified by the user. Separate each username into its own line in the file. It will also try to find the 'best' username out of all of them.
 - `SpecII-Stdin-Analyzer`: Similar to `SpecII-List-Analyzer`, but will take usernames via standard input. This would be typically used with external programs that can generate hundreds of thousands or even millions of usernames on separate lines, whose output is piped into this analyzer (e.g. `../some-username-generator | SpecII-Stdin-Analyzer`). Specify `--missing` to divide the viability of each username by the number of missing cars for a 100% prize car only playthrough.
 - `SpecII-Generate-Combined-Lists`: This is a utility command used for regenerating the combined lists and necessity lists at the top level of the file structure of these programs.
+- `SpecII-100-Tester-Stdin`: Similar to `SpecII-Stdin-Analyzer`, but hyper-optimized for searching for usernames with the least amount of missing cars for a 100% prize-cars only playthrough.
 
 Where 'best username' is referenced, it means it has the highest average viability of all the cars. Some programs will also let you divide this viability by the number of missing cars, to let you find usernames most viable for getting close to a 100% run on only prize cars.
 
