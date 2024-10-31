@@ -33,7 +33,7 @@ missingWorkerSTM = baseWorker withStm
       let printer u = do
             atomically $ do
               modifyTVar' haveSearchedRaw (+ 1)
-              modifyTVar' haveSearchedMod ((`mod` 50000) . (+ 1))
+              modifyTVar' haveSearchedMod ((`mod` 200000) . (+ 1))
 
             atomically (zipF (readTVar haveSearchedMod) (readTVar haveSearchedRaw)) >>= \ (h, r) ->
               when (h == 0) $ do
