@@ -152,3 +152,15 @@ executable SpecII-100-Tester-Stdin
     build-depends: SpecII-Cracking:Common
 
     hs-source-dirs:   s2a
+
+executable SpecII-100-Existence-Tester
+    import:
+        warnings,
+        shared-depends,
+        executable-depends
+    main-is:          Existence100.hs
+    -- other-modules:
+    -- other-extensions:
+    build-depends: SpecII-Cracking:Common
+
+    hs-source-dirs:   s2a

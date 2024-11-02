@@ -23,7 +23,7 @@ import S2RA.DataFiles
 
 type CarInfo   = (Int, Array Int Car)
 type EventInfo = [Event]
-type S2Data   = (CarInfo, EventInfo, Necessities)
+type S2Data    = (CarInfo, EventInfo, Necessities)
 type BFData    = (CarInfo, [Combo])
 type Combo     = (Event, String)
 type PrizeInfo = (Text, Car)
@@ -34,6 +34,11 @@ fnv1a = foldl' (\ acc ch -> (acc `xor` fromIntegral (ord ch)) * prime) initial
   where
     initial = 0x811c9dc5
     prime   = 16777619
+
+-- For debug / testing only.
+fnv1aPrefixF :: String -> Word32 -> Word32
+fnv1aPrefixF = foldl' (\ f ch -> (* prime) . (`xor` fromIntegral (ord ch)) . f) id
+  where prime = 16777619
 
 loadCombos :: Username -> EventInfo -> [Combo]
 loadCombos username es = zipWith (\ r f -> (r, username <> group r <> f)) es (fmap func es)
