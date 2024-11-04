@@ -30,7 +30,7 @@ en_ssw150_0000|win|Super Speedway 150mi
 en_nur24h_0000|win|Nürburgring 24h
 en_nur4h_0000|win|Nürburgring 4h
 en_suzuka1000_0000|win|Suzuka 1000km
-en_motegi8h_0000|win|Motegi 8h
+en_motegi8h_0000|win|Motegi 2h
 ex_eightcyl_0500|win|Eight+ Cylinder Shootout
 en_sarthe24h_0000|win|Circuit de La Sarthe 24h
 en_fuji1000_0000|win|Fuji 1000km

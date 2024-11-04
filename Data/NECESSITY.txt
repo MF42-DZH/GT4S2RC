@@ -60,5 +60,5 @@ Nissan Skyline
 Wagon
 Boxer Engine
 Homologation
-< 296hp Race Car
+<= 350PS Race Car
 Mazda Rotary

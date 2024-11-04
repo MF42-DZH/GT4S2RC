@@ -15,17 +15,17 @@ _166_25v6_24v_s_98|Alfa Romeo 166 2.5 V6 24V Sportronic '98|4198|
 _190e_evo2_91|Mercedes-Benz 190 E 2.5 - 16 Evolution II '91|6621|
 _190e_evo2_dtm_92|AMG Mercedes 190 E 2.5 - 16 Evolution II Touring Car '92|9885|20
 _2000_gt_67|Toyota 2000GT '67|7664|
-_2002_turbo_73|BMW 2002 Turbo '73|8670|
+_2002_turbo_73|BMW 2002 Turbo '73|8670|54
 _205_t16_85|Peugeot 205 Turbo 16 '85|8042|62
-_205_t16_rally_85|Peugeot 205 Turbo 16 Rally Car '85|7234|
-_205_t16_wrc_ev2_86|Peugeot 205 Turbo 16 Evolution 2 Rally Car '86|7546|
+_205_t16_rally_85|Peugeot 205 Turbo 16 Rally Car '85|8354|
+_205_t16_wrc_ev2_86|Peugeot 205 Turbo 16 Evolution 2 Rally Car '86|8666|
 _206_rc_03|Peugeot 206 RC '03|5225|5
 _206_s16_99|Peugeot 206 S16 '99|5194|5
-_206_wrc_99|Peugeot 206 Rally Car (Esso) '99|8169|5
-_206_wrc_exxon_99|Peugeot 206 Rally Car (Exxon) '99|8184|5
+_206_wrc_99|Peugeot 206 Rally Car (Esso) '99|8929|5,63
+_206_wrc_exxon_99|Peugeot 206 Rally Car (Exxon) '99|8184|5,63
 _206cc_20_01|Peugeot 206cc '01|5653|5
 _240_glt_estate_88|Volvo 240 GLT Estate '88|8594|60
-_240rs_gpb_rally_85|Nissan 240RS Rally Car '85|7333|42,63
+_240rs_gpb_rally_85|Nissan 240RS Rally Car '85|8453|42,63
 _240sx_180_us_96|Nissan 240SX '96|7084|42
 _240sx_silvia_us_96|Nissan 240SX (S14) '96|7431|42
 _240zg_71|Nissan 240ZG (HS30) '71|7416|58
@@ -56,19 +56,19 @@ _406_coupe_30_98|Peugeot 406 3.0 V6 Coupe '98|2640|
 _500_f_65|Fiat 500F '65|6166|54
 _500_l_69|Fiat 500L '69|6379|54
 _500_r_72|Fiat 500R '72|6479|54
-_5_maxi_turbo_rally_85|Renault 5 Maxi Turbo Rally Car '85|7859|
+_5_maxi_turbo_rally_85|Renault 5 Maxi Turbo Rally Car '85|8979|
 _5_turbo_80|Renault 5 Turbo '80|8481|62
 _787b_91|Mazda 787B Race Car '91|14712|64
 _905b_evo1_92|Peugeot 905 Race Car (Esso) '92|14893|
 _905b_evo1_exxon_92|Peugeot 905 Race Car (Exxon) '92|14893|
-a112_abarth_79|Autobianchi A112 Abarth '79|5907|
+a112_abarth_79|Autobianchi A112 Abarth '79|5907|54
 a160_98|Mercedes-Benz A 160 Avantgarde '98|7002|
 a2_14_02|Audi A2 1.4 '02|3293|
-a310_1600ve_73|Alpine A310 1600VE '73|8114|10
+a310_1600ve_73|Alpine A310 1600VE '73|8114|10,54
 a3_32_quattro_03|Audi A3 3.2 quattro '03|8746|44
 a4_dtm_04|Audi A4 Touring Car '04|10763|20
 ac_427_sc_66|AC Cars 427 S/C '66|6043|54
-accent_wrc_01|Hyundai Accent Rally Car '01|6789|11
+accent_wrc_01|Hyundai Accent Rally Car '01|8949|11,63
 accord_coupe_exv6_6_03|Honda ACCORD Coupe EX '03|4929|
 accord_coupe_us_88|Honda ACCORD Coupe '88|4144|
 accord_euro_r_02|Honda ACCORD Euro-R '02|4401|
@@ -85,19 +85,19 @@ acura_rsx_s_04|Acura RSX Type-S '04|5848|
 airtrek_turbo_02|Mitsubishi AIRTREK Turbo-R '02|5683|60
 alfa_gt_32_v6_24v_04|Alfa Romeo GT 3.2 V6 24V '04|5757|
 alfa_spider_30v6_01|Alfa Romeo Spider 3.0i V6 24V '01|3837|
-alpine_a110_16s_73|Alpine A110 1600S '73|8766|10,62
+alpine_a110_16s_73|Alpine A110 1600S '73|8766|10,62,54
 altezza_as200_98|Toyota ALTEZZA AS200 '98|7879|12
 altezza_gita_as300_01|Toyota ALTEZZA Gita AS300 '01|7596|12,60
 altezza_lm_race_00|Toyota ALTEZZA Touring Car '01|11238|12
 altezza_rs200_98|Toyota ALTEZZA RS200 '98|7855|12
 altoworks_rsz_97|Suzuki ALTO WORKS RS-Z '97|7715|56
 altoworks_sport_ltd_97|Suzuki ALTO WORKS SUZUKI SPORT LIMITED '97|8475|56
-amemiya_aspara_rx7_04|RE Amemiya AMEMIYA ASPARADRINK RX7 (JGTC) '04|11512|13,64
+amemiya_aspara_rx7_04|RE Amemiya AMEMIYA ASPARADRINK RX7 (JGTC) '04|11512|13,63,64
 amuse_carbonr_04|AMUSE CarbonR (R34) '04|7692|59
 amuse_s2000_04|AMUSE S2000 Street Version '04|8944|
 amuse_s2000_circuit_04|AMUSE S2000 R1 '04|10462|
 amuse_s2000_gt1_04|AMUSE S2000 GT1 '04|10975|
-arta_garaiya_03|ASL ARTA Garaiya (JGTC) '03|10696|13
+arta_garaiya_03|ASL ARTA Garaiya (JGTC) '03|10696|13,63
 arta_nsx_00|Honda ARTA NSX (JGTC) '00|12719|14
 au_supra_01|Toyota au CERUMO Supra (JGTC) '01|13162|14
 autounion_v16_typec_sl_37|Auto Union V16 Type C Streamline '37|10531|
@@ -114,7 +114,7 @@ beetle_rsi_00|Volkswagen New Beetle RSi '00|4955|1
 bellett_1600_gtr_69|Isuzu Bellett 1600 GT-R '69|4617|2
 blitz_r34_d1_04|BLITZ ER34 D1 spec (D1GP) '04|7953|59
 bluebird_1600dx_67|Nissan BLUEBIRD 1600 Deluxe (510) '69|4623|
-bluebird_1600sss_rally_69|Nissan BLUEBIRD Rally Car (510) '69|5626|63
+bluebird_1600sss_rally_69|Nissan BLUEBIRD Rally Car (510) '69|6786|63
 bluebird_ht_1800sss_79|Nissan BLUEBIRD Hardtop 1800SSS (910) '79|7178|
 bora_v6_4m_01|Volkswagen Bora V6 4MOTION '01|5474|
 btr_86|RUF BTR '86|7722|8,61
@@ -150,13 +150,13 @@ celica_gt_four_rc_91|Toyota CELICA GT-FOUR RC (ST185) '91|5768|62
 celica_gtr_4ws_91|Toyota CELICA GT-R (ST183, 4WS) '91|4593|
 celica_ss2_97|Toyota CELICA SS-II (ST202) '97|4975|
 celica_ss2_99|Toyota CELICA SS-II (ZZT231) '99|6321|
-celica_st185_wrc_95|Toyota CELICA GT-FOUR Rally Car (ST185) '95|5535|
-celica_wrc_95|Toyota CELICA GT-FOUR Rally Car (ST205) '95|5881|
+celica_st185_wrc_95|Toyota CELICA GT-FOUR Rally Car (ST185) '95|7095|63
+celica_wrc_95|Toyota CELICA GT-FOUR Rally Car (ST205) '95|7441|63
 celica_xx_2800gt_81|Toyota CELICA XX 2800GT '81|5750|
 cerbera_speed12_00|TVR Cerbera Speed 12 '00|8468|17
 cerbera_speed6_97|TVR Cerbera Speed Six '97|8366|17
 chaparral_2d_race_67|Chaparral 2D Race Car '67|11635|
-chaparral_2j_race_70|Chaparral 2J Race Car '70|15000|
+chaparral_2j_race_70|Chaparral 2J Race Car '70|13442|
 charger_440_rt_70|Dodge Charger 440 R/T '70|8225|
 charger_superbee_426_hemi_71|Dodge Charger Super Bee 426 Hemi '71|6425|
 chevelle_ss_454_ls6_70|Chevrolet Chevelle SS 454 '70|6309|
@@ -188,7 +188,7 @@ colt_15_sportx_02|Mitsubishi COLT 1.5 Sport X Version '02|5018|
 concept_s2_03|Suzuki CONCEPT-S2 '03|7665|22
 copen_activetop_02|Daihatsu Copen Active Top '02|6569|23
 copen_detachabletop_02|Daihatsu Copen Detachable Top '02|6675|23
-corolla_wrc_98|Toyota COROLLA Rally Car '98|7384|
+corolla_wrc_98|Toyota COROLLA Rally Car '98|7944|63
 corvette_convertible_54|Chevrolet Corvette Convertible (C1) '54|2762|24
 corvette_coupe_63|Chevrolet Corvette Coupe (C2) '63|3466|24
 corvette_cr5_00|Chevrolet Corvette C5R (C5) '00|10825|24
@@ -207,15 +207,15 @@ ctr_87|RUF CTR "Yellow Bird" '87|5194|8,61
 cube_ex_2wd_02|Nissan CUBE EX (FF/CVT) '02|2663|33,60
 cube_x_98|Nissan CUBE X '98|5356|33,60
 cuda_440_6_71|Plymouth Cuda 440 Six Pack '71|7016|
-cusco_impreza_03|Subaru CUSCO SUBARU ADVAN IMPREZA (JGTC) '03|10789|13,53,61
+cusco_impreza_03|Subaru CUSCO SUBARU ADVAN IMPREZA (JGTC) '03|10789|13,53,61,63
 cz3_tar_tmv_01|Mitsubishi CZ-3 Tarmac '01|6316|62
-cz3_tar_wrc_01|Mitsubishi CZ-3 Tarmac Rally Car '02|7273|
+cz3_tar_wrc_01|Mitsubishi CZ-3 Tarmac Rally Car '02|9033|63
 db7_vantage_coupe_00|Aston Martin DB7 Vantage Coupe '00|5620|26
 db9_03|Aston Martin DB9 Coupe '03|9641|26
 delsol_sir_92|Honda CR-X del Sol SiR '92|4922|
 delta_hf_integrale_evo_91|Lancia DELTA HF Integrale Evoluzione '91|5611|62
-delta_hf_integrale_wrc_92|Lancia DELTA HF Integrale Rally Car '92|6682|
-delta_s4_wrc_85|Lancia Delta S4 Rally Car '85|7612|
+delta_hf_integrale_wrc_92|Lancia DELTA HF Integrale Rally Car '92|8242|63
+delta_s4_wrc_85|Lancia Delta S4 Rally Car '85|8732|
 demio_glx_99|Mazda DEMIO (J) '99|5361|
 demio_sport_03|Mazda DEMIO SPORT '03|6160|
 denso_supra_00|Toyota DENSO SARD SUPRA GT (JGTC) '00|12809|14
@@ -235,7 +235,7 @@ elise_111r_04|Lotus Elise 111R '04|9700|27
 elise_111s_03|Lotus Elise 111S '03|9876|27
 elise_190_98|Lotus Elise Sport 190 '98|10248|27
 elise_type72_01|Lotus Elise Type 72 '01|9986|27
-escort_wrc_98|Ford Escort Rally Car '98|7764|
+escort_wrc_98|Ford Escort Rally Car '98|8924|63
 escudo_pikespeak_98|Suzuki ESCUDO Dirt Trial Car '98|12631|
 esprit_sport350_00|Lotus Esprit Sport 350 '00|9478|
 esprit_turbo_hc_87|Lotus Esprit Turbo HC '87|8954|
@@ -243,8 +243,8 @@ esprit_v8_02|Lotus Esprit V8 '02|8892|
 esprit_v8_gt_98|Lotus Esprit V8 GT '98|8394|
 esprit_v8_se_98|Lotus Esprit V8 SE '98|8272|
 esso_supra_01|Toyota ESSO Ultraflo Supra (JGTC) '01|13162|14
-europa_special_71|Lotus Europa Special '71|9057|28
-evo6_wrc_99|Mitsubishi Lancer Evolution VI Rally Car '99|7189|51
+europa_special_71|Lotus Europa Special '71|9057|28,54
+evo6_wrc_99|Mitsubishi Lancer Evolution VI Rally Car '99|7949|51,63
 exa_canopy_las_88|Nissan EXA CANOPY L.A.Version Type S (N13) '88|3183|
 exp_speed8_03|Bentley Speed 8 Race Car '03|15524|
 fairlady_2000_68|Nissan Fairlady 2000 (SR311) '68|5497|
@@ -257,13 +257,13 @@ falken_gtr_nur_04|Nissan FALKEN ☆ GT-R Race Car '04|9548|59
 fit_w_ff_01|Honda Fit W '01|4940|
 focus_rs_02|Ford FOCUS RS '02|7391|29,62
 focus_st170_jp_03|Ford FOCUS ST170 '03|5669|29
-focus_wrc_99|Ford FOCUS Rally Car '99|8169|29
+focus_wrc_99|Ford FOCUS Rally Car '99|8929|29
 ford_gt_05|Ford GT '05|10898|
 ford_gt_concept_dmv_02|Ford GT '02|10334|
 ford_gt_concept_gulf_02|Ford GT LM Race Car '02|11348|
 ford_gt_lm_sp2_04|Ford GT LM Race Car Spec II '04|11968|
 ford_gt_no_stripe_05|Ford GT '05|10898|
-formula_gran_turismo_04|Formula Gran Turismo '04|20000|30
+formula_gran_turismo_04|Formula Gran Turismo '04|17517|30
 fpv_f6_typhoon_04|FPV F6 Typhoon '04|8023|
 fpv_gt_04|FPV GT '04|7611|
 fpv_gt_no_stripe_04|FPV GT '04|7611|
@@ -284,7 +284,7 @@ giulia_sprint_gta_65|Alfa Romeo Giulia Sprint GTA 1600 '65|5829|4,54
 giulia_sprint_s_63|Alfa Romeo Giulia Sprint Speciale '63|5168|54
 golf_gti_01|Volkswagen Golf IV GTI '01|4752|31
 golf_gti_05|Volkswagen Golf V GTI '05|5801|31
-golf_gti_76|Volkswagen Golf I GTI '76|5904|31
+golf_gti_76|Volkswagen Golf I GTI '76|5904|31,54
 golf_r32_3d_03|Volkswagen Golf IV R32 '03|8130|
 griffith_500_94|TVR Griffith 500 '94|7872|17
 gs300_us_00|Lexus GS300 '00|7745|
@@ -305,15 +305,15 @@ hpa_golf_r32_04|HPA Motorsports Stage II R32 '04|8010|
 hsr2_concept_89|Mitsubishi HSR-II Concept '89|5826|
 i_concept_03|Mitsubishi i '03|7910|
 ibiza_cupra_r_04|Seat Ibiza Cupra '04|6126|
-impreza_22b_98|Subaru IMPREZA 22B-STi (GC) '98|7949|53,61,62
+impreza_22b_98|Subaru IMPREZA 22B-STi (GC) '98|8549|53,61,62
 impreza_coupe_wrx_sti6_99|Subaru IMPREZA Coupe WRX Type R STi Version VI (GC) '99|8266|53,61,62
 impreza_lm_race_00|Subaru IMPREZA Super Touring Car '01|7997|53,61
 impreza_wg_sti_00|Subaru IMPREZA Sport Wagon STi (GG, Type-I) '00|8397|53,60,61,62
 impreza_wg_wrx_99|Subaru IMPREZA Sport Wagon WRX STi Version VI (GF) '99|8561|53,60,61,62
-impreza_wrc_01|Subaru IMPREZA Rally Car '01|7780|53,61
-impreza_wrc_03|Subaru IMPREZA Rally Car '03|8176|53,61
-impreza_wrc_99|Subaru IMPREZA Rally Car '99|7380|53,61
-impreza_wrc_prot_01|Subaru IMPREZA Rally Car Prototype '01|7790|53,61
+impreza_wrc_01|Subaru IMPREZA Rally Car '01|9140|53,61,63
+impreza_wrc_03|Subaru IMPREZA Rally Car '03|9736|53,61
+impreza_wrc_99|Subaru IMPREZA Rally Car '99|8140|53,61,63
+impreza_wrc_prot_01|Subaru IMPREZA Rally Car Prototype '01|7990|53,61,63
 impreza_wrx_pro_01|Subaru IMPREZA WRX STi Prodrive Style (GD) '01|8183|53,61,62
 impreza_wrx_sti1_94|Subaru IMPREZA Sedan WRX STi (GC) '94|7234|53,61,62
 impreza_wrx_sti2_95|Subaru IMPREZA Sedan WRX STi Version II (GC) '95|7216|53,61,62
@@ -334,7 +334,7 @@ integra_r_95|Honda INTEGRA TYPE R (DC2) '95|4809|39
 integra_r_98|Honda INTEGRA TYPE R (DC2) '98|4602|39
 integra_r_99|Honda INTEGRA TYPE R (DC2) '99|5002|39
 integra_r_lm_01|Honda INTEGRA TYPE R Touring Car '02|7244|39
-interceptor_mk3_74|Jensen Interceptor MkIII '74|4900|
+interceptor_mk3_74|Jensen Interceptor MkIII '74|4900|54
 ka_01|Ford Ka '01|5156|
 karmann_ghia_type1_1500_68|Volkswagen Karmann Ghia Coupe (Type-1) '68|6394|54
 kei_works_4wd_02|Suzuki Kei WORKS '02|8587|56
@@ -342,11 +342,11 @@ kpgc10_skyline_gtr_70|Nissan SKYLINE Hard Top 2000GT-R (KPGC10) '70|6610|59
 kpgc110_skyline_gtr_73|Nissan SKYLINE 2000GT-R (KPGC110) '73|6978|59
 kusabi_concept_03|Mazda KUSABI '03|6451|
 lancer_1600gsr_73|Mitsubishi Lancer 1600 GSR '73|8374|
-lancer_1600gsr_rally_74|Mitsubishi Lancer 1600 GSR Rally Car '74|5510|63
+lancer_1600gsr_rally_74|Mitsubishi Lancer 1600 GSR Rally Car '74|6470|63
 lancer_evo2_gsr_94|Mitsubishi Lancer Evolution II GSR '94|6281|51,62
 lancer_evo3_gsr_95|Mitsubishi Lancer Evolution III GSR '95|6263|51,62
 lancer_evo4_96|Mitsubishi Lancer Evolution IV GSR '96|7429|51,62
-lancer_evo4_wrc_97|Mitsubishi Lancer Evolution IV Rally Car '97|7189|51,63
+lancer_evo4_wrc_97|Mitsubishi Lancer Evolution IV Rally Car '97|7949|51,63
 lancer_evo5_gsr_98|Mitsubishi Lancer Evolution V GSR '98|7076|51,62
 lancer_evo6_gsr_99|Mitsubishi Lancer Evolution VI GSR '99|7076|51,62
 lancer_evo6_rs_99|Mitsubishi Lancer Evolution VI RS '99|7308|51,62
@@ -360,18 +360,18 @@ lancer_evo8_mr_gsr_04|Mitsubishi Lancer Evolution VIII MR GSR '04|7150|51,62
 lancer_evo8_rs_03|Mitsubishi Lancer Evolution VIII RS '03|7577|51,62
 lancer_evo_gsr_92|Mitsubishi Lancer Evolution GSR '92|6333|51,62
 lancer_ex_1800gsr_ic_turbo_83|Mitsubishi Lancer EX 1800GSR IC Turbo '83|6748|
-lancer_wrc_03|Mitsubishi Lancer Evolution Super Rally Car '03|8204|51
+lancer_wrc_03|Mitsubishi Lancer Evolution Super Rally Car '03|9364|51,63
 land_range_stormer_04|Land Rover Range Stormer Concept '04|1844|
 lapin_turbo_4wd_02|Suzuki ALTO LAPIN Turbo '02|8281|56
-legacy_b4_20gt_03|Subaru LEGACY B4 2.0GT '03|7296|53,61
-legacy_b4_30r_03|Subaru LEGACY B4 3.0R '03|6106|53,61
+legacy_b4_20gt_03|Subaru LEGACY B4 2.0GT '03|6896|53,61
+legacy_b4_30r_03|Subaru LEGACY B4 3.0R '03|6606|53,61
 legacy_b4_blitzen_00|Subaru LEGACY B4 Blitzen '00|6314|53,61
-legacy_b4_rsk_98|Subaru LEGACY B4 RSK '98|5940|53,61
+legacy_b4_rsk_98|Subaru LEGACY B4 RSK '98|6140|53,61
 legacy_gtb_96|Subaru LEGACY Touring Wagon GT-B '96|6153|53,60,61
-legacy_sdn_20gt_b_03|Subaru LEGACY B4 2.0GT specB '03|7702|53,61
+legacy_sdn_20gt_b_03|Subaru LEGACY B4 2.0GT specB '03|6902|53,61
 legacy_wgn_20gt_03|Subaru LEGACY Touring Wagon 2.0GT '03|7267|53,60,61
 legacy_wgn_20gt_b_03|Subaru LEGACY Touring Wagon 2.0GT specB '03|7281|53,60,61
-legacy_wgn_30r_03|Subaru LEGACY Touring Wagon 3.0R '03|6489|53,60,61
+legacy_wgn_30r_03|Subaru LEGACY Touring Wagon 3.0R '03|6989|53,60,61
 legnum_vr4_v_98|Mitsubishi LEGNUM VR-4 Type V '98|5105|60
 lemans_quattro_03|Audi Le Mans quattro '03|7932|
 levin_bzr_98|Toyota COROLLA LEVIN BZ-R '98|4523|
@@ -449,7 +449,7 @@ mr2_gts_97|Toyota MR2 GT-S '97|8639|
 mr2_spyder_us_99|Toyota MR2 Spyder '99|9051|
 mr2_spyder_v_us_02|Toyota MR2 Spyder '02|8892|
 mr_wagon_sport_04|Suzuki MR Wagon Sport '04|6743|56
-mrs_autobacs_00|Toyota SUPERAUTOBACS APEX MR-S (JGTC) '00|10827|13
+mrs_autobacs_00|Toyota SUPERAUTOBACS APEX MR-S (JGTC) '00|10827|13,63
 mtr_gmv_04|Toyota Motor Triathlon Race Car '04|0|
 mugen_motul_civic_87|Honda MUGEN MOTUL CIVIC Si Race Car '87|4785|18,63
 mugen_s2000_00|MUGEN S2000 '00|7224|
@@ -491,7 +491,7 @@ opel_vectra_32v6_jp_03|Opel Vectra 3.2 V6 '03|3156|
 opera_s2000_04|Opera Performance S2000 '04|11939|
 opera_z_04|Opera Performance 350Z '04|7583|58
 pajero_evo_sp_03|Mitsubishi PAJERO Evolution Rally Raid Car '03|5437|51,63
-pajero_parisdakar_rally_85|Mitsubishi PAJERO Rally Raid Car '85|7311|63
+pajero_parisdakar_rally_85|Mitsubishi PAJERO Rally Raid Car '85|8431|63
 panda_super_ie_90|Fiat Panda Super i.e. '90|5906|
 panoz_esperante_race_98|Panoz Esperante GTR-1 Race Car '98|11329|
 pao_89|Nissan PAO '89|5701|33
@@ -562,15 +562,15 @@ r92cp_92|Nissan R92CP Race Car '92|14625|
 r_gt_00|RUF RGT '00|6767|8,61
 ram_1500_hemi_4cab_04|Dodge RAM 1500 LARAMIE Hemi Quad Cab '04|2929|36
 raybrig_nsx_00|Honda RAYBRIG NSX (JGTC) '00|12719|14
-razo_silvia_01|Nissan C-WEST RAZO SILVIA (JGTC) '01|9917|13,42
+razo_silvia_01|Nissan C-WEST RAZO SILVIA (JGTC) '01|9917|13,42,63
 roadrunner_superbird_70|Plymouth Super Bird '70|3980|
 rs200_84|Ford RS200 '84|8377|62
-rs200_rally_85|Ford RS200 Rally Car '85|7639|
+rs200_rally_85|Ford RS200 Rally Car '85|8759|
 rs4_01|Audi RS 4 '01|6279|60
 rs6_02|Audi RS 6 '02|4974|
 rs6_avant_02|Audi RS 6 Avant '02|4828|60
 rsc_tmv_01|Toyota RSC '01|4870|62
-rsc_tmv_lm_01|Toyota RSC Rally Raid Car '02|8315|
+rsc_tmv_lm_01|Toyota RSC Rally Raid Car '02|9875|
 runx_z_aero_tourer_02|Toyota COROLLA RUNX Z AEROTOURER '02|5001|
 rx7_a3_eu_90|Mazda RX-7 INFINI III (FC, J) '90|8073|64
 rx7_gt_lim_eu_85|Mazda RX-7 GT-Limited (FC, J) '85|7904|64
@@ -647,7 +647,7 @@ slr_mclaren_03|Mercedes-Benz SLR McLaren '03|9002|
 solstice_dmv_02|Pontiac Solstice Coupe Concept '02|9170|
 spider_duetto_66|Alfa Romeo Spider 1600 Duetto '66|4697|54
 spirra_46_v8_04|Proto Motors SPIRRA 4.6 V8 '04|9491|
-spitfire_1500_74|Triumph Spitfire 1500 '74|8834|45
+spitfire_1500_74|Triumph Spitfire 1500 '74|8834|45,54
 spoon_civic_00|Spoon CIVIC TYPE R (EK) '00|6591|18
 spoon_fit_03|Spoon Fit Race Car '03|3760|63
 spoon_integra_r_99|Spoon INTEGRA TYPE R (DC2) '99|4572|
@@ -659,14 +659,14 @@ ss_commodore_04|Holden Commodore SS '04|6907|
 ssr_03|Chevrolet SSR '03|5646|36
 stagea_25t_rs_fours_98|Nissan STAGEA 25t RS FOUR S '98|6703|60
 stagea_260rs_autech_98|Nissan STAGEA 260RS AutechVersion '98|6628|60
-starion_4wd_gpb_84|Mitsubishi STARION 4WD Rally Car '84|5033|
+starion_4wd_gpb_84|Mitsubishi STARION 4WD Rally Car '84|6153|
 starlet_granza_v_97|Toyota STARLET Glanza V '97|5201|
 storia_cx_2wd_98|Daihatsu STORIA CX 2WD '98|5949|
 storia_cx_4wd_98|Daihatsu STORIA CX 4WD '98|7279|
 storia_x4_98|Daihatsu STORIA X4 '00|7449|
 storm_v12_race_99|Lister Storm V12 Race Car '99|10422|
-stratos_73|Lancia STRATOS '73|8385|62
-stratos_wrc_77|Lancia STRATOS Rally Car '77|7258|63
+stratos_73|Lancia STRATOS '73|8385|62,54
+stratos_wrc_77|Lancia STRATOS Rally Car '77|8018|63,54
 stream_z_04|Nissan OPTION Stream Z '04|7551|58
 sunfire_gxp_02|Pontiac Sunfire GXP Concept '02|5409|
 supra_25gt_ttr_90|Toyota SUPRA 2.5GT Twin Turbo R '90|6507|
@@ -718,7 +718,7 @@ vitz_rs_turbo_02|Toyota VITZ RS Turbo '02|5903|48
 voltz_s_2wd_02|Toyota VOLTZ S '02|4846|
 w12_tmv_01|Volkswagen W12 Nardo Concept '01|10489|
 wagon_r_rr_98|Suzuki WAGON R RR '98|7352|56
-wedssport_celica_03|Toyota WEDSSPORT CELICA (JGTC) '03|11254|13
+wedssport_celica_03|Toyota WEDSSPORT CELICA (JGTC) '03|11254|13,63
 will_vs_01|Toyota WiLL VS '01|4459|
 woodone_supra_03|Toyota WOODONE Tom's Supra (JGTC) '03|12882|14
 xa_15s_2wd_03|SCION xA '03|5339|
@@ -732,7 +732,7 @@ xjr9_race_88|Jaguar XJR-9 Race Car '88|14402|49
 xkr_coupe_99|Jaguar XKR Coupe '99|8254|49
 xkr_rperform_02|Jaguar XKR R-Performance '02|8664|49
 xsara_vtr_03|Citroen Xsara VTR '03|5102|
-xsara_wrc_99|Citroen Xsara Rally Car '99|7067|63
+xsara_wrc_99|Citroen Xsara Rally Car '99|8227|63
 z4_30i_03|BMW Z4 '03|8078|
 z_act_70|Honda Z ACT '70|4046|
 zonda_c12_00|Pagani Zonda C12 '00|7597|

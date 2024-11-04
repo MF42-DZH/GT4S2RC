@@ -28,14 +28,14 @@ cabal build
 cabal install --overwrite-policy=always
 ```
 
-You should now have `SpecII-Seed-Analyzer`, `SpecII-Viability-Tester`, `SpecII-Permutation-Tester`, `SpecII-Generate-Combined-Lists`, `SpecII-Unviability-Tester`, `SpecII-List-Analyzer`, `SpecII-Bitflip-Tester` and `SpecII-Stdin-Analyzer` in your PATH.
+You should now have `SpecII-Seed-Analyzer`, `SpecII-Viability-Tester`, `SpecII-Permutation-Tester`, `SpecII-Generate-Combined-Lists`, `SpecII-Unviability-Tester`, `SpecII-List-Analyzer`, `SpecII-Bitflip-Tester`, `SpecII-Stdin-Analyzer`, `SpecII-100-Tester-Stdin`, `SpecII-100-Existence-Tester` in your PATH.
 
 Before anything else, while still in the repository, run `SpecII-Generate-Combined-Lists` in order to (re-)generate the combined lists and necessity list you see at the top level of the repository with up-to-date data.
 You will need to have these files in the current working directory in order to use the functionality of the programs built.
 
 ## Programs
 
-- `SpecII-Seed-Analyzer`: For analyzing the prizes of a single username in detail. **This is probably what you want.**
+- `SpecII-Seed-Analyzer`: For analyzing the prizes of a single username in detail. Specify `--hash` to search by username hash instead. **This is probably what you want.**
 - `SpecII-Viability-Tester`: This runs through all possible usernames of a length less than or equal to a length specified by the user and checks which username is the 'best'.
 - `SpecII-Unviability-Tester`: Similar to `SpecII-Viability-Tester`, but tries to find the worst username instead.
 - `SpecII-Permutation-Tester`: This runs through all possible capitalizations of a username input by a user and checks which username is the 'best'.

@@ -30,10 +30,13 @@ type PrizeInfo = (Text, Car)
 type Username  = String
 
 fnv1a :: String -> Word32
-fnv1a = foldl' (\ acc ch -> (acc `xor` fromIntegral (ord ch)) * prime) initial
-  where
-    initial = 0x811c9dc5
-    prime   = 16777619
+fnv1a = fnv1a' 0x811c9dc5
+
+-- For debug / testing only.
+fnv1a' :: Word32 -> String -> Word32
+fnv1a' = foldl' (\ acc ch -> (acc `xor` fromIntegral (ord ch)) * prime)
+  where prime = 16777619
+{-# INLINE fnv1a' #-}
 
 -- For debug / testing only.
 fnv1aPrefixF :: String -> Word32 -> Word32
@@ -53,6 +56,10 @@ loadData = do
 bruteForce' :: BFData -> [PrizeInfo]
 bruteForce' ((len, cars), combos) = fmap (\ (r, c) -> (coalesce event (T.pack . group) r, cars ! randInt (fnv1a c) 0 len)) combos
 
+bruteForceHash' :: CarInfo -> [Event] -> Word32 -> [PrizeInfo]
+bruteForceHash' (len, cars) events usernameHash
+  = fmap (\ e -> (coalesce event (T.pack . group) e, cars ! randInt (fnv1a' usernameHash (group e ++ func e)) 0 len)) events
+
 bruteForceCarsOnly :: BFData -> (Car -> a) -> [a]
 bruteForceCarsOnly ((len, cars), combos) action = fmap (\ (_, c) -> action (cars ! randInt (fnv1a c) 0 len)) combos
 
@@ -66,6 +73,10 @@ bruteForce :: Username -> S2Data -> (Text -> Car -> a) -> [a]
 bruteForce username (carInfo, eventInfo, _) action =
   let combos = loadCombos username eventInfo
   in  fmap (uncurry action) (bruteForce' (carInfo, combos))
+
+bruteForceHash :: Word32 -> S2Data -> (Text -> Car -> a) -> [a]
+bruteForceHash usernameHash (carInfo, eventInfo, _) action
+  = fmap (uncurry action) (bruteForceHash' carInfo eventInfo usernameHash)
 
 bruteForceMissingCount :: Username -> S2Data -> Int
 bruteForceMissingCount username (carInfo, eventInfo, necessities) = runST comp
