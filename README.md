@@ -45,7 +45,7 @@ You will need to have these files in the current working directory in order to u
 - `SpecII-Generate-Combined-Lists`: This is a utility command used for regenerating the combined lists and necessity lists at the top level of the file structure of these programs.
 - `SpecII-100-Tester-Stdin`: Similar to `SpecII-Stdin-Analyzer`, but hyper-optimized for searching for usernames with the least amount of missing cars for a 100% prize-cars only playthrough.
 - `SpecII-100-Existence-Tester`: Tests to see if there even is a username hash that can get a 100% prize cars only save.
-- `SpecII-Hash-Breaker`: Tries to find a valid username that matches a username hash.
+- `SpecII-Hash-Breaker`: Tries to find a valid username that matches a username hash. **Do not ask this program to look for usernames longer than 5 characters long unless you have at least 32 GB of RAM, this program eats memory for breakfast!**
 
 Where 'best username' is referenced, it means it has the highest average viability of all the cars. Some programs will also let you divide this viability by the number of missing cars, to let you find usernames most viable for getting close to a 100% run on only prize cars.
 
