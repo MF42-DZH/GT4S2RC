@@ -12,6 +12,6 @@ coprime = ((== 1) .) . gcd
 
 modInverse :: Integral a => a -> a -> a
 modInverse mult modulus
-  | coprime mult modulus = ((x `mod` modulus) + modulus) `mod` modulus
+  | coprime mult modulus = x `mod` modulus
   | otherwise            = error "Unsolveable. Inverse does not exist as the multiplier and modulus are not coprime."
   where (x, _) = bezout mult modulus
