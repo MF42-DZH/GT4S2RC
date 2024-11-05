@@ -419,7 +419,7 @@
                 \begin{align*}
                     16777619 \cdot \mathbf{In} + 2^{32} \cdot y &= 1\\
                     16777619 \cdot \mathbf{In} + 2^{32} \cdot y &\equiv 1 \mod 2^{32}\\
-                    16777619 \cdot \mathbf{In} &\equiv 1 \mod 2^{32}\ \text{(Multiples of our modulus decay to 0.)}\\
+                    16777619 \cdot \mathbf{In} &\equiv 1 \mod 2^{32}\ \text{(Multiples of our modulus decay to 0.)}
                 \end{align*}
 
                 The Extended Euclidean Algorithm (EEA) takes in two integers, $a$ and $b$, and return
@@ -457,6 +457,8 @@
                 \noindent Taking all of that together, we can derive a way to brute-force a username
                 that is hashed into a desired input.
 
+                \pagebreak
+
                 \begin{lstlisting}
   // Consult S2RA/Bruteforce.hs to see the character set.
   extern charset: String
@@ -489,12 +491,11 @@
 
                 \noindent The username that we have found earlier follows this path to be reversed:
                 \begin{align*}
-                    1369703188 \times 899433627 &\equiv 55520540 \mod 2^{32}\\
-                    \implies (55520540 \oplus 120\ (\text{`x'})) \times 899433627 &\equiv 1710164876 \mod 2^{32}\\
-                    \implies (1710164876 \oplus 41\ (\text{`)'})) \times 899433627 &\equiv 2019549415 \mod 2^{32}\\
-                    \implies (2019549415 \oplus 68\ (\text{`D'})) \times 899433627 &\equiv 4228665009 \mod 2^{32}\\
-                    \implies (4228665009 \oplus 69\ (\text{`E'})) \times 899433627 &\equiv 2166136252 \mod 2^{32}\\
-                    \implies 2166136252 \oplus 121\ (\text{`y'}) &\equiv 2166136261 \mod 2^{32}
+                    (1369703188 \times 899433627) \oplus 120\ (\text{`x'}) &\equiv 55520612 \mod 2^{32}\\
+                    \implies (55520612 \times 899433627) \oplus 41\ (\text{`)'}) &\equiv 1710164901 \mod 2^{32}\\
+                    \implies (1710164901 \times 899433627) \oplus 68\ (\text{`D'}) &\equiv 2019549347 \mod 2^{32}\\
+                    \implies (2019549347 \times 899433627) \oplus 69\ (\text{`E'}) &\equiv 4228665076 \mod 2^{32}\\
+                    \implies (4228665076 \times 899433627) \oplus 121\ (\text{`y'}) &\equiv 2166136261 \mod 2^{32}
                 \end{align*}
 
                 2166136261 is the base 10 / decimal representation of \texttt{0x811c9dc5}, so we finish there.
