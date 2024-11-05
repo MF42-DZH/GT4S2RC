@@ -28,7 +28,7 @@ cabal build
 cabal install --overwrite-policy=always
 ```
 
-You should now have `SpecII-Seed-Analyzer`, `SpecII-Viability-Tester`, `SpecII-Permutation-Tester`, `SpecII-Generate-Combined-Lists`, `SpecII-Unviability-Tester`, `SpecII-List-Analyzer`, `SpecII-Bitflip-Tester`, `SpecII-Stdin-Analyzer`, `SpecII-100-Tester-Stdin`, `SpecII-100-Existence-Tester` in your PATH.
+You should now have `SpecII-Seed-Analyzer`, `SpecII-Viability-Tester`, `SpecII-Permutation-Tester`, `SpecII-Generate-Combined-Lists`, `SpecII-Unviability-Tester`, `SpecII-List-Analyzer`, `SpecII-Bitflip-Tester`, `SpecII-Stdin-Analyzer`, `SpecII-100-Tester-Stdin`, `SpecII-100-Existence-Tester`, `SpecII-Hash-Breaker` in your PATH.
 
 Before anything else, while still in the repository, run `SpecII-Generate-Combined-Lists` in order to (re-)generate the combined lists and necessity list you see at the top level of the repository with up-to-date data.
 You will need to have these files in the current working directory in order to use the functionality of the programs built.
@@ -45,6 +45,7 @@ You will need to have these files in the current working directory in order to u
 - `SpecII-Generate-Combined-Lists`: This is a utility command used for regenerating the combined lists and necessity lists at the top level of the file structure of these programs.
 - `SpecII-100-Tester-Stdin`: Similar to `SpecII-Stdin-Analyzer`, but hyper-optimized for searching for usernames with the least amount of missing cars for a 100% prize-cars only playthrough.
 - `SpecII-100-Existence-Tester`: Tests to see if there even is a username hash that can get a 100% prize cars only save.
+- `SpecII-Hash-Breaker`: Tries to find a valid username that matches a username hash.
 
 Where 'best username' is referenced, it means it has the highest average viability of all the cars. Some programs will also let you divide this viability by the number of missing cars, to let you find usernames most viable for getting close to a 100% run on only prize cars.
 
