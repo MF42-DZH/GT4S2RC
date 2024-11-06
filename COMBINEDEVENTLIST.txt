@@ -84,7 +84,7 @@ us_shelby_cobra_0000|win|Shelby Cobra Cup
 fr_citroen_2cv_0000|win|2HP-2CV Classics (Citroën)
 fr_peugeot_206_0000|win|206 Cup (Peugeot)
 fr_renault_clio_0500|win|Clio Trophy (Renault)
-fr_renault_megane_0500|win|Megane Cup (Renault)
+fr_renault_megane_0300|win|Megane Cup (Renault)
 fr_renault_alpine_0300|win|Alpine Cup
 jp_daihatsu_copen_0000|win|Copen Race (Daihatsu)
 jp_daihatsu_midget2_0000|win|Midget II Race (Daihatsu)
@@ -94,7 +94,7 @@ jp_isuzu_0000|win|Isuzu Sports Classics
 jp_mazda_rotary_0000|win|Club "RE" (Mazda)
 jp_mazda_roadster_0500|win|NR-A Roadster Cup (Mazda)
 jp_mazda_rx8_0000|win|NR-A RX-8 Cup (Mazda)
-jp_mitsubishi_mirage_0500|win|Mirage Cup (Mitsubishi)
+jp_mitsubishi_mirage_0300|win|Mirage Cup (Mitsubishi)
 jp_mitsubishi_evo_0000|win|Evolution Meeting (Mitsubishi)
 jp_nissan_gtr_0000|win|Race of the Red "R" Emblem (Nissan)
 jp_nissan_march_0000|win|March Brothers (Nissan)

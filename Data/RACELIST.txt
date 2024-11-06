@@ -84,7 +84,7 @@ us_shelby_cobra_0000
 fr_citroen_2cv_0000
 fr_peugeot_206_0000
 fr_renault_clio_0500
-fr_renault_megane_0500
+fr_renault_megane_0300
 fr_renault_alpine_0300
 jp_daihatsu_copen_0000
 jp_daihatsu_midget2_0000
@@ -94,7 +94,7 @@ jp_isuzu_0000
 jp_mazda_rotary_0000
 jp_mazda_roadster_0500
 jp_mazda_rx8_0000
-jp_mitsubishi_mirage_0500
+jp_mitsubishi_mirage_0300
 jp_mitsubishi_evo_0000
 jp_nissan_gtr_0000
 jp_nissan_march_0000
