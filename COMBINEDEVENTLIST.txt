@@ -19,7 +19,7 @@ ex_gtallstar_1000|win|Gran Turismo All Stars
 ex_dream_0800|win|Dream Car Championship
 ex_polyphony_0800|win|Polyphony Digital Cup
 ex_wind_0000|win|Like The Wind
-ex_formula_1500|win|Formula Gran Turismo World Championship
+ex_formula_1200|win|Formula Gran Turismo World Championship
 ex_real_circuit_0000|win|Real Circuit Tours
 ex_premium_0000|win|Premium Sports Lounge
 en_grandvalley300_0000|win|Grand Valley 300km
@@ -44,7 +44,7 @@ eurdeu_touring_0500|win|Deutsche Touring Car Meisterschaft
 euritaly_0000|win|La Festa Italiano
 eurfrench_0500|win|Tous France Championnat
 eureuro_classic_0500|win|Euro Classic Car Cup
-eureuro_hatch_0500|win|Euro Hot Hatch League
+eureuro_hatch_0400|win|Euro Hot Hatch League
 eur1000mile_0400|win|Grand Tour (formerly 1000 Miles!)
 eurschvartz_a_0000|win|Schwarzwald Liga A
 eurschvartz_b_0000|win|Schwarzwald Liga B

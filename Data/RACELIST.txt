@@ -19,7 +19,7 @@ ex_gtallstar_1000
 ex_dream_0800
 ex_polyphony_0800
 ex_wind_0000
-ex_formula_1500
+ex_formula_1200
 ex_real_circuit_0000
 ex_premium_0000
 en_grandvalley300_0000
@@ -44,7 +44,7 @@ eurdeu_touring_0500
 euritaly_0000
 eurfrench_0500
 eureuro_classic_0500
-eureuro_hatch_0500
+eureuro_hatch_0400
 eur1000mile_0400
 eurschvartz_a_0000
 eurschvartz_b_0000
