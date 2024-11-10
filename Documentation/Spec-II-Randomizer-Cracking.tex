@@ -281,11 +281,9 @@
 
             The closest we have gotten to a username that can 100\% the game with only prize cars
             from the randomizer has four cars needing to be bought for a candidate seed, one such
-            example being ``AcritanRawest'' (case-sensitive). It is theoretically possible that a
-            username that has three cars missing can be found, but we only know its FNV-1a hash of
-            1369703188.
+            example being ``AcritanRawest'' (case-sensitive).
 
-            \subsubsection*{The 100\% Impossibility (as of 2024-11-03)}
+            \subsubsection*{The 100\% Impossibility (as of 2024-11-10)}
                 It turns out that there is no username out of the many, \textit{many} possible
                 usernames\footnote{There are $93^{30} + 93^{29} + \dots + 93^1$ possible usernames}
                 that can complete the game to 100\% completion with just randomized prize
@@ -364,24 +362,17 @@
                 were observed after bruteforcing the data for all those hashes:
 
                 \begin{itemize}
-                    \item 215 hashes result in a prize lineup missing 5 cars for a 100\% playthrough.
+                    \item 230 hashes result in a prize lineup missing 5 cars for a 100\% playthrough.
                           There are too many to list here.
-                    \item 16 hashes result in a prize lineup missing 4 cars for a 100\% playthrough.
+                    \item 17 hashes result in a prize lineup missing 4 cars for a 100\% playthrough.
                     \begin{itemize}
-                        \item 585265398, 634454505, 752339779, 1392599962, 1520546429,\\2103087292, 2258225527, 2311524843, 2776772991, 3019592698,\\3194864652, 3250908732, 3289153551, 3597215756, 3605929611,\\3634232672
-                    \end{itemize}
-                    \item \textbf{1} hash results in a prize lineup missing 3 cars for a 100\% playthrough.
-                    \begin{itemize}
-                        \item 1369703188
+                        \item 585265398, 634454505, 1309767868, 1369703188, 1392599962,\\1432721073, 1520546429, 1912668018, 2103087292, 2258225527,\\2641602117, 2714909022, 2776772991, 3019592698, 3289153551,\\3634232672, 3981126976
                     \end{itemize}
                 \end{itemize}
 
-                No possible username hash generate a prize car list with two cars, one car
-                or even zero cars missing for a 100\% playthrough with random prize cars only.
-
-                However, for the sole 3 cars missing hash, we have ran a brute-force hash reversal
-                to find that one of the possible usernames for that is ``\texttt{yED)x}'' (without quotation
-                marks).
+                No possible username hash generate a prize car list with three, two, one,
+                or even zero cars missing for a 100\% playthrough with random prize cars only
+                as of Spec II v1.07.
 
             \subsubsection*{Reversing the FNV-1a Hash}
                 The simple implementation of the FNV-1a hash also lets us perform a brute-force hash
@@ -456,9 +447,7 @@
 
                 \noindent Taking all of that together, we can derive a way to brute-force a username
                 that is hashed into a desired input.
-
                 \pagebreak
-
                 \begin{lstlisting}
   // Consult S2RA/Bruteforce.hs to see the character set.
   extern charset: String
@@ -488,19 +477,6 @@
                 \noindent There is the caveat that this algorithm is very memory inefficient, and
                 is extremely slow. There may not also be a username returned, since the character
                 set typeable into Spec II's username input keyboard is limited.
-
-                \noindent The username that we have found earlier follows this path to be reversed:
-                \begin{align*}
-                    (1369703188 \times 899433627) \oplus 120\ (\text{`x'}) &\equiv 55520612 \mod 2^{32}\\
-                    \implies (55520612 \times 899433627) \oplus 41\ (\text{`)'}) &\equiv 1710164901 \mod 2^{32}\\
-                    \implies (1710164901 \times 899433627) \oplus 68\ (\text{`D'}) &\equiv 2019549347 \mod 2^{32}\\
-                    \implies (2019549347 \times 899433627) \oplus 69\ (\text{`E'}) &\equiv 4228665076 \mod 2^{32}\\
-                    \implies (4228665076 \times 899433627) \oplus 121\ (\text{`y'}) &\equiv 2166136261 \mod 2^{32}
-                \end{align*}
-
-                2166136261 is the base 10 / decimal representation of \texttt{0x811c9dc5}, so we finish there.
-                Unwinding the calculation backwards, the username formed is ``\texttt{yED)x}'', just as
-                mentioned before.
 
         \subsection*{Acknowledgements}
             \small{
