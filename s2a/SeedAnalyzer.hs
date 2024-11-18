@@ -16,7 +16,7 @@ import S2RA.Typedefs
 -- Main brute-forcing flow, just to show all of the prize cars.
 main :: IO ()
 main = do
-  putStrLn "Gran Turismo 4 Spec II v1.07 Prize Car Randomizer Brute-Forcer\nMade by Azullia / 0xFC963F18DC21\nSpecial Thanks to Nenkai, TeaKanji\n"
+  putStrLn "Gran Turismo 4 Spec II v1.08 Prize Car Randomizer Brute-Forcer\nMade by Azullia / 0xFC963F18DC21\nSpecial Thanks to Nenkai, TeaKanji\n"
 
   args <- getArgs
   let hashes = foldr (\ x -> (((fmap toLower x == "-h") || (fmap toLower x == "--hash")) ||)) False args

@@ -28,7 +28,7 @@ extend xs     = nub xs
 
 main :: IO ()
 main = do
-  putStrLn "Gran Turismo 4 Spec II v1.07 Prize Car Randomizer Capitalisation LSB Bitflip Brute-Forcer"
+  putStrLn "Gran Turismo 4 Spec II v1.08 Prize Car Randomizer Capitalisation LSB Bitflip Brute-Forcer"
   putStrLn "Viability value per car provided by TeaKanji\n"
 
   sp2Data@(_, _, necessities) <- loadData
