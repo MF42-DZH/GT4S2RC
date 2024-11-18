@@ -1,5 +1,13 @@
 # Revision history for SpecII-Cracking
 
+## 0.1.3.0 -- 2024-11-19
+
+* Add seed hash reversal tool (uses a lot of memory).
+* Add seed hash checking to seed analyzer.
+* Add 100% hash existence tester.
+* Add optimized 100% checker.
+* Fix labels for Spec II v1.07-v1.08.
+
 ## 0.1.2.1 -- 2024-10-20
 
 * Remove PRNG integrity verifier.
@@ -18,4 +26,4 @@
 
 ## 0.1.0.0 -- 2024-10-14
 
-* First version. Released on an unsuspecting world.
+* First version.
