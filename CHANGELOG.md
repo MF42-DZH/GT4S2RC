@@ -1,5 +1,9 @@
 # Revision history for SpecII-Cracking
 
+## 0.1.4.0 -- 2024-??-??
+
+* Add initial track randomizer support.
+
 ## 0.1.3.0 -- 2024-11-19
 
 * Add seed hash reversal tool (uses a lot of memory).

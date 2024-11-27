@@ -1,0 +1,50 @@
+akasaka|Tokyo Route 246|6
+apricot|Apricot Hill|6
+autumn|Autumn Ring|6
+deepforest|Deep Forest Raceway|6
+fisco|Fuji Speedway '90s|6
+fisco_old|Fuji Speedway '80s|6
+grandvalley|Grand Valley Speedway|6
+grandvalley_east|Grand Valley East|6
+highspeedring|High Speed Ring|6
+hongkong|Hong Kong|6
+infineon|Infineon Sports Car Course|6
+infineon_nascar|Infineon Stock Car Course|6
+kashiwa|Motorland|6
+laguna|Mazda Raceway Laguna Seca|6
+midfield|Midfield Raceway|6
+mini|Autumn Ring Mini|6
+montecarlo|Côte d'Azur|6
+motegi|Twin Ring Motegi Road Course|6
+motegi_east|Twin Ring Motegi East Course|6
+motegi_west|Twin Ring Motegi West Course|6
+new_fisco|Fuji Speedway '05|6
+new_fisco_gt|Fuji Speedway '05 GT|6
+newyork|New York|6
+nurburgring|Nürburgring Nordschliefe|6
+oval|Twin Ring Motegi Super Speedway|6
+paris_tarmac|Opera Paris|6
+route5|Special Stage Route 5|6
+route5_club|Clubman Stage Route 5|6
+sarthe|Circuit de la Sarthe (Chicanes)|6
+sarthe_old|Circuit de la Sarthe (No Chicanes)|6
+seattle|Seattle Circuit|6
+seoul|Seoul Central|6
+suzuka|Suzuka Circuit|6
+suzuka_east|Suzuka East Short Course|6
+suzuka_west|Suzuka West Short Course|6
+tt_valencia|Circuit de la Comunitat Valenciana Ricardo Tormo|6
+trialmt|Trial Mountain|6
+tsukuba|Tsukuba Circuit (Dry)|6
+yosemite|El Capitan|6
+assisi|Citta di Aria|R
+capri|Costa di Amalfi|R
+paris_rally|George V Paris|R
+tsukuba_wet|Tsukuba Circuit (Wet)|R
+grandcanyon|Grand Canyon|D
+smtsouth|Swiss Alps|D
+tahiti_maze|Tahiti Maze|D
+yosemite_dirt|Cathedral Rocks Trail I|D
+yosemite_dirt_short|Cathedral Rocks Trail II|D
+icerace|Ice Arena|S
+nursnow|Chamonix|S
