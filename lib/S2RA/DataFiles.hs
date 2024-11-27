@@ -1,6 +1,7 @@
 module S2RA.DataFiles
   ( loadCarsAndEvents
   , loadAllNecessities
+  , loadTracksAndRaces
   , dataFilePath
   , combinedCarList
   , combinedEventList
@@ -8,6 +9,7 @@ module S2RA.DataFiles
   , combinedTrackList
   , combinedRaceData
   , DataFile(..)
+  , TrackData(..)
   , module S2RA.Typedefs
   ) where
 
