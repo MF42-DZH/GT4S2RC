@@ -143,3 +143,14 @@ summarise username ns is' = T.concat
 
     avgV :: Double = fromIntegral (foldl' (\ acc (_, c) -> acc + viability c) 0 infos) / fromIntegral len
     dups           = duplicateDetails infos
+
+bruteForceTracks :: Username -> TrackData -> [Race] -> (Race -> Track -> a) -> [a]
+bruteForceTracks username tracks races action =
+  let combos = fmap (\ r -> (username ++ rlabel r, r)) races
+  in  fmap (uncurry action . force) combos
+  where
+    force (seedString, race) = case rclass race of
+      SixCars   -> (race, let (l, ts) = sixCarInfo tracks in ts ! randInt (fnv1a seedString) 0 l)
+      RoadRally -> (race, let (l, ts) = roadRallyInfo tracks in ts ! randInt (fnv1a seedString) 0 l)
+      DirtRally -> (race, let (l, ts) = dirtRallyInfo tracks in ts ! randInt (fnv1a seedString) 0 l)
+      SnowRally -> (race, let (l, ts) = snowRallyInfo tracks in ts ! randInt (fnv1a seedString) 0 l)
