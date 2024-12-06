@@ -2,7 +2,7 @@
 
 Some experiments in cracking GT4 Spec II's randomizer.
 
-Currently, this seems to work for v1.06.1. **WARNING: If inputting names into Spec II's improved keyboard, disable HD HUD / UI textures, as it renders some symbols invisible on the keyboard (e.g. what looks like `BOLT STORY` might actually be `BOLT_STORY`).**
+Currently, this seems to work for v1.08. **WARNING: If inputting names into Spec II's improved keyboard, disable HD HUD / UI textures, as it renders some symbols invisible on the keyboard (e.g. what looks like `BOLT STORY` might actually be `BOLT_STORY`).**
 
 This **does not work** for the original Randomizer Public Build from sometime 2023. **Do not use this on your own username if you would like to not be spoiled about your username's prize cars! Also do not use this to give unwanted spoilers to others' save files!**
 
