@@ -465,7 +465,7 @@
       }
 
       prepended.find { case (_, _, h) => h == 0x811c9dc5 } match {
-        case Some((n, _, _)) => return n
+        case Some((n, _, _)) => return Some(n)
         case None => prepended.foreach(potentials.enqueue)
       }
     }
