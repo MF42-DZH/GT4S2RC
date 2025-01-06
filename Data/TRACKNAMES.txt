@@ -1,6 +1,22 @@
+Grand Canyon
+Grand Canyon (Reverse)
+Swiss Alps (Reverse)
+Tahiti Maze (Reverse)
+Cathedral Rocks Trail I (Reverse)
+Cathedral Rocks Trail II (Reverse)
+Swiss Alps
+Tahiti Maze
+Cathedral Rocks Trail I
+Cathedral Rocks Trail II
+Ice Arena
+Chamonix
+Ice Arena (Reverse)
+Chamonix (Reverse)
 Tokyo Route 246
-Apricot Hill
+Apricot Hill Raceway
 Autumn Ring
+Citta di Aria
+Costa di Amalfi
 Deep Forest Raceway
 Fuji Speedway '90s
 Fuji Speedway '80s
@@ -16,35 +32,109 @@ Midfield Raceway
 Autumn Ring Mini
 Côte d'Azur
 Twin Ring Motegi Road Course
-Twin Ring Motegi East Course
-Twin Ring Motegi West Course
-Fuji Speedway '05
-Fuji Speedway '05 GT
+Twin Ring Motegi East Short Course
+Twin Ring Motegi West Short Course
+Fuji Speedway 2005
+Fuji Speedway 2005 GT
 New York
 Nürburgring Nordschliefe
 Twin Ring Motegi Super Speedway
+George V Paris
 Opera Paris
+Tokyo Route 246 (Reverse)
+Apricot Hill Raceway (Reverse)
+Citta di Aria (Reverse)
+Autumn Ring (Reverse)
+Costa di Amalfi (Reverse)
+Deep Forest Raceway (Reverse)
+Grand Valley Speedway (Reverse)
+Grand Valley East (Reverse)
+High Speed Ring (Reverse)
+Hong Kong (Reverse)
+Motorland (Reverse)
+Midfield Raceway (Reverse)
+Autumn Ring Mini (Reverse)
+New York (Reverse)
+George V Paris (Reverse)
+Opera Paris (Reverse)
+Special Stage Route 5 (Reverse)
+Clubman Stage Route 5 (Reverse)
+Seattle (Reverse)
+Seoul Central (Reverse)
+Trial Mountain (Reverse)
+El Capitan (Reverse)
 Special Stage Route 5
 Clubman Stage Route 5
 Circuit de la Sarthe (Chicanes)
 Circuit de la Sarthe (No Chicanes)
-Seattle Circuit
+Seattle
 Seoul Central
 Suzuka Circuit
 Suzuka East Short Course
 Suzuka West Short Course
-Circuit de la Comunitat Valenciana Ricardo Tormo
 Trial Mountain
-Tsukuba Circuit (Dry)
+Tsukuba Circuit
+Circuit de la Comunitat Valenciana Ricardo Tormo
 El Capitan
+Tokyo Route 246
+Apricot Hill Raceway
+Autumn Ring
 Citta di Aria
 Costa di Amalfi
-George V Paris
-Tsukuba Circuit (Wet)
-Grand Canyon
-Swiss Alps
-Tahiti Maze
-Cathedral Rocks Trail I
-Cathedral Rocks Trail II
-Ice Arena
-Chamonix
+Deep Forest Raceway
+Fuji Speedway '90s
+Fuji Speedway '80s
+Grand Valley Speedway
+Grand Valley East
+High Speed Ring
+Hong Kong
+Infineon Sports Car Course
+Infineon Stock Car Course
+Motorland
+Mazda Raceway Laguna Seca
+Midfield Raceway
+Autumn Ring Mini
+Côte d'Azur
+Twin Ring Motegi Road Course
+Twin Ring Motegi East Short Course
+Twin Ring Motegi West Short Course
+Fuji Speedway 2005
+Fuji Speedway 2005 GT
+New York
+Nürburgring Nordschliefe
+Twin Ring Motegi Super Speedway
+Opera Paris
+Tokyo Route 246 (Reverse)
+Apricot Hill Raceway (Reverse)
+Citta di Aria (Reverse)
+Autumn Ring (Reverse)
+Costa di Amalfi (Reverse)
+Deep Forest Raceway (Reverse)
+Grand Valley Speedway (Reverse)
+Grand Valley East (Reverse)
+High Speed Ring (Reverse)
+Hong Kong (Reverse)
+Motorland (Reverse)
+Midfield Raceway (Reverse)
+Autumn Ring Mini (Reverse)
+New York (Reverse)
+Opera Paris (Reverse)
+Special Stage Route 5 (Reverse)
+Clubman Stage Route 5 (Reverse)
+Seattle (Reverse)
+Seoul Central (Reverse)
+Trial Mountain (Reverse)
+El Capitan (Reverse)
+Special Stage Route 5
+Clubman Stage Route 5
+Circuit de la Sarthe (Chicanes)
+Circuit de la Sarthe (No Chicanes)
+Seattle
+Seoul Central
+Suzuka Circuit
+Suzuka East Short Course
+Suzuka West Short Course
+Trial Mountain
+Tsukuba Circuit
+Circuit de la Comunitat Valenciana Ricardo Tormo
+El Capitan
