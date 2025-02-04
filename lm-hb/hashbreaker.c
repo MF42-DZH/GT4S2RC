@@ -1,3 +1,4 @@
+#include <inttypes.h>
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
@@ -63,7 +64,7 @@ int main(void) {
     fflush(stdout);
 
     int64_t hash_intermediate = -1l;
-    scanf_s("%ld", &hash_intermediate);
+    scanf_s("%" SCNi64, &hash_intermediate);
 
     if (hash_intermediate < 0 || hash_intermediate > ((int64_t) UINT32_MAX)) {
         puts("Invalid hash.");
