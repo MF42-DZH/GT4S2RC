@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <string.h>
 
+// Compile me with --std=c17 and -O2.
+
 #define MAX_USERNAME_ARR 31
 
 const uint32_t fnv1a_mod_inverse = 899433627u;
