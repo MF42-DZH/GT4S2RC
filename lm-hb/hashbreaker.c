@@ -16,7 +16,7 @@ const size_t charset_size = sizeof(charset) / sizeof(char);
 
 bool verify(uint32_t start_hash, const size_t to_test[MAX_USERNAME_ARR]) {
     uint32_t current = start_hash;
-    for (size_t ix = 0; to_test[ix] > 0 && ix < MAX_USERNAME_ARR; ++ix) {
+    for (size_t ix = 0u; to_test[ix] > 0u && ix < MAX_USERNAME_ARR; ++ix) {
         current = (current * fnv1a_mod_inverse) ^ ((uint32_t) charset[to_test[ix]]);
     }
 
@@ -27,10 +27,8 @@ bool bruteforce(uint32_t start_hash, /* Out */ char result[MAX_USERNAME_ARR]) {
     size_t intermediate[MAX_USERNAME_ARR] = { 0u };
     size_t length = 0u;
 
-    puts("[!] Testing the invalid blank username.");
-
     do {
-        if (verify(start_hash, intermediate)) {
+        if (length > 0u && verify(start_hash, intermediate)) {
             // Reverse the result, as the algorithm above outputs the answer in reverse.
             for (size_t ix = 0; ix < length; ++ix) {
                 result[(length - ix) - 1] = charset[intermediate[ix]];
@@ -40,16 +38,16 @@ bool bruteforce(uint32_t start_hash, /* Out */ char result[MAX_USERNAME_ARR]) {
         }
 
         for (size_t ix = 0; ix < MAX_USERNAME_ARR - 1; ++ix) {
-            if (intermediate[ix] == 0) {
-                intermediate[ix] = 1;
+            if (intermediate[ix] == 0u) {
+                intermediate[ix] = 1u;
 
                 length += 1;
                 if (length < MAX_USERNAME_ARR) printf("[!] Now testing %zu-long usernames.\n", length);
                 break;
-            } else if (intermediate[ix] == charset_size - 1) {
-                intermediate[ix] = 1;
+            } else if (intermediate[ix] == charset_size - 1u) {
+                intermediate[ix] = 1u;
             } else {
-                intermediate[ix] += 1;
+                intermediate[ix] += 1u;
                 break;
             }
         }
