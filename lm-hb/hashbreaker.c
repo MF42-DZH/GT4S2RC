@@ -63,7 +63,7 @@ int main(void) {
     fflush(stdout);
 
     int64_t hash_intermediate = -1l;
-    scanf_s("%lld", &hash_intermediate);
+    scanf_s("%ld", &hash_intermediate);
 
     if (hash_intermediate < 0 || hash_intermediate > ((int64_t) UINT32_MAX)) {
         puts("Invalid hash.");
