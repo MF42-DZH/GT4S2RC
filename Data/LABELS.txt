@@ -511,6 +511,7 @@ prelude_s_98
 prelude_si_vtec_91
 prelude_sir_96
 prelude_sir_s_98
+primera_20te_90
 primera_20v_us_01
 prius_g_02
 prius_g_touring_03

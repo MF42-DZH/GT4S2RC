@@ -511,6 +511,7 @@ Honda PRELUDE Type S '98
 Honda PRELUDE Si VTEC '91
 Honda PRELUDE SiR '96
 Honda PRELUDE SiR S spec '98
+Nissan PRIMERA 2.0 Te '90
 Nissan PRIMERA 20V '01
 Toyota PRIUS G (J) '02
 Toyota PRIUS G Touring Selection (J) '03
