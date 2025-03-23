@@ -290,6 +290,9 @@ jp_suzuki_k_0003|Suzuki Kei Car Cup #3|6
 jp_toyota_altezza_0001|Altezza Race (Toyota / Lexus) #1|6
 jp_toyota_altezza_0002|Altezza Race (Toyota / Lexus) #2|6
 jp_toyota_altezza_0003|Altezza Race (Toyota / Lexus) #3|6
+jp_toyota_sports_0001|Toyota Sports Meetup #1|6
+jp_toyota_sports_0002|Toyota Sports Meetup #2|6
+jp_toyota_sports_0003|Toyota Sports Meetup #3|6
 jp_toyota_vitz_0001|Vitz Race (Toyota) #1|6
 jp_toyota_vitz_0002|Vitz Race (Toyota) #2|6
 jprjapan_0501|Japan Championship #1|6
@@ -346,6 +349,11 @@ pr_compact_0502|World Compact Car Cup #2|6
 pr_compact_0503|World Compact Car Cup #3|6
 pr_compact_0504|World Compact Car Cup #4|6
 pr_compact_0505|World Compact Car Cup #5|6
+pr_concept_0001|Concept Car Club #1|6
+pr_concept_0002|Concept Car Club #2|6
+pr_concept_0003|Concept Car Club #3|6
+pr_concept_0004|Concept Car Club #4|6
+pr_concept_0005|Concept Car Club #5|6
 pr_gtworld_1001|Gran Turismo World Championship #1|6
 pr_gtworld_1002|Gran Turismo World Championship #2|6
 pr_gtworld_1003|Gran Turismo World Championship #3|6

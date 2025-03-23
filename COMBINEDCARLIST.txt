@@ -511,6 +511,7 @@ prelude_s_98|Honda PRELUDE Type S '98|4572|
 prelude_si_vtec_91|Honda PRELUDE Si VTEC '91|4848|
 prelude_sir_96|Honda PRELUDE SiR '96|5336|
 prelude_sir_s_98|Honda PRELUDE SiR S spec '98|4720|
+primera_20te_90|Nissan PRIMERA 2.0 Te '90|4962|
 primera_20v_us_01|Nissan PRIMERA 20V '01|3931|
 prius_g_02|Toyota PRIUS G (J) '02|4868|
 prius_g_touring_03|Toyota PRIUS G Touring Selection (J) '03|5116|

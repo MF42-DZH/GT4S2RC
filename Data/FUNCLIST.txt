@@ -193,3 +193,5 @@ hall_clear
 hall_clear
 hall_clear
 win
+win
+win

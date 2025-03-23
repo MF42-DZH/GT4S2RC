@@ -193,3 +193,5 @@ EuropeanRaceEvents|hall_clear|All European Events
 RallyEvents|hall_clear|All Special Condition Events
 EnduranceEvents|hall_clear|All Endurance Events
 us_ford_focus_0000|win|Focus Cup (Ford)
+jp_toyota_sports_0000|win|Toyota Sports Meetup
+pr_concept_0000|win|Concept Car Club
