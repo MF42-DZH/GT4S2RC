@@ -21,7 +21,7 @@ permutations (x : xs) =
 
 main :: IO ()
 main = do
-  putStrLn "Gran Turismo 4 Spec II v1.08 Prize Car Randomizer Capitalisation Permutation Brute-Forcer"
+  putStrLn "Gran Turismo 4 Spec II v1.09 Prize Car Randomizer Capitalisation Permutation Brute-Forcer"
   putStrLn "Viability value per car provided by TeaKanji\n"
 
   sp2Data@(_, _, necessities) <- loadData

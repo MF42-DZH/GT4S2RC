@@ -50,7 +50,7 @@ worker name queue continue ((carCount, cars), events, necessities) = forkJoinabl
 
 main :: IO ()
 main = do
-  putStrLn "Gran Turismo 4 Spec II v1.08 Prize Car Randomizer 100% Existence Tester"
+  putStrLn "Gran Turismo 4 Spec II v1.09 Prize Car Randomizer 100% Existence Tester"
 
   sp2Data <- loadData
 

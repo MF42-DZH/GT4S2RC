@@ -66,7 +66,7 @@ missingWorkerSTM = baseWorker withStm
 
 main :: IO ()
 main = do
-  putStrLn "Gran Turismo 4 Spec II v1.08 Prize Car Randomizer Viability Stdin Missing Cars Analyzer"
+  putStrLn "Gran Turismo 4 Spec II v1.09 Prize Car Randomizer Viability Stdin Missing Cars Analyzer"
 
   sp2Data@(_, _, necessities) <- loadData
 

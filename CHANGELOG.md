@@ -1,8 +1,9 @@
 # Revision history for SpecII-Cracking
 
-## 0.1.4.0 -- 2024-??-??
+## 0.1.4.0 -- 2025-??-??
 
 * Add initial track randomizer support.
+* Add support for v1.09 prize changes.
 
 ## 0.1.3.0 -- 2024-11-19
 

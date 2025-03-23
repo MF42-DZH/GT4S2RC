@@ -9,7 +9,7 @@ import S2RA.S2Data
 
 main :: IO ()
 main = do
-  putStrLn "Gran Turismo 4 Spec II v1.08 Prize Car Randomizer Viability File Analyzer"
+  putStrLn "Gran Turismo 4 Spec II v1.09 Prize Car Randomizer Viability File Analyzer"
   putStrLn "Viability value per car provided by TeaKanji\n"
   putStrLn "Please provide a newline-separated list of usernames to test."
 

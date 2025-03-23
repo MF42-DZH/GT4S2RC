@@ -37,7 +37,7 @@ attemptReversalWorker queue result maxLength = forkJoinable comp
 
 main :: IO ()
 main = do
-  putStrLn "Gran Turismo 4 Spec II v1.08 Prize Car Randomizer FNV-1a Brute-Forcer"
+  putStrLn "Gran Turismo 4 Spec II v1.09 Prize Car Randomizer FNV-1a Brute-Forcer"
 
   putStr (concat ["Enter a username hash (0 to ", show (maxBound :: Word32), "): "])
   hFlush stdout

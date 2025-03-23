@@ -10,7 +10,7 @@ import S2RA.S2Data
 
 main :: IO ()
 main = do
-  putStrLn "Gran Turismo 4 Spec II v1.08 Track Randomizer Brute-Forcer\nMade by Azullia / 0xFC963F18DC21\nSpecial Thanks to Nenkai, TeaKanji\n"
+  putStrLn "Gran Turismo 4 Spec II v1.09 Track Randomizer Brute-Forcer\nMade by Azullia / 0xFC963F18DC21\nSpecial Thanks to Nenkai, TeaKanji\n"
   tracksAndRaces <- loadTracksAndRaces
 
   loop tracksAndRaces
