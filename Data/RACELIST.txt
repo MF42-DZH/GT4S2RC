@@ -193,3 +193,5 @@ EuropeanRaceEvents
 RallyEvents
 EnduranceEvents
 us_ford_focus_0000
+jp_toyota_sports_0000
+pr_concept_0000

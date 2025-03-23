@@ -290,6 +290,9 @@ jp_suzuki_k_0003
 jp_toyota_altezza_0001
 jp_toyota_altezza_0002
 jp_toyota_altezza_0003
+jp_toyota_sports_0001
+jp_toyota_sports_0002
+jp_toyota_sports_0003
 jp_toyota_vitz_0001
 jp_toyota_vitz_0002
 jprjapan_0501
@@ -346,6 +349,11 @@ pr_compact_0502
 pr_compact_0503
 pr_compact_0504
 pr_compact_0505
+pr_concept_0001
+pr_concept_0002
+pr_concept_0003
+pr_concept_0004
+pr_concept_0005
 pr_gtworld_1001
 pr_gtworld_1002
 pr_gtworld_1003

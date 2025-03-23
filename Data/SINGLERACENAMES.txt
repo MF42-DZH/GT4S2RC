@@ -290,6 +290,9 @@ Suzuki Kei Car Cup #3
 Altezza Race (Toyota / Lexus) #1
 Altezza Race (Toyota / Lexus) #2
 Altezza Race (Toyota / Lexus) #3
+Toyota Sports Meetup #1
+Toyota Sports Meetup #2
+Toyota Sports Meetup #3
 Vitz Race (Toyota) #1
 Vitz Race (Toyota) #2
 Japan Championship #1
@@ -346,6 +349,11 @@ World Compact Car Cup #2
 World Compact Car Cup #3
 World Compact Car Cup #4
 World Compact Car Cup #5
+Concept Car Club #1
+Concept Car Club #2
+Concept Car Club #3
+Concept Car Club #4
+Concept Car Club #5
 Gran Turismo World Championship #1
 Gran Turismo World Championship #2
 Gran Turismo World Championship #3
