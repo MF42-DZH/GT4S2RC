@@ -1,4 +1,4 @@
-# Spec II Cracking
+# Spec II RNG Cracking
 
 Some experiments in cracking GT4 Spec II's randomizer.
 
