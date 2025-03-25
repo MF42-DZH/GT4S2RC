@@ -1,13 +1,10 @@
 module S2RA.DataFiles
   ( loadCarsAndEvents
   , loadAllNecessities
-  , loadTracksAndRaces
   , dataFilePath
   , combinedCarList
   , combinedEventList
   , topLevelNecessities
-  , combinedTrackList
-  , combinedRaceData
   , DataFile(..)
   , TrackData(..)
   , module S2RA.Typedefs
@@ -18,12 +15,10 @@ import qualified Data.Text as T
 import qualified Data.Text.IO as TI
 import S2RA.Typedefs
 
-combinedCarList, combinedEventList, topLevelNecessities, combinedTrackList, combinedRaceData :: String
+combinedCarList, combinedEventList, topLevelNecessities :: String
 combinedCarList     = "COMBINEDCARLIST.txt"
 combinedEventList   = "COMBINEDEVENTLIST.txt"
 topLevelNecessities = "NECESSITIES.txt"
-combinedTrackList   = "COMBINEDTRACKLIST.txt"
-combinedRaceData    = "COMBINEDRACEDATA.txt"
 
 data DataFile
   = Labels
@@ -74,19 +69,3 @@ data TrackData = TrackData
   , dirtRallyInfo :: (Int, Array Int Track)
   , snowRallyInfo :: (Int, Array Int Track)
   }
-
-loadTracksAndRaces :: IO (TrackData, [Race])
-loadTracksAndRaces = do
-  allTracks :: [Track] <- fmap read . lines <$> readFile combinedTrackList
-  allRaces :: [Race]   <- fmap read . lines <$> readFile combinedRaceData
-  
-  return
-    ( TrackData
-      (toInfo (filter ((== SixCars) . tclass) allTracks))
-      (toInfo (filter ((== RoadRally) . tclass) allTracks))
-      (toInfo (filter ((== DirtRally) . tclass) allTracks))
-      (toInfo (filter ((== SnowRally) . tclass) allTracks))
-    , allRaces
-    )
-  where
-    toInfo xs = (length xs, listArray (0, length xs - 1) xs)
