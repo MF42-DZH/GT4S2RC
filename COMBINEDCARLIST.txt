@@ -14,7 +14,7 @@ _156_25v6_98|Alfa Romeo 156 2.5 V6 24V '98|4157|
 _166_25v6_24v_s_98|Alfa Romeo 166 2.5 V6 24V Sportronic '98|4198|
 _190e_evo2_91|Mercedes-Benz 190 E 2.5 - 16 Evolution II '91|6621|
 _190e_evo2_dtm_92|AMG Mercedes 190 E 2.5 - 16 Evolution II Touring Car '92|9885|20
-_2000_gt_67|Toyota 2000GT '67|7664|
+_2000_gt_67|Toyota 2000GT '67|7664|65
 _2002_turbo_73|BMW 2002 Turbo '73|8670|54
 _205_t16_85|Peugeot 205 Turbo 16 '85|8042|62
 _205_t16_rally_85|Peugeot 205 Turbo 16 Rally Car '85|8354|
@@ -89,7 +89,7 @@ alpine_a110_16s_73|Alpine A110 1600S '73|8766|10,62,54
 altezza_as200_98|Toyota ALTEZZA AS200 '98|7879|12
 altezza_gita_as300_01|Toyota ALTEZZA Gita AS300 '01|7596|12,60
 altezza_lm_race_00|Toyota ALTEZZA Touring Car '01|11238|12
-altezza_rs200_98|Toyota ALTEZZA RS200 '98|7855|12
+altezza_rs200_98|Toyota ALTEZZA RS200 '98|7855|12,65
 altoworks_rsz_97|Suzuki ALTO WORKS RS-Z '97|7715|56
 altoworks_sport_ltd_97|Suzuki ALTO WORKS SUZUKI SPORT LIMITED '97|8475|56
 amemiya_aspara_rx7_04|RE Amemiya AMEMIYA ASPARADRINK RX7 (JGTC) '04|11512|13,63,64
@@ -124,7 +124,7 @@ c12_03|Callaway C12 '03|6777|
 c3_16_02|Citroen C3 1.6 '02|6408|
 c5_v6_exclusive_03|Citroen C5 V6 Exclusive '03|3732|
 c8_laviolette_02|Spyker C8 Laviolette '02|8894|
-caldina_gt_four_02|Toyota CALDINA GT-FOUR '02|6879|60
+caldina_gt_four_02|Toyota CALDINA GT-FOUR '02|6879|60,65
 calsonic_gtr_00|Nissan CALSONIC SKYLINE (JGTC) '00|12274|14,59
 calsonic_skyline_gtr_gpa_93|Nissan CALSONIC SKYLINE GT-R Race Car '93|8619|59
 camaro_irocz_88|Chevrolet Camaro IROC-Z Concept '88|5549|16
@@ -142,17 +142,17 @@ castrol_nsx_00|Honda Castrol MUGEN NSX (JGTC) '00|12719|14
 castrol_supra_00|Toyota Castrol Tom's Supra (JGTC) '00|12870|14
 castrol_supra_01|Toyota Castrol Tom's Supra (JGTC) '01|13029|14
 caterham_7_fb_02|Caterham Seven Fire Blade '02|0|
-celica_1600gt_70|Toyota CELICA 1600GT (TA22) '70|7356|
-celica_2000gt_four_86|Toyota CELICA 2000GT-FOUR (ST165) '86|6216|62
-celica_2000gt_r_86|Toyota CELICA 2000GT-R (ST162) '86|5382|
-celica_gt_four_98|Toyota CELICA GT-FOUR (ST205) '98|6089|62
-celica_gt_four_rc_91|Toyota CELICA GT-FOUR RC (ST185) '91|5768|62
-celica_gtr_4ws_91|Toyota CELICA GT-R (ST183, 4WS) '91|4593|
-celica_ss2_97|Toyota CELICA SS-II (ST202) '97|4975|
+celica_1600gt_70|Toyota CELICA 1600GT (TA22) '70|7356|65
+celica_2000gt_four_86|Toyota CELICA 2000GT-FOUR (ST165) '86|6216|62,65
+celica_2000gt_r_86|Toyota CELICA 2000GT-R (ST162) '86|5382|65
+celica_gt_four_98|Toyota CELICA GT-FOUR (ST205) '98|6089|62,65
+celica_gt_four_rc_91|Toyota CELICA GT-FOUR RC (ST185) '91|5768|62,65
+celica_gtr_4ws_91|Toyota CELICA GT-R (ST183, 4WS) '91|4593|65
+celica_ss2_97|Toyota CELICA SS-II (ST202) '97|4975|65
 celica_ss2_99|Toyota CELICA SS-II (ZZT231) '99|6321|
 celica_st185_wrc_95|Toyota CELICA GT-FOUR Rally Car (ST185) '95|7095|63
 celica_wrc_95|Toyota CELICA GT-FOUR Rally Car (ST205) '95|7441|63
-celica_xx_2800gt_81|Toyota CELICA XX 2800GT '81|5750|
+celica_xx_2800gt_81|Toyota CELICA XX 2800GT '81|5750|65
 cerbera_speed12_00|TVR Cerbera Speed 12 '00|8468|17
 cerbera_speed6_97|TVR Cerbera Speed Six '97|8366|17
 chaparral_2d_race_67|Chaparral 2D Race Car '67|11635|
@@ -374,8 +374,8 @@ legacy_wgn_20gt_b_03|Subaru LEGACY Touring Wagon 2.0GT specB '03|7281|53,60,61
 legacy_wgn_30r_03|Subaru LEGACY Touring Wagon 3.0R '03|6989|53,60,61
 legnum_vr4_v_98|Mitsubishi LEGNUM VR-4 Type V '98|5105|60
 lemans_quattro_03|Audi Le Mans quattro '03|7932|
-levin_bzr_98|Toyota COROLLA LEVIN BZ-R '98|4523|
-levin_gt_apex_83|Toyota COROLLA LEVIN GT-APEX (AE86) '83|8256|
+levin_bzr_98|Toyota COROLLA LEVIN BZ-R '98|4523|65
+levin_gt_apex_83|Toyota COROLLA LEVIN GT-APEX (AE86) '83|8256|65
 lexus_is200_gt1_race_04|Lexus IS200 GT-1 Race Car '04|8381|12,63
 lexus_is200_rs200_98|Lexus IS200 (J) '98|7855|12
 lexus_is300_sc_us_01|Lexus IS300 Sport Cross '01|7596|12
@@ -442,12 +442,12 @@ move_custom_rs_lim_4wd_02|Daihatsu MOVE Custom RS Limited '02|8171|
 move_cx_2wd_95|Daihatsu MOVE CX '95|6031|
 move_srxx_2wd_97|Daihatsu MOVE SR-XX 2WD '97|6242|
 move_srxx_4wd_97|Daihatsu MOVE SR-XX 4WD '97|7617|
-mr2_1600_g_86|Toyota MR2 1600 G '86|8686|
-mr2_1600_glim_sc_86|Toyota MR2 1600 G-Limited Super Charger '86|8794|
-mr2_glimited_97|Toyota MR2 G-Limited '97|8679|
-mr2_gts_97|Toyota MR2 GT-S '97|8639|
-mr2_spyder_us_99|Toyota MR2 Spyder '99|9051|
-mr2_spyder_v_us_02|Toyota MR2 Spyder '02|8892|
+mr2_1600_g_86|Toyota MR2 1600 G '86|8686|65
+mr2_1600_glim_sc_86|Toyota MR2 1600 G-Limited Super Charger '86|8794|65
+mr2_glimited_97|Toyota MR2 G-Limited '97|8679|65
+mr2_gts_97|Toyota MR2 GT-S '97|8639|65
+mr2_spyder_us_99|Toyota MR2 Spyder '99|9051|65
+mr2_spyder_v_us_02|Toyota MR2 Spyder '02|8892|65
 mr_wagon_sport_04|Suzuki MR Wagon Sport '04|6743|56
 mrs_autobacs_00|Toyota SUPERAUTOBACS APEX MR-S (JGTC) '00|10827|13,63
 mtr_gmv_04|Toyota Motor Triathlon Race Car '04|0|
@@ -572,7 +572,7 @@ rs6_02|Audi RS 6 '02|4974|
 rs6_avant_02|Audi RS 6 Avant '02|4828|60
 rsc_tmv_01|Toyota RSC '01|4870|62
 rsc_tmv_lm_01|Toyota RSC Rally Raid Car '02|9875|
-runx_z_aero_tourer_02|Toyota COROLLA RUNX Z AEROTOURER '02|5001|
+runx_z_aero_tourer_02|Toyota COROLLA RUNX Z AEROTOURER '02|5001|65
 rx7_a3_eu_90|Mazda RX-7 INFINI III (FC, J) '90|8073|64
 rx7_gt_lim_eu_85|Mazda RX-7 GT-Limited (FC, J) '85|7904|64
 rx7_gtx_eu_90|Mazda RX-7 GT-X (FC, J) '90|8006|64
@@ -654,14 +654,14 @@ spoon_fit_03|Spoon Fit Race Car '03|3760|63
 spoon_integra_r_99|Spoon INTEGRA TYPE R (DC2) '99|4572|
 spoon_s2000_00|Spoon S2000 '00|7200|
 spoon_s2000_race_00|Spoon S2000 Race Car '00|9036|63
-sports_800_65|Toyota SPORTS 800 '65|8435|61
+sports_800_65|Toyota SPORTS 800 '65|8435|61,65
 srt4_03|Dodge SRT4 '03|5740|
 ss_commodore_04|Holden Commodore SS '04|6907|
 ssr_03|Chevrolet SSR '03|5646|36
 stagea_25t_rs_fours_98|Nissan STAGEA 25t RS FOUR S '98|6703|60
 stagea_260rs_autech_98|Nissan STAGEA 260RS AutechVersion '98|6628|60
 starion_4wd_gpb_84|Mitsubishi STARION 4WD Rally Car '84|6153|
-starlet_granza_v_97|Toyota STARLET Glanza V '97|5201|
+starlet_granza_v_97|Toyota STARLET Glanza V '97|5201|65
 storia_cx_2wd_98|Daihatsu STORIA CX 2WD '98|5949|
 storia_cx_4wd_98|Daihatsu STORIA CX 4WD '98|7279|
 storia_x4_98|Daihatsu STORIA X4 '00|7449|
@@ -670,10 +670,10 @@ stratos_73|Lancia STRATOS '73|8385|62,54
 stratos_wrc_77|Lancia STRATOS Rally Car '77|8018|63,54
 stream_z_04|Nissan OPTION Stream Z '04|7551|58
 sunfire_gxp_02|Pontiac Sunfire GXP Concept '02|5409|
-supra_25gt_ttr_90|Toyota SUPRA 2.5GT Twin Turbo R '90|6507|
-supra_30gt_turbo_a_88|Toyota SUPRA 3.0GT Turbo A '88|6313|
-supra_rz_97|Toyota SUPRA RZ '97|8512|
-supra_szr_97|Toyota SUPRA SZ-R '97|6484|
+supra_25gt_ttr_90|Toyota SUPRA 2.5GT Twin Turbo R '90|6507|65
+supra_30gt_turbo_a_88|Toyota SUPRA 3.0GT Turbo A '88|6313|65
+supra_rz_97|Toyota SUPRA RZ '97|8512|65
+supra_szr_97|Toyota SUPRA SZ-R '97|6484|65
 svt_f150_lightning_03|Ford SVT F-150 Lightning '03|3386|36
 t350c_03|TVR T350C '03|9185|17
 tacoma_x_runner_04|Toyota Tacoma X-Runner '04|5979|36
@@ -690,8 +690,8 @@ toms_chaser_00|Tom's X540 CHASER '00|7503|
 toyota7_70|Toyota 7 Race Car '70|10054|
 trd_celica_sportm_00|Toyota Modellista CELICA TRD Sports M (ZZT231) '00|7227|
 trial_celica_ss2_03|TRIAL CELICA SS-II (ZZT231) '03|5989|
-trueno_bzr_98|Toyota SPRINTER TRUENO BZ-R '98|4523|
-trueno_gt_apex_83|Toyota SPRINTER TRUENO GT-APEX (AE86) '83|8251|
+trueno_bzr_98|Toyota SPRINTER TRUENO BZ-R '98|4523|65
+trueno_gt_apex_83|Toyota SPRINTER TRUENO GT-APEX (AE86) '83|8251|65
 trueno_gt_apex_shigeno_00|Toyota SPRINTER TRUENO GT-APEX (AE86) Shuichi Shigeno Version '00|6299|
 tt_00|Audi TT Coupe 1.8T quattro '00|7063|46
 tt_coupe_32_03|Audi TT Coupe 3.2 quattro '03|7791|46
@@ -714,8 +714,8 @@ viper_gtsr_00|Dodge VIPER GTSR Concept '00|10780|47
 viper_srt10_03|Dodge VIPER SRT10 '03|9292|47
 vitz_euro_00|Toyota VITZ U Euro Sport Edition '00|5600|48
 vitz_f_99|Toyota VITZ F '99|5310|48
-vitz_rs15_00|Toyota VITZ RS 1.5 '00|5323|48
-vitz_rs_turbo_02|Toyota VITZ RS Turbo '02|5903|48
+vitz_rs15_00|Toyota VITZ RS 1.5 '00|5323|48,65
+vitz_rs_turbo_02|Toyota VITZ RS Turbo '02|5903|48,65
 voltz_s_2wd_02|Toyota VOLTZ S '02|4846|
 w12_tmv_01|Volkswagen W12 Nardo Concept '01|10489|
 wagon_r_rr_98|Suzuki WAGON R RR '98|7352|56
