@@ -45,7 +45,7 @@ bool bruteforce(uint32_t start_hash, /* Out */ char result[MAX_USERNAME_ARR]) {
                 length += 1;
                 if (length < MAX_USERNAME_ARR) printf("[!] Now testing %zu-long usernames.\n", length);
                 break;
-            } else if (intermediate[ix] == charset_size - 1u) {
+            } else if (intermediate[ix] == charset_size - 2u) {
                 intermediate[ix] = 1u;
             } else {
                 intermediate[ix] += 1u;
