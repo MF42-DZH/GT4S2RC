@@ -267,23 +267,11 @@
             \end{itemize}
 
             The first goal was achieved relatively comfortably by trying to find seeds with
-            a high average car viability, some examples include:
+            a high average car viability, by brute-forcing the lineups of many usernames at
+            a time while comparing their average viabilities (essentially just a metric
+            that measures the handling and power capabilities of a car).
 
-            \begin{itemize}
-                \item \texttt{GatewomanBoundaries} (with its \textbf{five} 787Bs!)
-                \item \texttt{ZaniestDisconcert} (with its \textbf{B License Bronze}\\Formula
-                Gran Turismo!)
-                \item \textbf{[REDACTED AT THE REQUEST\footnote{(at gunpoint)} OF CERO, PEGI,
-                THE ACB, AND THE ESRB]}
-                \item \texttt{std::reinterpret\_cast<float>} (with its \textbf{five} BMW V12
-                LMRs!)
-            \end{itemize}
-
-            The closest we have gotten to a username that can 100\% the game with only prize cars
-            from the randomizer has four cars needing to be bought for a candidate seed, one such
-            example being ``AcritanRawest'' (case-sensitive).
-
-            \subsubsection*{The 100\% Impossibility (as of 2024-11-10)}
+            \subsubsection*{The 100\% Impossibility (as of 2025-04-29)}
                 It turns out that there is no username out of the many, \textit{many} possible
                 usernames\footnote{There are $93^{30} + 93^{29} + \dots + 93^1$ possible usernames}
                 that can complete the game to 100\% completion with just randomized prize
@@ -362,17 +350,50 @@
                 were observed after bruteforcing the data for all those hashes:
 
                 \begin{itemize}
-                    \item 230 hashes result in a prize lineup missing 5 cars for a 100\% playthrough.
+                    \item 74 hashes result in a prize lineup missing 5 cars for a 100\% playthrough.
                           There are too many to list here.
-                    \item 17 hashes result in a prize lineup missing 4 cars for a 100\% playthrough.
+                    \item 31 hashes result in a prize lineup missing 4 cars for a 100\% playthrough.
                     \begin{itemize}
-                        \item 585265398, 634454505, 1309767868, 1369703188, 1392599962,\\1432721073, 1520546429, 1912668018, 2103087292, 2258225527,\\2641602117, 2714909022, 2776772991, 3019592698, 3289153551,\\3634232672, 3981126976
+                        \item 30124607,
+                        466081194,
+                        573556365,
+                        618568250,
+                        680046867,
+                        \\1190286828,
+                        1683701050,
+                        1691623435,
+                        1964326257,
+                        2000606274,
+                        \\2079066668,
+                        2083527803,
+                        2366774963,
+                        2462023237,
+                        2499046370,
+                        \\2545030294,
+                        2566654769,
+                        2693050474,
+                        2719867818,
+                        2721109794,
+                        \\2767627000,
+                        2974291508,
+                        3353918225,
+                        3393527741,
+                        3670790600,
+                        \\4029161521,
+                        4032302124,
+                        4034448255,
+                        4073253241,
+                        4104544060,
+                        \\4124159775
                     \end{itemize}
+                    \item 1 hash results in a prize lineup missing 3 cars for a 100\% playthrough: 1432721073.
+                    One can use the method outlined in the next section to determine that one
+                    username that hashes into this value is \texttt{dNNH\$}.
                 \end{itemize}
 
-                No possible username hash generate a prize car list with three, two, one,
+                No possible username hash generate a prize car list with two, one,
                 or even zero cars missing for a 100\% playthrough with random prize cars only
-                as of Spec II v1.07.
+                as of Spec II v1.09.
 
             \subsubsection*{Reversing the FNV-1a Hash}
                 The simple implementation of the FNV-1a hash also lets us perform a brute-force hash
