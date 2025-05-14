@@ -165,15 +165,3 @@ executable SpecII-100-Existence-Tester
     build-depends: SpecII-Cracking:Common
 
     hs-source-dirs:   s2a
-
-executable SpecII-Hash-Breaker
-    import:
-        warnings,
-        shared-depends,
-        executable-depends
-    main-is:          HashBreaker.hs
-    -- other-modules:
-    -- other-extensions:
-    build-depends: SpecII-Cracking:Common
-
-    hs-source-dirs:   s2a

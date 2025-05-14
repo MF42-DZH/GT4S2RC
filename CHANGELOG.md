@@ -1,8 +1,9 @@
 # Revision history for SpecII-Cracking
 
-## 0.1.4.0 -- 2025-??-??
+## 0.1.4.0 -- 2025-05-14
 
 * Add support for v1.09 prize changes.
+* Remove Haskell implementation of the hash breaker as it is too inefficient.
 
 ## 0.1.3.0 -- 2024-11-19
 
