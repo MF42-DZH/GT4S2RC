@@ -1,5 +1,9 @@
 # Revision history for SpecII-Cracking
 
+## 0.1.5.0 -- 2025-??-??
+
+* Add fairness analyser tool.
+
 ## 0.1.4.0 -- 2025-05-14
 
 * Add support for v1.09 prize changes.

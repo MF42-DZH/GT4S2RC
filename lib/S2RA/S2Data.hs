@@ -56,12 +56,19 @@ loadData = do
 bruteForce' :: BFData -> [PrizeInfo]
 bruteForce' ((len, cars), combos) = fmap (\ (r, c) -> (coalesce event (T.pack . group) r, cars ! randInt (fnv1a c) 0 len)) combos
 
-bruteForceHash' :: CarInfo -> [Event] -> Word32 -> [PrizeInfo]
+bruteForceHash' :: CarInfo -> EventInfo -> Word32 -> [PrizeInfo]
 bruteForceHash' (len, cars) events usernameHash
   = fmap (\ e -> (coalesce event (T.pack . group) e, cars ! randInt (fnv1a' usernameHash (group e ++ func e)) 0 len)) events
 
 bruteForceCarsOnly :: BFData -> (Car -> a) -> [a]
 bruteForceCarsOnly ((len, cars), combos) action = fmap (\ (_, c) -> action (cars ! randInt (fnv1a c) 0 len)) combos
+
+bruteForceCarIndicesOnly :: BFData -> (Int -> a) -> [a]
+bruteForceCarIndicesOnly ((len, _), combos) action = fmap (\ (_, c) -> action (randInt (fnv1a c) 0 len)) combos
+
+bruteForceHashCarIndicesOnly :: CarInfo -> EventInfo -> Word32 -> [Int]
+bruteForceHashCarIndicesOnly (len, _) events usernameHash
+  = fmap (\ e -> randInt (fnv1a' usernameHash (group e ++ func e)) 0 len) events
 
 coalesce :: (Eq s, IsString s) => (a -> s) -> (a -> s) -> a -> s
 coalesce f g x =

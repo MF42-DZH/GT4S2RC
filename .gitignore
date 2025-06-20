@@ -14,3 +14,7 @@
 *.fls
 *.log
 *.synctex.gz
+
+# Other Ignores
+*.class
+*.iml

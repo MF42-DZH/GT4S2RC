@@ -1,6 +1,6 @@
 cabal-version:      3.4
 name:               SpecII-Cracking
-version:            0.1.4.0
+version:            0.1.5.0
 synopsis:           An attempt at breaking Spec II's randomizer algorithm.
 description:        See https://github.com/MF42-DZH/GT4S2RC/blob/master/README.md
 homepage:           https://github.com/MF42-DZH/GT4S2RC
@@ -23,7 +23,9 @@ common shared-depends
         array ^>=0.5.7.0,
         text ^>=2.1.1,
         containers ^>=0.7,
-        stm ^>=2.5.3.1
+        stm ^>=2.5.3.1,
+        bytestring ^>=0.12.1.0,
+        binary ^>=0.8.9.2
     default-language: GHC2021
 
 common executable-depends
@@ -160,6 +162,18 @@ executable SpecII-100-Existence-Tester
         shared-depends,
         executable-depends
     main-is:          Existence100.hs
+    -- other-modules:
+    -- other-extensions:
+    build-depends: SpecII-Cracking:Common
+
+    hs-source-dirs:   s2a
+
+executable SpecII-Fairness-Tester
+    import:
+        warnings,
+        shared-depends,
+        executable-depends
+    main-is:          Fairness.hs
     -- other-modules:
     -- other-extensions:
     build-depends: SpecII-Cracking:Common
