@@ -3,6 +3,7 @@
 ## 0.1.5.0 -- 2025-??-??
 
 * Add fairness analyser tool.
+* Add support for v1.10. Should have no changes from v1.09.
 
 ## 0.1.4.0 -- 2025-05-14
 

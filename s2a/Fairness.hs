@@ -42,7 +42,7 @@ runSimple = do
 
 runNormal :: IO ()
 runNormal = do
-  putStrLn "Gran Turismo 4 Spec II v1.09 Prize Car Randomizer Fairness Analyzer"
+  putStrLn "Gran Turismo 4 Spec II v1.10 Prize Car Randomizer Fairness Analyzer"
 
   (cars@(numCars, carArray), events, _) <- loadData
   allCarsGotten :: IOUArray Int Word64 <- newArray (0 :: Int, numCars - 1) (0 :: Word64)
