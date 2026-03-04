@@ -4,7 +4,7 @@
 
 * Add fairness analyser tool.
 * Add support for v1.10. Should have no changes from v1.09.
-* Add hash (a.k.a. the idnentifier of the prize car lineup) to the analyzer tool.
+* Add hash (a.k.a. the unique identifier of the prize car lineup) to the analyzer tool.
 
 ## 0.1.4.0 -- 2025-05-14
 
