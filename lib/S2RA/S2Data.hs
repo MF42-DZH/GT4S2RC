@@ -132,7 +132,7 @@ duplicateDetails infos =
 
 summarise :: Username -> Necessities -> [PrizeInfo] -> Text
 summarise username ns is' = T.concat
-  [ "--- \"", T.pack username , "\" :: Summary ---\n\n"
+  [ T.concat ["--- \"", T.pack username , "\" :: Hash / Lineup #", T.pack (show (fnv1a username)), " :: Summary ---\n\n"]
   , "Average Viability: ", T.pack (show avgV), "\n"
   , "\nDuplicates:\n"
   , T.unlines ( let counts   = fmap (\ (n, (count, _)) -> T.concat [n, " (x", T.pack (show count), ")"]) (M.assocs dups)

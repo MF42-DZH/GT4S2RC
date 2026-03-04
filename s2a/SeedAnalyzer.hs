@@ -37,7 +37,6 @@ main = do
           "" -> return ()
           _  -> do
             TI.putStrLn ""
-            TI.putStrLn (T.concat [T.justifyRight 44 ' ' (T.pack username), " - Hash / Lineup Number: ", T.pack (show (fnv1a username))])
             TI.putStrLn ""
             results <- sequence $ bruteForce username s2d $ \ r c ->
               (r, c) <$ TI.putStrLn (T.concat [T.justifyRight 44 ' ' r, " ==> ", name c, " (", T.pack (show (viability c)),")"])
