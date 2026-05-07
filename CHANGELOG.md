@@ -1,5 +1,9 @@
 # Revision history for SpecII-Cracking
 
+## 0.1.5.1 -- 2026-05-07
+
+* Fix a typo.
+
 ## 0.1.5.0 -- 2026-03-04
 
 * Add fairness analyser tool.
