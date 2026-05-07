@@ -13,7 +13,7 @@ pr_turbo_0000|win|Race of Turbo Sports
 pr_boxer_0000|win|Boxer Spirit
 pr_classic_0500|win|World Classic Car Cup
 pr_compact_0500|win|World Compact Car Cup
-pr_supercar_0000|win|Supercal Festival
+pr_supercar_0000|win|Supercar Festival
 pr_gtworld_1000|win|Gran Turismo World Championship
 ex_gtallstar_1000|win|Gran Turismo All Stars
 ex_dream_0800|win|Dream Car Championship
